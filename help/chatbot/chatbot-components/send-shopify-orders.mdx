@@ -1,0 +1,62 @@
+---
+title: "Send Shopify orders"
+---
+
+# Send Shopify orders
+
+Automatic Shopify Order Lookup & Response.\
+When a customer inquires about their Shopify order details, this component can automatically search for their order in your Shopify store and respond with the relevant order information.
+
+> **Info**
+>
+> Before using this component, you need to install the YCloud app in your Shopify store.
+
+
+## Best Practices
+
+1\. Use natural language recognition triggers to identify the customer’s intent and confirm whether they want to check their Shopify order.
+
+2\. Once the intent is confirmed, automatically search for orders using the customer’s WhatsApp phone number and return the relevant order details.
+
+3\. If no order is found using the WhatsApp phone number, use the Ask Question component to request the customer’s order ID.
+
+4\. After obtaining the order ID, retrieve the Shopify order details and provide the information to the customer.
+
+5\. If still can not find any order, transfer the conversation to a live agent using the Agent Takeover component.
+
+![](/images/gitbook/image-122-290bce48.png)
+
+### Component Settings
+
+![](/images/gitbook/image-123-bc227ca4.png)
+
+#### Search Method:
+
+• Search by Customer’s WhatsApp Number – The system automatically searches for Shopify orders using the customer’s WhatsApp number.
+
+• Search by Order ID – Requires using the Ask Question component to collect the order ID and save it as the “Order ID” field.
+
+
+#### Number of Orders to Send
+
+When multiple orders are found in Shopify, you can configure how many order details to return.
+
+Supported range: 1–50
+
+
+#### Order Details to Send
+
+You can customize the order details to be sent by inserting Shopify fields into the response. Supported order data fields include:
+
+1. order\_id
+2. order\_status
+3. order\_link
+4. item\_number
+5. order\_amount
+6. product\_name
+7. shop\_name
+8. total\_discounts
+9. tracking\_url
+10. tracking\_company
+11. tracking\_id
+12. currency

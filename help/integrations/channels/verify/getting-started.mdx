@@ -1,0 +1,46 @@
+---
+title: "Getting Started"
+---
+
+# Getting Started
+
+## Building User Verification with YCloud Verify
+
+Integrate ready-made solutions to quickly send one-time passwords (OTP) through channels like SMS, WhatsApp, email, and voice to verify user identities globally.
+
+## Benefits of YCloud Verify
+
+* Simplified Verification: YCloud Verify integrates message channel connections, OTP generation, verification message delivery, OTP verification, and data monitoring. By using simple APIs to integrate Verify with your application system, you can achieve global user verification.
+* Multi-Channel Integration: Integrate multiple mainstream message channels such as SMS, WhatsApp, Email, and Voice to ensure global message delivery verification.
+* Message Templates: Pre-set message templates adaptable to various verification scenarios, automatically translated according to number location, compliant with global local regulations.
+* Fraud Prevention: Identify potential fraudulent numbers before sending, trigger alerts for abnormal situations promptly, protecting your business from fraud and avoiding expensive communication costs.
+
+## How YCloud Verify Works
+
+YCloud Verify handles OTP generation, verification message delivery, OTP verification, fraud monitoring, and verification data statistics with just two APIs, simplifying development work.
+
+![](/images/gitbook/653b7a189e3fc-1b772289.gif)
+
+*Verify working principle*
+
+If you already have the capability to generate, store, and verify OTPs, you can also use YCloud Verify. For more details, see [Custom OTP](/help/integrations/channels/verify/verification-features/custom-otp).
+
+## Before You Start
+
+To use any YCloud product, you need to [register](https://www.ycloud.com/console/#/entry/register) for a free account.
+
+Contact customer service to activate the Verify feature.
+
+## Setting Up User Verification
+
+With just a few lines of code, you can use the Verification API to send the first verification token to the user's device. We have detailed API references:
+
+1. Send Verification Code API: Sends a message with a verification code to the end user via the specified channel. Supported channels include SMS, WhatsApp, Voice, and Email. [Jump to API Documentation](https://docs.ycloud.com/reference/verification-send)
+2. Verify Verification Code API: Checks if the verification code submitted by the user is correct. [Jump to API Documentation](https://docs.ycloud.com/reference/verification-check)
+
+## Next Steps
+
+* [Message Template Configuration](/help/integrations/channels/verify/verification-features/verification-message-templates): Templates are pre-defined and approved texts for sending verification messages, supported channels include SMS, Voice, WhatsApp, and Email.
+* [Security Settings](/help/integrations/channels/verify/verification-features/security-settings): YCloud's preset security settings, including checking the phone number before starting verification, restricting countries/regions, blacklisting restrictions, etc.
+* [Verification Analysis](/help/integrations/channels/verify/verification-features/verification-analysis): YCloud Verify provides a complete data cycle of verification requests-sending-success, automatically sending verification reports to businesses daily, with clear verification logs for each verification.
+* Verification Channel Selection: Each verification channel has its own advantages and disadvantages. Choosing the appropriate verification channel based on the country/region where your business is located can help improve the pass rate of the verification process and ensure account security.

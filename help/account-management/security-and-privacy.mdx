@@ -1,0 +1,44 @@
+---
+title: "Security and Privacy"
+description: At YCloud, we are committed to data security and privacy protection.
+---
+
+# Security and Privacy
+
+At YCloud, safeguarding customer privacy and data security is our unwavering commitment. We approach every detail that could affect you with meticulous care, leveraging our professional team and robust mechanisms to fortify an impenetrable defense for your data security and privacy protection.
+
+## Security Strategy Design
+
+YCloud employs a defense-in-depth approach, implementing multi-layered security measures across the organization. Our security strategies are driven not only by compliance and regulatory requirements but also by industry best practices such as OWASP Top 10 and CIS Critical Security Controls and threat intelligence. We are continuously refining our existing security controls.
+
+## **Data Security**
+
+YCloud utilizes various DataStores to store data and ensure its security. Each DataStore configuration adheres to best practices for data security and recovery.
+
+When data within the platform is replicated across multiple service clusters, should a server in one service cluster fail, processing will switch to a backup server in another service cluster, minimizing service interruption impacts.
+
+Our disaster recovery strategy combines data snapshots and daily full backups to ensure multiple copies of data are available for recovery. Snapshots are designed to provide a quick recovery mechanism, with recovery possible within minutes. Full backups are used when snapshots cannot restore the data.
+
+## **Communication Security**
+
+All communications between web clients and YCloud servers are protected using the TLS (1.0, 1.1, 1.2) protocol with strong cipher suites.
+
+All pages on YCloud are securely loaded via HTTPS.
+
+## **System Reliability**
+
+Each service in YCloud's microservices architecture is distributed across multiple servers running in different data centers. These services communicate with each other via APIs to reduce interdependencies. Each update is tested in the corresponding test environment before deployment.
+
+YCloud also leverages a global Content Delivery Network (CDN) to distribute content to the nearest location to users, ensuring fast and consistent access no matter where you are.
+
+## **Infrastructure Security**
+
+We utilize security products such as HIDS and WAF to ensure your data security, protecting your information with top-tier infrastructure security measures.
+
+For other related content, please refer to:
+
+[Terms of Service](https://www.ycloud.com/terms-service)
+
+[Privacy Policy](https://www.ycloud.com/privacy-policy)
+
+[Shopify Store Privacy Agreement](https://www.ycloud.com/sp-policy)

@@ -1,0 +1,27 @@
+---
+title: "Branch"
+---
+
+# Branch
+
+## What is a Branch?
+
+A Branch is used for customer attribute condition judgment and is not displayed to the customer. Enterprises can add judgment components to provide diverse responses for different attributes of customers and situations.
+
+Within a Branch, multiple "filters" can be set to divert and respond to customers who meet different conditions.
+
+## Applicable Scenarios
+
+### User Attribute Judgment
+
+Take the following Chatbot as an example, which is a return scenario for an e-commerce customer. The image below sets up three Branches:
+
+1. The most recent purchase record is less than seven days old.
+2. The customer has a high intent TAG.
+3. Other conditions.
+
+When a user triggers the Chatbot keyword and starts a conversation, the Chatbot will first judge the user's attributes before sending the first message. For example: If the user meets condition one, the Chatbot will reply with the return address information; if the user meets condition two or three, it will match to another flow connecting to customer service.
+
+> Please note: When a user meets multiple conditions, the conversation will continue with the flow connected to the first condition based on the order of the Branches.
+
+![](/images/gitbook/_05f755b6-646c-4d7b-893d-b58c46e9f9ed-15ddcbc1.jpg)

@@ -1,0 +1,65 @@
+---
+title: "SMPP"
+---
+
+# SMPP
+
+[SMPP](https://smpp.org/) is the industry standard for sending and receiving SMS. Please contact our customer service to enable this feature.
+
+## Get SMPP Account
+
+Please contact customer service to create your own SMPP account.
+
+## Using SMPP
+
+### Connection
+
+Please connect to the following server:
+
+| Server Address  | Server Port | SSL Server Port |
+| --------------- | ----------- | --------------- |
+| smpp.ycloud.com | 30002       | 30012           |
+
+Contact us to retrieve our public certificate.
+
+###
+
+### Binding
+
+To send a bind request, please contact us to retrieve your SMPP system ID and password.
+
+| Status | Description                         |
+| ------ | ----------------------------------- |
+| 0      | Success                             |
+| 3      | Invalid SMPP system ID and password |
+| 5      | Exceeds connection limit            |
+
+###
+
+### Submitting Messages
+
+| Status | Description              |
+| ------ | ------------------------ |
+| 0      | Success                  |
+| 4      | Invalid phone number     |
+| 6      | Exceeds connection limit |
+
+### Delivery Reports
+
+Below is an example of the "short\_message" parameter in the "deliver\_sm" PDU:
+
+```javascript
+id:11041301030001006668 sub:001 dlvrd:001 submit date:2111040501 done date:2111040501 stat:DELIVRD err:0 text:none
+```
+
+"Submit date" and "done date" are in UTC time.
+
+When sending, 'err' is '0', other values are:
+
+| Error Code | Description                                                          |
+| ---------- | -------------------------------------------------------------------- |
+| 3          | Insufficient balance                                                 |
+| 4          | Use of sensitive words not allowed                                   |
+| 10         | The phone number is blacklisted                                      |
+| 18         | Invalid signature. Signatures are required for SMS in Mainland China |
+| 65         | Rejected by us, usually for SMS in Mainland China                    |

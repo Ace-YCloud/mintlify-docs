@@ -1,0 +1,66 @@
+---
+title: "Messages"
+description: This overview outlines how messages work on WhatsApp Business accounts.
+---
+
+# Messages
+
+## Messages and Conversations
+
+A conversation is a 24-hour messaging thread initiated by sending messages between you and your customer, which is also the basis for WhatsApp pricing.
+
+Businesses initiate conversations by sending free-form messages or template messages. You can refer to [Pricing](https://github.com/HANGZHOU-YUNPIAN-NETWORK-CO-LTD/ycloud-docs/blob/main/en/pricing-and-fees/whatsapp-conversation-fee-rules.md) to understand how conversations are initiated and ended, and how they affect WhatsApp's pricing model.
+
+## Outbound Messages
+
+### Message Types
+
+When communicating with customers via WhatsApp, you can use two types of messages:
+
+* Message Templates: To initiate a conversation with a customer, you need to use pre-created, pre-approved message templates. These templates can be approved by WhatsApp within an hour and support multiple message types.
+* Free-form Messages: These are custom messages that support all media types. You can use free-form messages to communicate with customers within the 24-hour service window, which include:
+  * Text Messages - Plain text messages that can contain letters, numbers, and symbols.
+  * Media Messages - Messages that include media files such as images, videos, audio, documents, and stickers.
+  * Contact Messages - Messages that include contact information such as names and phone numbers.
+  * Location Messages - Messages that include the user's geographical location.
+  * Interactive Messages - Messages that allow users to interact with the content. For example, list messages display a list of items users can choose from, reply button messages allow users to respond with a set of predefined options, single and multiple product messages allow users to browse and purchase products within the messaging app.
+
+### **Message Status**
+
+For each message you send, notifications about the status of that message will be sent to your webhook callback.
+
+<table data-full-width="true"><thead><tr><th width="180">Status</th><th>Description</th></tr></thead><tbody><tr><td><code>deleted</code></td><td>A message sent by the customer has been deleted by the customer. After receiving this notification, if the message was downloaded from the server, ensure it is deleted from your system.</td></tr><tr><td><code>delivered</code></td><td>The message you sent has been delivered to the customer's device.</td></tr><tr><td><code>failed</code></td><td>The message you sent has failed to send. The failure reason will be included in the callback. Please refer to the error message documentation for help with debugging:- <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-codes">Error Codes</a> and <a href="https://developers.facebook.com/docs/whatsapp/cloud-api/support/troubleshooting">Troubleshooting</a><br /></td></tr><tr><td><code>read</code></td><td>The message you sent has been read by the customer. The <code>read</code> notification is only available for customers who have enabled read receipts. For customers who have not enabled this feature, you will only receive the <code>delivered</code> notification.</td></tr><tr><td><code>sent</code></td><td>The message you sent is in transit within WhatsApp's systems.</td></tr><tr><td><code>warning</code></td><td>The message you sent contains items that are unavailable or non-existent in the catalog.</td></tr></tbody></table>
+
+The order of these notifications in your application may not reflect the actual timing of the message status. If necessary, check the timestamps to determine the timing.
+
+## Inbound Messages
+
+### Message Types
+
+When using WhatsApp for two-way communication, you will receive inbound messages in real-time. These messages can take various forms, such as:
+
+* Text Messages
+* Location Messages
+* Media Messages, including images, audio, voice, video, and documents
+* Messages sent after clicking quick reply buttons/list buttons
+
+## Frequently Asked Questions
+
+<details>
+
+<summary>Can messages be formatted?</summary>
+
+Yes! WhatsApp allows you to format selected text in messages using bold, italic, strikethrough, or monospace fonts.
+
+</details>
+
+<details>
+
+<summary>What should I do if I need to send a customer service reply after 24 hours?</summary>
+
+In some cases, you may need more time to process a customer query and may only be able to provide a response after 24 hours. We recommend creating message templates to re-initiate communication with the customer, such as:
+
+* "Hello &#123;&#123;1&#125;&#125;, regarding the issue you reported earlier, we regret to inform you that &#123;&#123;2&#125;&#125;. We apologize for any inconvenience this may have caused."
+* "We have updates regarding your ticket. If you wish to continue receiving support, please reply."
+
+</details>

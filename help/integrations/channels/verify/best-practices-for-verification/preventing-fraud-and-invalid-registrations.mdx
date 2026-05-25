@@ -1,0 +1,47 @@
+---
+title: "Preventing Fraud and Invalid Registrations"
+---
+
+# Preventing Fraud and Invalid Registrations
+
+As global fraud risks increase, some attackers send a large number of SMS or voice verification requests to specific numbers for profit. Additionally, many applications offer "benefits" exclusively for new users, prompting attackers to register fake accounts in bulk to obtain rewards through various means.
+
+* **SMS Scams**: Scammers send SMS messages to a series of numbers controlled by a mobile network operator (MNO) and share the resulting revenue.
+* **International Revenue Share Fraud (IRSF)**: Fraudsters target phone verification, making numerous voice calls to premium phone numbers to earn commissions.
+* **Fake Registrations**: Attackers use scripts to create fake accounts in bulk, obtain new user rewards, and then cash out. Their specific profit methods may vary, but all lead to you spending extra money without gaining real users.
+
+## How to Determine if You Are Under Attack?
+
+Unexpectedly low verification success rates/message delivery rates or sudden increases in verification numbers in unexpected countries/regions.
+
+## Recommended Measures
+
+**Deploy Robot Detection During Verification**
+
+Products like Google reCAPTCHA can help detect and block bot traffic. For example, perform checks before each SMS OTP request to prevent automated scripts and bots. This will introduce minimal friction for legitimate users.
+
+## Verification Frequency Limitations
+
+Limit the frequency of verification requests to help prevent fraud and protect your application, such as:
+
+* Maximum of X verification messages per number within X seconds
+* Maximum of X verification messages requested per country/region within X seconds
+* You can even design rate limits based on user, IP, or device identifiers.
+
+Rate limits cannot completely prevent fraud, but they can slow down attackers, making them think it's not worth attacking your application.
+
+## Voice Verification Channel as an Alternative, Available Only After the Third Attempt
+
+Due to the increasing prevalence of International Revenue Share Fraud (IRSF), we recommend not offering the "call me" option at the beginning, but only after three attempts via SMS.
+
+## Implement Geographic Permission Restrictions
+
+You must have a clear business purpose, so verification requests from other countries/regions should be suspect. Set geographic verification permissions and disable all countries/regions you do not intend to send messages to, to prevent malicious attackers from creating unnecessary verification requests and wasting SMS or voice costs.
+
+## Check Phone Numbers Before Sending
+
+Check the line type of the number before sending. At least identify invalid landlines and mobile numbers, and only send SMS to mobile numbers.
+
+## Monitor One-Time Password (OTP) Verification Success Rates and Create Alerts
+
+We recommend real-time monitoring of changes in verification success rates. If you find that verification success rates are drastically dropping or verification numbers are suddenly increasing in unexpected countries/regions, you should pay close attention. They may be from some malicious attackers. We recommend designing some alert triggers to notify you when abnormal thresholds are reached. YCloud verify has built-in security alert triggers that you can easily configure on the interface to receive abnormal alerts.

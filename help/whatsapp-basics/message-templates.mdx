@@ -1,0 +1,104 @@
+---
+title: "Message Templates"
+description: Sending WhatsApp messages using templates.
+---
+
+# Message Templates
+
+Template messages are used to initiate marketing, utility, and authentication [conversations](https://developers.facebook.com/docs/whatsapp/pricing#conversations). Unlike free-form messages, template messages are the only type that can be sent to customers who have not messaged you or have not messaged you in the past 24 hours.
+
+Templates must be pre-approved before they can be sent. Additionally, templates may be automatically disabled based on customer feedback and engagement. Once disabled, the template cannot be sent until its quality rating improves.
+
+## Categories of Message Templates
+
+Different message templates correspond to different conversation billing, please refer to:
+
+* Authentication: Use this category to send verification codes.
+* Utility: Use this category to send account updates, order updates, alerts, and other important information.
+* Marketing: Use this category to send promotional offers, product announcements, and other marketing-related information to increase awareness and engagement.
+
+## Content of Message Templates
+
+Message templates include the following:
+
+* Header: This part can contain a logo or other brand elements, as well as a title or video.
+* Body: The body is the main content of the message. It should contain all relevant information and be written in a clear and concise manner.
+* Footer: The footer can contain additional messages, such as a call to action or contact information.
+* Buttons: Buttons are optional elements that can be included in your message to encourage recipients to take specific actions, such as visiting a website or making a purchase.
+
+![](/images/gitbook/image-427-6b7dfed3.png)
+
+## Creating Templates
+
+To create templates using the API, please refer to:
+
+[Open related resource](https://docs.ycloud.com/reference/whatsapp-template-creation-examples)
+
+To create templates using the YCloud management backend, please refer to:
+
+[create-template](/help/whatsapp-accounts-management/template-management/create-template)
+## Template Review
+
+After creating a template, you can submit it for approval. The approval decision can take up to 24 hours. Once a decision is made, your BM account administrator will receive an email.
+
+If your message template is approved, its status will be set to **"Active - Quality Pending,"** and you can start sending it to customers. If it is rejected, you can edit and resubmit it for approval, or appeal the decision [here](https://developers.facebook.com/docs/whatsapp/message-templates/guidelines#appeals).
+
+## Common Reasons for Rejection
+
+Submissions are often rejected for the following reasons, so ensure to avoid these mistakes:
+
+* Missing or mismatched variable parameters. The correct format is `&#123;&#123;1&#125;&#125;`.
+* Variable parameters containing special characters, such as `#`, `$`, or `%`.
+* Variable parameters are not continuous. For example, `&#123;&#123;1&#125;&#125;`, `&#123;&#123;2&#125;&#125;`, `&#123;&#123;4&#125;&#125;`, `&#123;&#123;5&#125;&#125;` are defined but `&#123;&#123;3&#125;&#125;` is missing.
+* The message template contains content that violates WhatsApp's business policies: When you offer goods or services for sale, we consider all messages and media (including any descriptions, prices, fees, taxes, and/or any required legal disclosures) related to your goods or services to constitute a transaction. Transactions must comply with [WhatsApp's business policies](https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.whatsapp.com%2Flegal%2Fcommerce-policy%2F%3Ffbclid%3DIwZXh0bgNhZW0CMTEAAR0iHyU-k_AwIfmWxcKhpU0r6N7j7cUQ5DiZhdWTwwcdGCYRbL8RlpXxjmU_aem_7IzIW0N0jczoJq2N1oCR9g\&h=AT0gd0XysVbil3TL2mhX2kxvQfmDSn03g8volglJ6oaup-VJHWL0H1Fys3-vo5lMsHAsiQStQyjUV_9szwUgdKdXe5vm__e17KfP7tK6kgx-YeTwRQ-eRs5N6SbAXwKKVIrVD4TNTkU).
+* The message template contains content that violates [WhatsApp's business policies](https://www.whatsapp.com/legal/business-policy/?fbclid=IwZXh0bgNhZW0CMTEAAR18bv6_VUkTHb-vQvPBuoA2l_Pu2NCWOGTvRVOoznQEJpYA8AE1Nsu3NNw_aem_q2mmaMbLCKvp4KQDCgwDrw): Do not ask users for sensitive identifiers. For example, do not ask people to share their full personal payment card number, financial account number, national ID number, or other sensitive identifiers. This also includes not asking users for documents that may contain sensitive identifiers. Requesting partial identifiers (e.g., the last 4 digits of a Social Security number) is acceptable.
+* The content contains potentially abusive or threatening content, such as threatening legal action against a customer or threatening to publicly shame them.
+* The message template is a duplicate of an existing template. If the wording in the body and footer of the submitted template is the same as an existing template, the duplicate template will be rejected.
+
+Rejection information will also be sent via email to the BM administrator.
+
+If you believe the template was rejected incorrectly, you can submit a [template appeal](/help/whatsapp-basics/message-templates#mu-ban-shen-su). You can also choose to edit the rejected template and resubmit it.
+
+This check does not apply to templates classified as `AUTHENTICATION`.
+
+## Template Status
+
+The following are the statuses a WhatsApp template can have:
+
+* In Review: Indicates the template is still under review. The review can take up to 24 hours.
+* Rejected: The template was rejected during our review process or violates one or more of our policies.
+* Active - Quality Pending: The message template has not yet received customer quality feedback. Message templates with this status can be sent to customers.
+* Active - High Quality: The template has received very little negative customer feedback. Message templates with this status can be sent to customers.
+* Active - Medium Quality: The template has received negative feedback from multiple customers but may soon be suspended or disabled. Message templates with this status can be sent to customers.
+* Active - Low Quality: The template has received negative feedback from multiple customers. Message templates with this status can be sent to customers but are at risk of being suspended or disabled soon.
+* Suspended: The template has been suspended due to repeated negative feedback from customers. Message templates with this status cannot be sent to customers.
+* Disabled: The template has been disabled due to repeated negative feedback from customers. Message templates with this status cannot be sent to customers.
+* Appeal - In Review: Indicates an appeal has been requested.
+
+## Template Suspension
+
+If end-users repeatedly report spam or block messages related to a message template, WhatsApp will pause the template for a period to protect the phone number's quality rating. The suspension durations are as follows:
+
+* First report: 3-hour suspension
+* Second report: 6-hour suspension
+* Third report: Disabled
+
+During the template suspension, you can choose one of the following actions:
+
+* Edit the template content: If you believe the template content may be considered spam or phishing by end-users, edit the content. For example, remove specific words from the template.
+* Reshape the target audience: If you believe the message is not relevant to the current audience, change the audience. For example, if the template content is only relevant to a specific loyalty group, send the template message only to that group, not to all users. After making changes, the updated template will take effect within two minutes. You do not need to wait for the three-hour period to end before using the template. Meta will continue to track the end-user block rate for the updated template.
+* Take no action: The template will be back online after three hours. However, the template may be paused again. If you continue to use a low-quality template after suspension, the phone number quality and ultimately the message sending limits may be affected.
+
+## Template Appeal
+
+If your submission is rejected, you can file an appeal. Note that the appeal must include examples.
+
+You need to log in to your BM account > [Account Quality](https://business.facebook.com/business-support-home/) and appeal the "Rejected Template":
+
+1. On the [**Account Quality**](https://business.facebook.com/business-support-home/) page, click **"Rejected Message Templates."**
+2. Select from the list of rejected templates and click **"Request Review."**
+3. Enter the **appeal reason** and click **Submit.**
+4. After submission, the request and issue will be moved to the **"In Review"** tab.
+5. The appeal review decision will be sent via Business Manager, usually within 24 to 48 hours. The violation for the appeal will remain **Unchanged** or be moved to **Reversed.**
+
+![](/images/gitbook/image-428-da8456cf.png)

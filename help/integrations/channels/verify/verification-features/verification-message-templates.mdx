@@ -1,0 +1,134 @@
+---
+title: "Verification Message Templates"
+---
+
+# Verification Message Templates
+
+This template is predefined and approved text used for sending verification messages, supporting channels including SMS, voice, WhatsApp, and email.
+
+If you have other business needs, please contact us.
+
+## Entry
+
+Integrations > Verify > Settings, [Click to jump to the settings page](https://www.ycloud.com/console/#/app/integrations/verify/setting)
+
+![](/images/gitbook/image-488-fc4cbc3c.png)
+
+## Customizable Message Template
+
+The message template supports customization of the following content, which can be configured in the console:
+
+| Customization Option                  | Definition                                                                                                                                                                                                                                               | Supported Channels                              |
+| ------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- |
+| Brand                                 | The brand name and logo displayed in the verification message                                                                                                                                                                                            | All channels except voice.                      |
+| Verification Code Length              | The longer the verification code in the message, the higher the security level.                                                                                                                                                                          | All channels.                                   |
+| Verification Code Validity            | Once expired, the verification code becomes invalid and cannot be used for verification.                                                                                                                                                                 | All channels.                                   |
+| "Verification Code Validity" Reminder | If enabled, the validity information will appear at the end of the message.                                                                                                                                                                              | All channels except voice.                      |
+| "Do Not Share" Alert                  | If enabled, "Do not share this code with anyone." will appear at the end of the message.                                                                                                                                                                 | All channels except voice and WhatsApp.         |
+| "SMS Fallback" Alert                  | If enabled, when the WhatsApp status report returns "failed," YCloud will automatically attempt to resend the verification code via SMS. However, if the status report is delayed by more than 30 seconds, YCloud will not automatically resend via SMS. | Only WhatsApp supports customizing this option. |
+
+## Supported Languages
+
+We will automatically parse the country/region code of the provided phone number into the local language, with English as the fallback language. If you still need to specify a language, you can override it using the language parameter.
+
+Supported languages include:
+
+ar: Arabic\
+de: German\
+en: English\
+es: Spanish\
+fr: French\
+id: Indonesian\
+it: Italian\
+pt: Portuguese\
+ru: Russian\
+tr: Turkish\
+vi: Vietnamese\
+zh: Simplified Chinese\
+zh-hk: Traditional Chinese.
+
+> **Info**
+>
+> Note that this does not apply when the channel is voice.
+
+The default language for verification messages in various countries/regions is as follows (verification messages in all other countries/regions default to English):
+
+| Country/Region Code | Country/Region Name              | Default Language           |
+| ------------------- | -------------------------------- | -------------------------- |
+| TR                  | Turkey                           | tr: Turkish                |
+| CO                  | Colombia                         | es: Spanish                |
+| AE                  | United Arab Emirates             | ar: Arabic                 |
+| ID                  | Indonesia                        | id: Indonesian             |
+| SA                  | Saudi Arabia                     | ar: Arabic                 |
+| MX                  | Mexico                           | es: Spanish                |
+| MO                  | Macau                            | zh-hk: Traditional Chinese |
+| LI                  | Liechtenstein                    | de: German                 |
+| CG                  | Congo                            | fr: French                 |
+| SV                  | El Salvador                      | es: Spanish                |
+| GW                  | Guinea-Bissau                    | pt: Portuguese             |
+| LU                  | Luxembourg                       | de: German                 |
+| GQ                  | Equatorial Guinea                | es: Spanish                |
+| CV                  | Cape Verde                       | pt: Portuguese             |
+| RE                  | Reunion                          | fr: French                 |
+| SM                  | San Marino                       | it: Italian                |
+| MC                  | Monaco                           | fr: French                 |
+| PF                  | French Polynesia                 | fr: French                 |
+| SD                  | Sudan                            | ar: Arabic                 |
+| GF                  | French Guiana                    | fr: French                 |
+| NC                  | New Caledonia                    | fr: French                 |
+| KZ                  | Kazakhstan                       | ru: Russian                |
+| MQ                  | Martinique                       | fr: French                 |
+| BR                  | Brazil                           | pt: Portuguese             |
+| AR                  | Argentina                        | es: Spanish                |
+| PE                  | Peru                             | es: Spanish                |
+| ES                  | Spain                            | es: Spanish                |
+| IT                  | Italy                            | it: Italian                |
+| RU                  | Russian Federation               | ru: Russian                |
+| PY                  | Paraguay                         | es: Spanish                |
+| CR                  | Costa Rica                       | es: Spanish                |
+| HN                  | Honduras                         | es: Spanish                |
+| NI                  | Nicaragua                        | es: Spanish                |
+| VE                  | Venezuela                        | es: Spanish                |
+| UY                  | Uruguay                          | es: Spanish                |
+| DO                  | Dominican Republic               | es: Spanish                |
+| PA                  | Panama                           | es: Spanish                |
+| GT                  | Guatemala                        | es: Spanish                |
+| BO                  | Bolivia                          | es: Spanish                |
+| EC                  | Ecuador                          | es: Spanish                |
+| BH                  | Bahrain                          | ar: Arabic                 |
+| OM                  | Oman                             | ar: Arabic                 |
+| YE                  | Yemen                            | ar: Arabic                 |
+| LB                  | Lebanon                          | ar: Arabic                 |
+| IQ                  | Iraq                             | ar: Arabic                 |
+| KW                  | Kuwait                           | ar: Arabic                 |
+| JO                  | Jordan                           | ar: Arabic                 |
+| CN                  | People's Republic of China       | zh: Simplified Chinese     |
+| TW                  | Taiwan Province of China         | zh-hk: Traditional Chinese |
+| HK                  | Hong Kong                        | zh-hk: Traditional Chinese |
+| VN                  | Vietnam                          | vi: Vietnamese             |
+| CL                  | Chile                            | es: Spanish                |
+| BY                  | Belarus                          | ru: Russian                |
+| EG                  | Egypt                            | ar: Arabic                 |
+| TG                  | Togo                             | fr: French                 |
+| MZ                  | Mozambique                       | pt: Portuguese             |
+| BF                  | Burkina Faso                     | fr: French                 |
+| AO                  | Angola                           | pt: Portuguese             |
+| ST                  | Sao Tome and Principe            | pt: Portuguese             |
+| BJ                  | Benin                            | fr: French                 |
+| RW                  | Rwanda                           | fr: French                 |
+| BI                  | Burundi                          | fr: French                 |
+| NE                  | Niger                            | fr: French                 |
+| CD                  | Democratic Republic of the Congo | fr: French                 |
+| MA                  | Morocco                          | ar: Arabic                 |
+| GA                  | Gabon                            | fr: French                 |
+| GN                  | Guinea                           | fr: French                 |
+| SN                  | Senegal                          | fr: French                 |
+| ML                  | Mali                             | fr: French                 |
+| TN                  | Tunisia                          | ar: Arabic                 |
+| DZ                  | Algeria                          | ar: Arabic                 |
+| LY                  | Libya                            | ar: Arabic                 |
+| PT                  | Portugal                         | pt: Portuguese             |
+| CH                  | Switzerland                      | de: German                 |
+| BE                  | Belgium                          | de: German                 |
+| DE                  | Germany                          | de: German                 |
+| FR                  | France                           | fr: French                 |

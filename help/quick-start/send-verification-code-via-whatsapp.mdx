@@ -1,0 +1,184 @@
+---
+title: "Send Verification Code via WhatsApp"
+---
+
+# Send Verification Code via WhatsApp
+
+> **Info**
+>
+> As a verification channel, WhatsApp shares the same advantages as SMS and is not affected by local carrier infrastructure. This means that WhatsApp messages can be received in areas where Wi-Fi is available but cellular signals are weak or non-existent. Additionally, WhatsApp is generally faster than SMS and provides extra security with end-to-end encryption.
+>
+> 1. **Cost Reduction**
+>
+> In many countries, **WhatsApp is cheaper than SMS** and does not charge for undelivered messages. Therefore, in countries and regions with high WhatsApp coverage, such as India, Indonesia, and South America, we recommend using WhatsApp as the **preferred verification channel**. It can increase your overall verification conversion rate while being more cost-effective.
+>
+> 2. **Secure and Reliable**
+>
+> WhatsApp also **offers additional security benefits**: every WhatsApp user can be identified by the unique phone number provided when creating their account. At the same time, WhatsApp uses its own set of powerful anti-fraud tools to verify these phone numbers. This means that you are partially outsourcing identity verification to WhatsApp, directly benefiting from a robust security system.
+
+## 1. Create Authentication Message Templates
+
+### Step 1: Register YCloud Account
+
+* Log in to the YCloud backend, [click to visit](https://www.ycloud.com/console/#/entry/login?lastPath=https%3A%2F%2Fwww.ycloud.com%2Fconsole%2F%23%2Fapp%2Fdashboard%2FgetStarted)
+
+### Step 2: Create WABA
+
+Click below to view the detailed guidance.
+
+[Open related resource](https://helpdocs.ycloud.com/help-center/kuai-su-ru-men/chuang-jian-whatsapp-business-api-zhang-hu)
+
+### Step 3: Create Authentication Message Template
+
+> **Info**
+>
+> WhatsApp provides fixed templates for authentication messages:
+>
+> * Preset fixed text for authentication message templates:
+>   * \<VERIFICATION\_CODE> is your verification code.
+>   * Security disclaimer (optional): For your security, do not share this code.
+>   * Expiration warning (optional): "This code will expire in \<NUM\_MINUTES> minutes.
+> * Validity period: Customize the actual validity period of this code. If the message is not delivered within this period, it will be withdrawn, and you will not be charged, nor will your customer see the message.
+> * Copy code button or Zero-tap button
+> * The text does not support URLs, media, or emojis. Authentication templates containing a one-time password button consist only of preset text and a button, so the risk of such templates being suspended is greatly reduced.
+
+1. Create message template
+
+* Click Home > Templates > + Add Template, then create your template
+
+![](/images/gitbook/_17568a42-4c6a-4320-adfb-5eaf69f05284-b0990b28.png)
+
+![](/images/gitbook/_51b666f4-2e0d-4588-8527-f4ca00cd8be1-28235503.png)
+
+2. Setting up template
+
+* Select Category  "Authentication", and name the template and select the template language
+  * Please note: **The template name must be unique**. Names only support lowercase letters a-z, 0-9, and underscores (\_). Once submitted, the template cannot be changed.
+
+![](/images/gitbook/image-190-1-ed058878.png)
+
+*Page for naming the template, selecting the template type, and template language*
+
+* Choose the sending method:
+  * Copy code
+  * Autofill-One tap
+  * Autofill-Zero tap
+
+Choosing different sending methods here will result in variations in the interface buttons and usage methods that the user receives. Overall, **zero-click verification codes offer the best user experience, making them the preferred solution**. However, this button is currently only supported on Android devices outside of India, and implementing such a button requires changes to your app's code to perform a "handshake." Additionally, the app's signing key hash needs to be modified. A specific comparison is as follows:
+
+| **Sending Method**    | **Copy code**                                                                                                                                                                                                                                                                                                                                               | **One tap**                                                                                                                                                                                                                                                                                                                                                 | **Zero tap**                                                                                                                                                                                                                                                                                                                                               |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Interface Display** | ![](https://helpdocs.ycloud.com/~gitbook/image?url=https%3A%2F%2F4253554051-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F78HV6e8vN6mhwsbohgTK%252Fuploads%252Fw4TGx8LoSfmG2yvUikfe%252Fimage.png%3Falt%3Dmedia%26token%3D4b0fb6dc-22e2-42b4-af9e-a4bb68006404\&width=300\&dpr=4\&quality=100\&sign=8e306ad1\&sv=1) | ![](https://helpdocs.ycloud.com/~gitbook/image?url=https%3A%2F%2F4253554051-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F78HV6e8vN6mhwsbohgTK%252Fuploads%252FNISdhPZmB6OfWbSiqDin%252Fimage.png%3Falt%3Dmedia%26token%3D2355fe9f-70a1-48aa-b44e-2b0263c48b64\&width=300\&dpr=4\&quality=100\&sign=b1117e68\&sv=1) | ![](https://helpdocs.ycloud.com/~gitbook/image?url=https%3A%2F%2F4253554051-files.gitbook.io%2F%7E%2Ffiles%2Fv0%2Fb%2Fgitbook-x-prod.appspot.com%2Fo%2Fspaces%252F78HV6e8vN6mhwsbohgTK%252Fuploads%252FAIMobqBaVIKqzVri1QEw%252Fimage.png%3Falt%3Dmedia%26token%3D7e852cff-9456-4a88-88ab-3214dc8ee6b9\&width=300\&dpr=4\&quality=100\&sign=6950bac\&sv=1) |
+| **Guide**             | The user clicks the button in WhatsApp to copy the code, then manually switches to your app's page and pastes the verification code into the app page.                                                                                                                                                                                                      | When the user clicks the button in WhatsApp, it will automatically load your app and pass the verification code to the app, requiring just one click.                                                                                                                                                                                                       | <p>After the user receives the verification code, your app interface will automatically fill in the verification code without any clicks or switching needed.</p><p>4o</p>                                                                                                                                                                                 |
+| **Limitations**       | No device or region restrictions.                                                                                                                                                                                                                                                                                                                           | It is only supported on Android devices outside of India currently. Additionally, changes to the app's code are required to perform the "handshake," as well as modifications to the app's signing key hash.                                                                                                                                                | It is only supported on Android devices outside of India currently. Additionally, changes to the app's code are required to perform the "handshake," as well as modifications to the app's signing key hash.                                                                                                                                               |
+
+* Add a security disclaimer and an expiration time warning for the verification code (optional).
+
+![](/images/gitbook/image-198-b7275436.png)
+
+* Setting up message validity period
+
+It is recommended to set a custom validity period, allowing you to choose between 1-10 minutes as the message's validity period. Once set, your authentication message must be delivered within this timeframe. If the message is not delivered to the user's device within this period, it will be withdrawn, you will not be charged, and your customer will not see the message. If you do not set a custom validity period, the standard WhatsApp message validity period (24 hours) will apply. This means you might incur additional charges for invalid messages sent after the timeout.
+
+![](/images/gitbook/image-199-a4d1bb32.png)
+
+* Click Submit Template
+  * Generally, the verification code template will be displayed as approved within a few minutes after submission. When the status shows "active", it means the template status is activated and ready to send.
+
+![](/images/gitbook/image-192-1-2375f1a7.png)
+
+*Template status "Activated - Quality Pending"*
+
+* When the template status shows "Active-Quality pending", it means that this message template has been activated and ready to be sent.
+
+### Step 4: Send OTP Messages Using the API
+
+Next, you can send OTP messages through API
+
+> Click to view [API Docs](https://docs.ycloud.com/reference/whatsapp_message-send-directly#/)
+
+API request reference:
+
+[Open related resource](https://docs.ycloud.com/reference/whatsapp-messaging-examples)
+
+### Step 5: Receive Webhook Notifications
+
+**1.Configure the Callback URL**
+
+* Click Developers > Webhooks ，then [configure Webhooks](https://www.ycloud.com/console/#/app/developers/webhook)。
+
+Create a Webhook endpoint and enter the callback URL. Notifications regarding the status of the message will be sent to your Webhook callback.
+
+![](/images/gitbook/image-200-5f52eb88.png)
+
+**2.Monitor OTP Messages Status**
+
+For each message you send, notifications regarding the status of the message will be sent to your Webhook callback. You can determine whether your verification code was successfully sent based on the feedback received.
+
+| Status    | Description                                                                                                                                                                                                                                                                                                                                                                            |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Failed    | The message you sent failed to deliver. The reason for the failure will be included in the callback. Please refer to the error message documentation for assistance with debugging: [Error Codes](https://developers.facebook.com/docs/whatsapp/cloud-api/support/error-codes) and [Troubleshooting](https://developers.facebook.com/docs/whatsapp/cloud-api/support/troubleshooting). |
+| Sent      | The message you sent is being processed within WhatsApp's system.                                                                                                                                                                                                                                                                                                                      |
+| Delivered | The message you sent has been delivered to the user's device.                                                                                                                                                                                                                                                                                                                          |
+| Read      | The message you sent has been read by the user. The read notification is only available for users who have enabled read receipts. For users who have not enabled this feature, you will only receive a delivered notification.                                                                                                                                                         |
+
+## Best practice for WhatsApp OTP
+
+**1.Front-End Interface Design**
+
+Using WhatsApp to send OTP is a new method. To ensure that your users have an optimal experience during the verification code process, we offer some UI design suggestions:
+
+| **Solution** | **Design Plan**                                                                                                                                                                          | **Applicable Case**                                                                                                                       | **Example**                                                                |
+| ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| 1            | By default, if sending the OTP via WhatsApp fails (likely because the target phone number is not registered with a personal WhatsApp account), the OTP will be sent immediately via SMS. | Your audience is primarily concentrated in countries/regions with high WhatsApp coverage, such as Indonesia, India, Brazil, and Colombia. | ![](/images/gitbook/image-186-fa5430ad.png) |
+| 2            | Provide button options for receiving OTP messages, allowing users to select their preferred channel for receiving the OTP.                                                               | Your audience is located in countries/regions where WhatsApp coverage is not sufficient, or your app serves multiple countries/regions.   | ![](/images/gitbook/image-556-df94dff6.png) |
+
+**2.Check if the user has WhatsApp installed.**
+
+To improve user experience and default to using WhatsApp, you can implement a check to determine if the user has the WhatsApp application installed on the same device running your app. If WhatsApp is detected, you can proceed to submit the WhatsApp verification code. If it is not detected, you can switch to sending the OTP via SMS.
+
+For detecting whether the app is installed, you can refer to:
+
+* IOS: [https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl](https://developer.apple.com/documentation/uikit/uiapplication/1622952-canopenurl)
+* Android: [https://code.luasoftware.com/tutorials/android/android-check-if-app-installed](https://code.luasoftware.com/tutorials/android/android-check-if-app-installed)
+
+Here is an example implementation for detecting WhatsApp on Android:
+
+```
+fun PackageManager.isPackageInstalled(packageName: String): Boolean {
+  return try {
+    getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+    true
+  } catch (e: NameNotFoundException) {
+    false
+  }
+}
+
+fun isWhatsAppInstalled : Boolean() {
+    val whatsAppPackageName = "com.whatsapp"
+    val whatsAppBusinessPackageName = "com.whatsapp.w4b"
+    return getPackageManager().isPackageInstalled(whatsAppPackageName) || getPackageManager().isPackageInstalled(whatsAppBusinessPackageName)
+}
+```
+
+**3.Set Up an Auto-Resend Policy**
+
+Generally, auto-resend policies fall into two categories:
+
+1.  **Immediate SMS Resend for Failure (Highly Recommended)**
+
+    **Failed**: Indicates that the WhatsApp message submission has failed. If the receipt shows a failure, immediately resend the OTP via SMS to ensure a smooth customer experience.
+2.  **SMS Resend for Delayed Delivery Status (Optional)**
+
+    We recommend designing a strategy for handling timeouts when the delivery status is not received. For instance, set a timeout period: if the WhatsApp OTP message is successfully submitted (sent) but the delivery status update is not received within the timeout period, automatically resend the same OTP via SMS. We suggest a timeout period ranging from 15 to 60 seconds, depending on how you balance cost and customer experience.
+
+### Special Verification Method: Inbound Verification
+
+In addition to the commonly used method of businesses proactively sending verification codes, there is a special inbound verification method where user verification is completed through users actively sending inbound messages. This method is similar to the third-party login experience on WeChat. The advantages of this method include:
+
+* **Lower Costs**: For example, in Indonesia, conversations initiated by users are charged at a rate that is at least one-third cheaper than those initiated by businesses.
+* **24-Hour Free Interaction Window**: Since the conversation is initiated by the user, **it provides a 24-hour free interaction window**. During this period, businesses can send marketing or notification messages to the customer without incurring additional costs.
+
+Below is a case study of the Shopee app in Southeast Asia: 👇
+
+[Download 515_1682401824.mp4](/images/gitbook/515_1682401824-dfdf4d48.mp4)

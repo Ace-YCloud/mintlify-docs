@@ -1,0 +1,58 @@
+---
+title: "Authentication Message Templates"
+description: >-
+  If your mobile application offers users the option to receive one-time
+  passwords or verification codes via WhatsApp, you must use an authentication
+  template.
+---
+
+# Authentication Message Templates
+
+![](/images/gitbook/image-353-481d6806.png)
+
+The authentication template with an OTP button consists of the following:
+
+* Preset authentication message template fixed text:
+  * \<VERIFICATION\_CODE> is your verification code.
+  * Security disclaimer (optional): For your safety, do not share this code.
+  * Expiry warning (optional): This code will expire in \<NUM\_MINUTES> minutes.
+  * Button: Copy code or one-tap autofill button.
+  * Message validity: If the message is not delivered within the validity period, you will not be charged, and your customer will not see the message.
+
+The code length cannot exceed 15 characters. URLs, media, and emojis are not supported. Due to the authentication template with an OTP button consisting only of preset text and buttons, the risk of it being paused is greatly reduced.
+
+## Copy Code Authentication Templates <a href="#copy-code-authentication-templates" id="copy-code-authentication-templates"></a>
+
+The copy code authentication template allows you to send a one-time password or code along with a copy code button to your users.
+
+![](https://scontent-hkg1-2.xx.fbcdn.net/v/t39.2365-6/391709210_6733218460105388_4204949555628827374_n.png?stp=dst-webp&_nc_cat=107\&ccb=1-7&_nc_sid=e280be&_nc_ohc=krz-7v4xBIQQ7kNvgHdqrBW&_nc_ht=scontent-hkg1-2.xx\&oh=00_AYDAQ1dzpZiwvWmGy67v_uYh4zI5iqD1BdIyD24xn0pc6g\&oe=6694D0BD)
+
+When a WhatsApp user clicks the copy code button, the WhatsApp client copies the password or code to the device's clipboard. The user can then switch to your app and paste the password or code into your app.
+
+See [Copy Code Authentication Templates](/help/whatsapp-basics/message-templates/authentication-message-templates/copy-verification-code-authentication-template) for how to use them.
+
+## One-Tap Autofill Authentication Templates <a href="#one-tap-autofill-authentication-templates" id="one-tap-autofill-authentication-templates"></a>
+
+The authentication template includes a one-tap autofill button.
+
+![](https://scontent-hkg1-2.xx.fbcdn.net/v/t39.2365-6/393789031_872892117564016_6400271480127333734_n.png?stp=dst-webp&_nc_cat=104\&ccb=1-7&_nc_sid=e280be&_nc_ohc=YQvdnWWnjhYQ7kNvgF-Fdpy&_nc_ht=scontent-hkg1-2.xx\&oh=00_AYBD2XbjW4aCaL2vLfdKi2ym247Lt4J9K9Ha07LQ29ZmlA\&oe=6694C268)
+
+When a WhatsApp user clicks the autofill button, the WhatsApp client triggers an activity that opens your application and provides it with the password or code.
+
+See [One-Tap Autofill Authentication Templates](/help/whatsapp-basics/message-templates/authentication-message-templates/one-click-autofill-authentication-template) for how to use them.
+
+## Zero-Tap Authentication Templates <a href="#zero-tap-authentication-templates" id="zero-tap-authentication-templates"></a>
+
+The zero-tap authentication template allows your users to receive a one-time password or code via WhatsApp without leaving your application.
+
+![](/images/gitbook/image-446-d8bf1e9f.png)
+
+When a user in your app requests a password or code and you provide that password or code using a zero-tap authentication template, the WhatsApp client broadcasts the included password or code, which your app can then capture using a broadcast receiver.
+
+See [Zero-Tap Authentication Templates](/help/whatsapp-basics/message-templates/authentication-message-templates/zero-click-authentication-template) for how to use them.
+
+## Best Practices
+
+* Confirm the number before sending a one-time password or code to the user's WhatsApp phone number.
+* Clearly explain to users that the password or code will be sent to their WhatsApp phone number, especially when you offer multiple ways for users to receive passwords or codes. See [Getting Opt-In](https://developers.facebook.com/docs/whatsapp/overview/getting-opt-in) for more tips.
+* When the user pastes the password or code into your app, or your app receives the password or code through the one-tap autofill button flow, clearly indicate to the user that your app has captured the password or code.

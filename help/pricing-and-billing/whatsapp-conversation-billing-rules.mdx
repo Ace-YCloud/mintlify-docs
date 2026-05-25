@@ -1,0 +1,137 @@
+---
+title: "WhatsApp Conversation Billing Rules"
+hidden: true
+---
+
+# WhatsApp Conversation Billing Rules
+
+WhatsApp is billed per conversation, not per individual message sent or received.
+
+A conversation is a 24-hour message thread between you and your customer. When your message to the customer is delivered, the conversation opens and is charged. The criteria for determining when a conversation opens and how it is categorized are described below.
+
+## Conversation Categories
+
+Conversations are divided into the following categories:
+
+* **Marketing** — Helps you achieve various goals, from increasing awareness to driving sales and re-engaging customers. Examples include new product, service, or feature announcements; targeted promotions/offers; and abandoned cart reminders.
+* **Utility** — Allows you to follow up on user actions or requests. Examples include opt-in confirmations; order/delivery management (e.g., delivery updates); account updates or reminders (e.g., payment reminders); or feedback surveys.
+* **Authentication** — Enables you to authenticate users with a one-time password, possibly at multiple steps in the login process (e.g., account verification, account recovery).
+* **Service** — Enables you to address customer inquiries.
+
+Marketing, Utility, and Authentication conversations can only be opened using template messages. Service conversations can only be opened using free-form messages. See below for ["Opening Conversations"](/help/pricing-and-billing/whatsapp-conversation-billing-rules#service-conversations).
+
+## Opening Conversations <a href="#service-conversations" id="service-conversations"></a>
+
+### Marketing, Utility, and Authentication Conversations <a href="#marketing--utility--and-authentication-conversations" id="marketing--utility--and-authentication-conversations"></a>
+
+When you send an approved Marketing, Utility, or Authentication template to a customer, we check if there is an existing conversation between you and the customer that matches the template category. If one exists, a new conversation will not be opened. If one does not exist, a **new conversation of that category will be opened, lasting 24 hours.**
+
+For example:
+
+* **Hour 0:** You send a targeted promotion (Marketing template message) to a customer. There is no open Marketing conversation between you and the customer, so a Marketing conversation lasting 24 hours is opened.
+* **Hour 4:** The customer completes an order on your website, so you send them an order confirmation (Utility template message). There is no open Utility conversation between you and the customer, so a Utility conversation lasting 24 hours is opened.
+* **Hour 10:** You send a shipping confirmation (Utility template message) to the customer. There is already an open Utility conversation between you and the customer, so a new Utility conversation is not opened.
+
+For more examples, see our  [Pricing Explanation PDF](https://kdocs.cn/l/cup9DQGVcUmg)
+
+### Service Conversations <a href="#service-conversations" id="service-conversations"></a>
+
+A Service conversation opens when you send a free-form message to a customer and there is no open conversation of **any category** between you and the customer.
+
+To send free-form messages, there must be a [Customer Service Window](/help/pricing-and-billing/whatsapp-conversation-billing-rules#ke-hu-fu-wu-chuang-kou) between you and the customer.
+
+> **Info**
+>
+> Explanation: Within 24 hours of the user's last reply, you can send them free-form messages (non-template messages). When this message is successfully delivered, we will determine if you currently have an open session. If not, a Service conversation will be opened and charged as a service conversation fee.
+
+For example:
+
+* **Hour 0:** You send a targeted promotion (Marketing template) to a customer. There is no open Marketing conversation between you and the customer, so a Marketing conversation lasting 24 hours is opened.
+* **Hour 4:** The customer sends you a message. This opens a Customer Service Window between you and the customer, allowing you to send them free-form messages for the next 24 hours.
+* **Hour 5:** You send a free-form message to the customer. There is already an open conversation (in this case, a Marketing conversation) between you and the customer, so a Service conversation has not been opened.
+* **Hour 24:** The Marketing conversation ends.
+* **Hour 25:** The 24-hour Customer Service Window is still open, so you send a second free-form message to the customer. There is no longer an open conversation between you and the customer, so a Service conversation lasting 24 hours is opened.
+* **Hour 26:** The 24-hour Customer Service Window is still open, so you send a third free-form message to the customer. There is already an open Service conversation between you and the customer, so a new Service conversation is not opened.
+
+For more examples, see our [Pricing Explanation PDF](https://scontent-sin6-1.xx.fbcdn.net/v/t39.8562-6/350685135_631521772182777_716278591301876804_n.pdf?_nc_cat=111\&ccb=1-7&_nc_sid=b8d81d&_nc_ohc=OOODv0uRMo0Q7kNvgG3xQDX&_nc_zt=14&_nc_ht=scontent-sin6-1.xx&_nc_gid=Aw_9LedvmBv6K1Yscj9ygTS\&oh=00_AYDxlHTZnz9rfRIgY_xiRTRb8ZflLM6F4iD1NQL7tJMNfg\&oe=673DC8D0).
+
+## Customer Service Window
+
+When a WhatsApp user sends you a message, a 24-hour timer known as the Customer Service Window will start (or refresh).
+
+Only within the Customer Service Window can you send all types of messages (**template messages** excluded).
+
+> **Info**
+>
+> Note that the Customer Service Window is not a visible window; it is not a billing standard. It is merely a virtual timer that limits whether you can send free-form messages to the customer.
+>
+> It rolls over based on the customer's last message time (24 hours), and within this time, you can send free-form messages to the customer.
+
+## Conversation Duration
+
+Marketing, Utility, Authentication, and Service conversations will last 24 hours unless closed by a newly opened [Free Entry Point Conversation](https://developers.facebook.com/docs/whatsapp/pricing#free-entry-point-conversations).
+
+Free Entry Point Conversations last 72 hours.
+
+## Multiple Conversations
+
+There may be multiple conversations between you and your customer. A maximum of four types of conversations may be generated simultaneously.
+
+Example of this scenario:
+
+_A customer sends you a consultation message, and you reply with a free-form message (non-template message), opening a **Service Conversation**._
+
+_Within the next 24 hours, you send **Marketing template messages, Authentication template messages, and Utility template messages** to the customer, all of which are successfully received. When these templates are successfully received, the corresponding conversation types are automatically opened. At this point, you have opened four types of conversations and will be charged four times according to the types._
+
+## Free Conversations
+
+Each WhatsApp Business Account receives 1,000 free **Service Conversations** per month across all its business phone numbers. This number refreshes at the beginning of each month based on the WhatsApp Business Account's timezone.
+
+Marketing, Utility, and Authentication conversations are not part of the free package.
+
+## Free Entry Point Conversations
+
+If a customer using an Android or iOS device sends you a message via a [click on a WhatsApp ad](https://www.facebook.com/business/help/447934475640650/) or a [Facebook Page Call to Action](https://www.facebook.com/help/977869848936797) button, and you respond within 24 hours, a Free Entry Point Conversation can be opened. If you do not respond within 24 hours, a Free Entry Point Conversation will not be opened, and you can only send template messages to the customer, which will open a conversation of the corresponding type based on the template category.
+
+The Free Entry Point Conversation opens immediately after you reply to the message and is valid for **72 hours**. Once opened, you can send any type of message to the customer without additional charges. However, you can only send free-form messages if there is an open [Customer Service Window](/help/pricing-and-billing/whatsapp-conversation-billing-rules#ke-hu-fu-wu-chuang-kou) between you and the customer.
+
+For example, if a customer sends you a message at 10 AM by clicking on a WhatsApp ad, and you reply with a template message at 10 PM the same day:
+
+* The Free Entry Point Conversation starts at 10 PM and lasts for 72 hours.
+* You can send template messages for free within the 72 hours.
+* You can send free-form messages until 10 AM the next day, at which point the [Customer Service Window](/help/pricing-and-billing/whatsapp-conversation-billing-rules#ke-hu-fu-wu-chuang-kou) will close, as it is independent of the Free Entry Point Conversation (however, if the customer sends you another message, another 24-hour Customer Service Window will open, within which you can send free-form messages).
+
+## Pricing
+
+YCloud charges based on the recipient's country and the type of conversation.
+
+Specific prices can be found on our website: [http://www.ycloud.com/price](http://www.ycloud.com/price)
+
+### International-Authentication Pricing
+
+Countries with international-authentication pricing:&#x20;
+
+Indonesia, India, Malaysia, Nigeria, Pakistan, Saudi Arabia, South Africa, United Arab Emirates
+
+####
+
+#### Specific Rules:
+
+Customers classified as international businesses will be subject to international authentication pricing.
+
+####
+
+#### **International Business Certification**
+
+If your business generates more than **750,000** authentication conversations across all WABA accounts within a continuous 30-day period (180 days for India), and these conversations' WhatsApp users are from countries with international authentication pricing, you will be considered eligible for international authentication pricing.
+
+Once qualified, we will **send you an email notification** and attempt to determine your business's **primary operating location** using publicly available information. After 30 days, authentication conversations initiated by you in non-primary regions but in countries with international authentication pricing will be charged at the international-authentication pricing rate.
+
+
+Example:
+
+_If your primary operating location is determined to be Indonesia, your authentication conversations in Indonesia will still be charged at the regular rate, but those sent to India will be charged at the international authentication rate._
+
+> **Info**
+>
+> Please note that eligibility is permanent. Once your business is considered eligible, authentication conversations initiated thereafter in markets applicable for international authentication pricing will be charged at the international-authentication  pricing rate.

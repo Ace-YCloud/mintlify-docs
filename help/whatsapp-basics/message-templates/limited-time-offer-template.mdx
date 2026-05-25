@@ -1,0 +1,72 @@
+---
+title: "Limited-Time Offer Template"
+description: This document introduces the limited-time offer template and its usage.
+---
+
+# Limited-Time Offer Template
+
+Limited-time offer templates allow you to display the expiration date of a discount code and a running countdown timer in your template message, making it easy to communicate limited-time offers and drive customer engagement. Limited-time offer templates are only available for marketing template messages.
+
+![](/images/gitbook/image-465-cb034cc8.png)
+
+### Limited-time offer components
+
+The limited-time offer template consists of a header, a limited-time offer component, body text, and buttons. The limited-time offer component includes the limited-time offer header, the limited-time offer period, and the limited-time offer code, according to the following rules:
+
+* The header is required.
+*   The "Limited-Time Offer" button is on by default; you can manually turn it off. If the "Limited-Time Offer" button is on, you can upload the specific time of the limited-time offer when submitting this template.&#x20;
+
+    ⚠️ You do not need to upload the specific limited-time offer time when creating a limited-time offer template.
+* If you choose to add a "Copy Code" button and enter the sample discount code, the limited-time discount code will be displayed. Otherwise, the limited-time discount code will not be displayed.
+* The "Visit Website" button is required; the "Copy Code" button is optional.
+
+#### Display Behavior
+
+The following examples show how the component appears on WhatsApp mobile.\
+When users view a limited-time offer template message on WhatsApp Web or the desktop app, they will not see the display behavior of the Limited Time Offer component. Instead, they will see a message indicating that they have received a message.
+
+**1. When no expiration time is set**
+
+If no expiration time is set when sending the message, the Limited Time Offer component will not display a specific expiration time, and it will not show the `Offer ended` status.\
+If the template includes a `Copy Code` button and a promo code is provided, users will still be able to see and copy the code.
+
+\[Image placeholder: Effect when no expiration time is set]
+
+**2. When an expiration time is set and the offer is still valid**
+
+If an expiration time is set when sending the message and the offer is still valid, the Limited Time Offer component will display the expiration time and the promo code.\
+If the template includes a `Copy Code` button, users can copy the code directly.
+
+![](/images/gitbook/limited-time-offer-demo-2-f91343d7.png)
+
+**3. When an expiration time is set and the offer has expired**
+
+If the offer has passed the configured expiration time,&#x20;
+
+* the Limited Time Offer component will show `Offer ended`.
+* the `Copy Code` button will disappear, and users will no longer be able to copy the code.
+
+![](/images/gitbook/limited-time-offer-demo-3-expired-5d2ad697.png)
+
+
+### Create a limited-time offer template
+
+You can create limited-time offer templates using YCloud's templates.
+
+First, select the limited-time offer template under the Marketing Templates directory.
+
+![](/images/gitbook/image-793-edd3fa26.png)
+
+Then, fill in the header, limited-time offer component, body text, and buttons in sequence.
+
+![](/images/gitbook/image-792-080dd6dc.png)
+
+⚠️ Users viewing the limited-time offer template message using the WhatsApp web or desktop application will not see the offer but will receive a message indicating they have received a message.
+
+💡Once the template is approved, you can send this template message in 3 ways:
+
+1. [Inbox: Send it to a contact](https://helpdocs.ycloud.com/help-center/inbox/initiate-new-chat)
+2. [WhatsApp Campaign](https://helpdocs.ycloud.com/help-center/campaign/create-a-whatsapp-marketing-campaign)
+3. [API: Send it via API](https://docs.ycloud.com/reference/whatsapp_message-send-directly)
+
+***

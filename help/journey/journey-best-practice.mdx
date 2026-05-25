@@ -1,0 +1,47 @@
+---
+title: "Journey Best Practice"
+description: Understand the Best Use Cases for Building Customer Journeys with Journey
+---
+
+# Journey Best Practice
+
+The following best practices are written with reference to the YCloud Journey, and we will introduce how to build customer journeys through it.
+
+These use cases are for reference only, and you need to design more targeted, personalized, and subscription experience-aligned automated processes based on your own needs.
+
+## Abandoned Checkout Automation
+
+Benefits of Journey:
+
+* The target shoppers are those who have abandoned the checkout process.
+* Offer them appropriate discounts, inviting them to return and complete their purchase.
+
+## Trigger Settings
+
+**Enter Trigger:**
+
+* Send time: Contact event \_Customer started Checkout. The contact event needs to be defined and passed to YCloud by you. For details, please refer to "[How to Customize Contact Events.](/help/contact/contact-settings/contact-event)"
+* Sender: Select the WhatsApp phone number you have already created.
+* Audience: Typically, no additional restrictions are applied in this use case.
+* Filter out unsubscribed customers: It is recommended to check this option.
+* Customer trigger limit: Select "Trigger every time the customer meets the conditions."
+
+**Exit Trigger:**
+
+* **Exit rule:** Contact event \_Customer successfully placed an order.
+
+**Goal:**
+
+* **Goal:** Contact event \_Customer successfully placed an order.
+
+## Create Wait Time
+
+Create a new component "Wait" and set the wait time. Then connect the "Trigger" and "Wait" components.
+
+This represents how long you are willing to wait for the customer to complete the checkout process.
+
+## Create your message
+
+Use your message to create a sense of urgency for the customer. Common examples include "This offer expires today!" or "These products are selling out fast—hurry up and buy before they’re gone!" You can also offer a significant discount to motivate them to complete the order.
+
+Remember to include a link back to the checkout page in your message, so the customer can click and return directly from your message.

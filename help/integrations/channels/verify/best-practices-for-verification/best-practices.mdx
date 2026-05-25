@@ -1,0 +1,103 @@
+---
+title: "Best Practices"
+---
+
+# Best Practices
+
+The following best practices are written with reference to the YCloud verification API, focusing on the process of using One-Time Passwords (OTP) for complete verification. However, many of these recommendations apply regardless of whether you use our service.
+
+## Verification, MFA, and OTP
+
+* Verification: A general concept that refers to the process of confirming a user's identity through various means.
+* Multi-Factor Authentication (MFA): Including Two-Factor Authentication (2FA) and similar terms, requires users to provide two or more pieces of evidence (or factors) to access a website or application. Factors used for verification can include account passwords, magic links, One-Time Passwords (OTP), biometrics (fingerprints, facial recognition, etc.), push authentication, etc. MFA is commonly used in login and payment confirmation scenarios as an additional security measure.
+* One-Time Password (OTP): A specific verification method widely considered to be more secure. It involves sending a message containing a verification code via SMS, email, WhatsApp, or other messaging channels. The code has a short validity period and can only be used once to verify a single login session or transaction.
+
+YCloud's verification API provides a complete OTP solution, including message sending and verification. You can easily integrate SMS, email, voice, and WhatsApp channels to quickly implement in-app registration, login, and MFA.
+
+## Common Verification Scenarios
+
+* Identity binding during registration: Verification is often a crucial step in establishing an online relationship with a user. Verifying the user's identity through phone number/email/social media accounts can reduce invalid or fake registrations while ensuring user safety.
+* Passwordless login: Due to the vulnerability of traditional static passwords to attacks, more and more businesses are turning to OTP or social media-based login verification, providing a better login experience for users who don't need to remember complex passwords. This reduces friction in the login process and increases conversions.
+* Multi-Factor Authentication during login: Many applications now require users to provide additional verification factors after entering their password to add an extra layer of security.
+* Account changes: Whenever a user forgets their password, the account can be recovered through some form of verification.
+* Payment confirmation: Higher security is required during the payment process, especially in most financial applications, where users need to go through MFA before confirming any type of payment transaction. Additionally, if you operate in the EU, you need to comply with PSD2 by providing additional verification.
+
+## Balancing Security and User Experience
+
+Ensure that the security verification process you add does not prevent users from achieving their goals, whether during registration or completing transactions. Choosing the right verification channel and designing an efficient, secure, and cost-effective user verification process are significant challenges for international businesses.
+
+## Choosing the Right Verification Channel
+
+YCloud's verification API integrates multiple channels for sending OTPs, which can be quickly integrated:
+
+* SMS
+* Whatsapp
+* Voice
+* Email Each channel has its own advantages and disadvantages. Choose the appropriate verification channel based on the country/region of the end user. For example, in the US and Canada, SMS is preferred as the verification channel due to its low cost and high delivery rate. In countries like India, Indonesia, Vietnam, social media platforms like WhatsApp or Zalo may be more suitable as verification messaging channels, as they can improve your verification success rate and are more cost-effective.
+
+Once the preferred verification channel is clear, consider providing a backup verification channel. If SMS is used as the primary verification channel, ensure that voice or WhatsApp can be used as a backup when the user cannot receive SMS.
+
+Additionally, many excellent companies design verification processes that support multiple verification channels and allow users to choose. For example, TikTok supports SMS verification, email verification, and social media verification.
+
+> 📘 [Learn more about different verification channels in the YCloud verification API](/help/integrations/channels/verify/best-practices-for-verification/verification-channel-selection).
+
+## Choosing a Reliable Service Provider
+
+If your infrastructure or messaging channel is not secure, your authentication will no longer be secure. Choosing YCloud as your channel provider is a wise choice, as it offers strong security and reliable, fast delivery.
+
+## Adding Additional Verification Options
+
+It's impossible to know what situation a user might encounter at any given time, such as forgetting their password, losing their phone, or roaming abroad. When initiating verification, at least back up an alternative method of verifying the user's identity. Common combinations include:
+
+* Password + SMS verification
+* SMS verification + voice verification
+* Whatsapp verification + SMS verification
+* Password + email verification
+
+However, each user is hard-earned, and supporting more verification combinations can reduce friction for real users during the verification process.
+
+## Using the Brand Name as the Messaging Channel
+
+When sending OTP messages via SMS, it is particularly important to use the brand name or website name (instead of random numbers) when registering the sender. This can give users a greater sense of security.
+
+> 📘 You can [pre-register](/help/integrations/channels/global-sms/sms-features/sender-id) the sender ID for each country/region in YCloud.
+
+## Using an Appropriate Verification Code Length
+
+The complexity of the OTP depends on the string used, which can be letters, numbers, or both. Generally, the length of the OTP should be between 4 and 10 digits to provide sufficient security while ensuring a smooth user experience.
+
+## The Verification Code is the Focus of the Message Content
+
+Whenever an OTP message is sent to a user, the verification code should be prominently displayed in the message. Ensure that the code is on the first line of the message, and consider bolding or highlighting it if the message is sent via WhatsApp or email.
+
+## Using Languages Understandable to Local Users
+
+Although the core of the OTP message is a string of characters, some users may still not understand the point. YCloud verify provides preset verification message templates in multiple languages, ensuring that the messages comply with local regulations and are not filtered by operators.
+
+## Providing a Logic for Retrying the Verification Code
+
+If a channel failure prevents the user from receiving the verification message correctly, the user may want to initiate a "retry."
+
+However, to prevent malicious requests or impatient users, we recommend adding a verification request interval:
+
+* The first retry interval is 30 seconds.
+* Increase the time interval for subsequent retries exponentially or set the retry frequency.
+
+This will help:
+
+* Avoid sending duplicate messages to users.
+* Reduce the possibility of malicious attacks.
+
+## Code Verification
+
+After sending the verification message to the user, use the pre-generated code to verify the code entered by the user, and follow these recommendations:
+
+* Set the validity period of the verification code to 5-10 minutes. It cannot be verified again after the validity period expires.
+* Each verification code can only be used once. After verification, add a "verified" flag in the database.
+* Limit the frequency of verification code verification to resist brute force attacks. YCloudVerify pre-installs the above strategies and supports customization, allowing you to focus on your business, and leave the rest to us.
+
+## Monitoring Verification Success Rate
+
+We recommend that you monitor the success rate of verification in real time. If you find that the verification success rate drops rapidly or suddenly increases in some unexpected countries/regions, you should pay close attention, as it may be from some malicious attackers.
+
+We suggest you design some trigger alerts to alert you when certain abnormal thresholds are reached. YCloud verify has built-in security warning triggers that you can easily configure on the interface to receive abnormal alerts.

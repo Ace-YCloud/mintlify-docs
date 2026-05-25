@@ -1,0 +1,180 @@
+---
+title: "Best Practices for YCloud Chatbot"
+---
+
+# Best Practices for YCloud Chatbot
+
+YCloud Chatbot allows you to freely adjust the way it chats with customers—whether it's communication style, process guidance logic, complex scenario judgment, or tool invocation priority, all can be flexibly configured. This ensures that its responses are accurate, compliant, in line with brand tone, and consistent with your business operation policies. YCloud Chatbot relies on intelligent language models to determine how to follow configuration instructions to achieve the best service results. Therefore, the clarity of configuration logic and the precision of instruction wording are crucial. To help you fully realize the value of Chatbot, improve automation efficiency and customer experience, it is recommended to refer to the following best practices when configuring and using YCloud Chatbot.
+
+### 1. What Can Chatbot Do for You?
+
+YCloud Chatbot relies on the WhatsApp ecosystem to provide enterprises with full-process intelligent conversation and automation services. The core applicable scenarios are as follows:
+
+* **Customer Service**: 7×24-hour automated answering of common inquiries, handling of queries, and soothing of complaints to relieve the pressure on human customer service staff.
+* **Sales and Customer Acquisition** : proactively welcome visitors, guide them to leave contact information, recommend products, follow up with potential customers, and improve lead conversion.
+* **Business Handling**: Self-service query of orders, account information, business handling, and information verification to shorten service paths.
+* **Unsubscribe Management**: Automatically execute unsubscribe operations, accurately respond to user unsubscribe requests, avoid non-compliant outreach, reduce complaint rates, and ensure account quality.
+
+### 2. Flow: Standardized process, easily achieve automation
+
+Flow is suitable for fixed, linear, and well-defined business scenarios. Through visual drag-and-drop configuration, it automates business processes and reduces maintenance costs.
+
+#### Core Application Scenarios
+
+1. **Automatic Unsubscribe Management**
+
+When a user sends keywords such as "unsubscribe", , "TD", Flow automatically recognizes them, adds them to the unsubscribe list, simultaneously stops pushing marketing messages, and replies with a confirmation narrative, all without manual intervention throughout the process.
+
+![](/images/gitbook/1-1-58d82a37.png)
+
+2. **Automatically send the main menu via the welcome narrative**
+
+When the user has their first conversation, a brand welcome narrative is automatically sent, displaying the main business menu (e.g., "1 Consult Products, 2 Apply for Services, 3 Contact Human Support"), and based on the user's click selection, it jumps to the corresponding branch process.
+
+![](/images/gitbook/2-278cadb5.png)
+
+![](/images/gitbook/3-bd473197.png)
+
+3. **Reduce maintenance costs through the coordinated operation of multiple Chatbot Flows**
+
+Split generic nodes (such as identity verification, information confirmation) into independent Flows, and other scenarios directly reference and link them, avoiding duplicate configuration, unifying maintenance entry, and improving efficiency.
+
+![](/images/gitbook/4-e3039f24.png)
+
+### 3. AI Agent: Intelligent and Efficient Response to Complex Scenarios
+
+AI Agent has the capabilities of intent understanding, logical judgment, and multi-step task execution, is suitable for scenarios requiring flexible interaction and complex decision-making, and can proactively guide, make autonomous decisions, and call tools to complete tasks.
+
+#### (1) Practical Scenarios
+
+* **Intelligent Customer Service**: Answers multi-dimensional inquiries, handles complaints, resolves complex issues, supports context memory, and enables anthropomorphic interaction.
+* **Automatic lead capture**: Actively guide users to provide information such as name, phone number, and requirements.
+* **Intelligent Shopping Guide**: Understand user preferences, recommend products, answer questions about specifications, guide order placement, and simulate exclusive shopping guide services.
+
+#### (2) Recommended Configuration Steps
+
+1. **Select the appropriate Role**
+
+Based on the scenario, predefine roles (customer service, sales, shopping guide, etc.), determine core functions and communication styles, such as customer service focusing on professional answers and sales focusing on guiding conversion.
+
+![](/images/gitbook/5-ee673444.png)
+
+2. **Configure Profile**
+
+Improve the basic information of the role, including name, avatar, self-introduction, language style, and service scope, to unify the brand image.
+
+For details, please refer to:[AI Profile](/help/chatbot/ai-profile)
+
+![](/images/gitbook/6-a3e9b924.png)
+
+3. **Configure Knowledge Base**
+
+Upload product documents, FAQs, business manuals, policy terms, etc., supporting document, web page, and Q\&A formats to ensure accurate and compliant responses.&#x20;
+
+For details, please refer to:[ AI Knowledge Base](https://helpdocs.ycloud.com/help-center/chatbot/ai-knowledge-base)
+
+![](/images/gitbook/7-cae85673.png)
+
+4. **Configure Actionbook**
+
+Without complex configuration, simply describe business requirements in natural language to draw a customized business blueprint; Actionbook helps you briefly explain task steps, and it can automatically invoke various Actions to transform complex business processes into smooth automated execution processes.
+
+For details, please refer to: [AI Actionbooks](https://helpdocs.ycloud.com/help-center/chatbot/ai-actionbooks)
+
+![](/images/gitbook/8-073efc85.png)
+
+When it is necessary to interface with external systems, configure the API interface through the Data Connector ([Data Connector](https://helpdocs.ycloud.com/help-center/integrations/data-connectors)) to implement operations such as querying orders and verifying information, thereby empowering AI with execution capabilities.It is recommended to start with standard, repetitive processes and configure data connectors.&#x20;
+
+For details, please refer to [Data Connector](https://helpdocs.ycloud.com/help-center/integrations/data-connectors)
+
+![](/images/gitbook/10-26df41bd.png)
+
+![](/images/gitbook/11-6451db22.png)
+
+5. **Configure Allocation Rules**
+
+After completing the AI configuration, assign incoming sessions to the corresponding AI for processing in the number settings to improve service efficiency.&#x20;
+
+For details, please refer to: [Conversation Assignment Rules](https://helpdocs.ycloud.com/help-center/whatsapp-accounts-management/phone-number-management/conversation-assignment-rules)
+
+![](/images/gitbook/12-79a3bf1b.png)
+
+#### (3) Best Practices
+
+**1. Clarification of Task Instructions (Recommended Practices vs. Non-Recommended Practices)**
+
+**① Lead Generation Scenario**
+
+* ❌ Not Recommended Practice: "You should collect customer information and then store it."
+* ✅ Recommended Practice: "You are a loan product lead collection specialist, required to politely guide users to provide their name, contact phone number, loan amount, and location. After collecting all the information, synchronize it to the CRM. For any missing information, ask for it one by one to ensure no fields are overlooked."
+
+**② Customer Service Scenario**
+
+* ❌ Not Recommended Practice: "Just help the client solve problems."
+* ✅ Recommended Practice: "You are a financial customer service representative, responsible for answering questions related to account inquiries, repayment, rates, etc. Reply strictly according to the Knowledge Base, do not promise content beyond the scope, soothe customers first when encountering complaints, and transfer to human service when unable to resolve issues."
+
+**③ Shopping Guide Scenario**
+
+* ❌ Not Recommended Practice: "You recommend products to customers and ask them to buy."
+* ✅ Recommended Practice: "As an e-commerce shopping guide, first inquire about the user's needs, budget, and preferences, recommend 2-3 matching products, explain their advantages, prices, and specifications, guide the user to place an order when they hesitate, and promptly inform them in case of inventory issues."
+
+**2. Tool Configuration Optimization**
+
+**① Knowledge Base Configuration**
+
+* Classification Management: Classify by product, business, and FAQ to facilitate accurate retrieval by AI.
+* Content Guidelines: Answers should be concise, accurate, and unambiguous; industries such as finance need to include compliance reminders.
+* Dynamic Update: Regularly synchronize new policies and products, remove expired content, and ensure information timeliness.
+* Supplement unknowns: When AI is unable to answer, record the question and supplement it manually, continuously optimizing the Knowledge Base.
+
+**② Actionbook Configuration (Data Connector)**
+
+* Define Scenarios: Only configure necessary interfaces, such as configuring "Account Inquiry" for the customer service scenario.
+* Specification Parameters: Define request/response parameters, clarify field meanings, formats, and required fields to avoid call failures.
+* Exception handling: Set up retry on failure and error prompts, such as "Query failed, please try again later", to enhance the user experience.
+* Permission control: Restrict sensitive operations, add manual review nodes for financial scenarios to avoid risks.
+
+### 4. Reference Case: AI Agent Intelligent Customer Service Solution for the Financial Industry
+
+#### Scene Background
+
+A consumer finance company provides users with services such as account consultation, repayment guidance, and complaint handling via WhatsApp, requiring 7×24-hour response to customer requests, answering high-frequency inquiries, reducing the pressure on human customer service, while ensuring compliance and accuracy of responses, and enhancing the customer service experience.
+
+#### Core Competence
+
+1. **Multilingual Intelligent Customer Service**
+
+Supports automatic recognition and response in multiple languages, including Simplified/Traditional Chinese, English, Spanish, Portuguese, Indonesian, etc., covering user inquiries in target markets.
+
+2. **Automatic collection of sales leads**
+
+Actively inquire about the user's name, contact information, loan requirements, and country/region, and extract information in a structured manner.
+
+3. **Compliance Q\&A and Risk Warning**
+
+In accordance with financial regulatory requirements, automatically reply with product interest rates, repayment methods, and application conditions, and reject illegal commitments.
+
+#### Configuration Plan
+
+1. **Role Setting**: The AI role is a "Financial Customer Service Specialist", with a professional, patient, and compliant style. The scope of service includes account inquiry, repayment guidance, rate consultation, complaint appeasement, and basic question answering, without involving any non-compliant commitments.
+2. **Knowledge Base Configuration**: Upload content related to account knowledge, repayment process, fee standards, compliance terms, common complaint handling narratives, abnormal issue guidelines, etc., and mark compliance reminders such as "subject to system display" and "final interpretation rights reserved by the company".
+3. **Actionbook Configuration**: Connect to the company's core business system, configure interfaces for "Account Information Query", "Repayment Record Query", and "Complaint Ticket Creation", with parameters including user identity verification information to ensure information security.
+
+**Process Logic**
+
+1. Trigger: When the user sends keywords such as "account inquiry", "repayment", "complaint", etc., or directly consults related questions, the AI will proactively respond and greet.
+2. Identity Verification: When users inquire about account-related issues, first guide them to complete identity verification before providing query results to prevent information leakage.
+3. Precise Answers: For high-frequency inquiries (such as "How to make a repayment", "Current amount due", "What is the interest rate"), provide accurate responses based on the Knowledge Base, with clear steps and plain language, such as "You can operate through the 'Repayment' entry on the home page of the APP, and the current amount due shall prevail as shown in the system\~".
+4. Complaint handling: When users provide feedback and lodge complaints (such as "repayment failure" or "rate anomaly"), first soothe their emotions with "I understand your distress, and I'm very sorry for the inconvenience. I'll handle it for you right away", then collect details of the complaint (problem description, occurrence time), automatically create a ticket and synchronize it with the human customer service, and simultaneously inform the user that "the ticket has been created, and a human specialist will contact you within 1 hour to follow up on the progress of the handling".
+5. Transfer of complex issues: When encountering complex issues that exceed the scope of the Knowledge Base and cannot be resolved (such as "account freezing and unfreezing", "negotiation of large repayment amounts"), automatically transfer to the corresponding human customer service, and simultaneously push the user's consultation records to facilitate quick follow-up by human staff.
+6. Compliance Management: Throughout the process, avoid non-compliant statements, do not promise content such as "100% approval" or "risk-free", and for core information involving rates, repayment, etc., clearly state that "it shall be subject to system rules and contract agreements".
+
+#### Effect Value
+
+* Service response speedup: Achieved 7×24-hour uninterrupted response, with the average response time for high-frequency consultations shortened to within 10 seconds, and customer waiting time reduced by 80%.
+* Accurate and compliant responses: Relying on the Knowledge Base and compliance configuration, the accuracy rate of customer service responses reaches 98%, effectively avoiding compliance risks and meeting the regulatory requirements of the financial industry.
+* Optimization of labor costs: Replacing over 60% of high-frequency consultation tasks of human customer service, reducing the investment in human agents, lowering customer service operation costs, and enabling human agents to focus on handling complex issues.
+* Customer Experience Improvement: Anthropomorphic interaction, patient reassurance, and efficient problem-solving have increased customer satisfaction by 55% and improved the timeliness of complaint handling by 70%.
+
+\
+The core value of YCloud Chatbot lies in its ability to help enterprises reduce operating costs, improve service efficiency and customer experience, and ensure business compliance through the standardized Flow process and AI Agent intelligent services . Whether it is simple automated operations or complex multi-step intelligent interactions, following the above best practices can enable Chatbot to better adapt to your business needs.We recommend that you flexibly adjust the configuration based on your own business scenarios during actual use, regularly review Chatbot interaction data, optimize the Knowledge Base and instruction configuration, and continuously iterate and optimize. If you encounter any questions or need further technical support during the configuration process, you can contact YCloud's official customer service to obtain professional assistance and fully leverage the business enabling value of Chatbot.

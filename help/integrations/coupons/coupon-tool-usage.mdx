@@ -1,0 +1,99 @@
+---
+title: "Coupon Tool Usage"
+---
+
+# Coupon Tool Usage
+
+Manage promotional activities for businesses. Businesses can upload their own coupon codes and restrict each customer to claim only one coupon code. Uploaded coupon codes can be distributed in ChatBot, Inbox, and Campaign.
+
+## Usage Scenarios
+
+Scan to claim a coupon, where customers use a QR code to claim a coupon in your business account.
+
+## Tutorial
+
+### Step 1: Create a Coupon Campaign
+
+#### Step 1.1: Enable Coupon Functionality
+
+Entry: [Integrations](https://www.ycloud.com/console/#/app/integrations/all), click the Install button to enable
+
+![](/images/gitbook/image-492-a3f9743d.png)
+
+#### Step 1.2: Create a Coupon Campaign
+
+Navigate from the left sidebar Integrations > [Coupons](https://www.ycloud.com/console/#/app/integrations/coupon/list) to the Coupons page
+
+Click \[+ New Coupons]
+
+![](/images/gitbook/image-493-40bf543a.png)
+
+#### Step 1.3: Configure Campaign Information
+
+* Coupon Type: Code type (coupon code). Currently, only this type is supported; for other types, please contact us.
+* Campaign Name: Name of the coupon campaign
+* Campaign Notes: Notes about the campaign, optional.
+* Claim Limit: Each person is allowed to claim only once.
+* Campaign Duration: Set the campaign time. Coupons will stop being sent outside this time range.
+
+After confirming the information is correct, click Submit.
+
+![](/images/gitbook/image-494-2eae9330.png)
+
+#### Step 1.4: Upload Coupon Codes
+
+Click the upload button
+
+![](/images/gitbook/image-495-1ed14687.png)
+
+Upload the coupon code spreadsheet. You can click the template button to download a template.
+
+> **Info**
+>
+> Note: In the uploaded Excel spreadsheet, the Code must be in the first column. YCloud will automatically remove duplicate coupon codes.
+
+![](/images/gitbook/image-496-6f60fb2d.png)
+
+After uploading, click Save
+
+![](/images/gitbook/image-497-26efc832.png)
+
+### Step 2: Configure the Claim Process in Chatbot
+
+#### Step 2.1: Create a Chatbot
+
+If you already have a Chatbot, you can directly enter your existing Chatbot. If not configured yet, see the [Create a Chatbot](/help/chatbot/create-a-chatbot) tutorial.
+
+#### Step 2.2: Create a Flow
+
+Select the Chatbot you need to configure and click the Create Flow button.
+
+![](/images/gitbook/image-499-8e0adbd2.png)
+
+#### Step 2.3: Configure Flow Keyword
+
+Set the Keyword to the claim keyword.
+
+Example: If you want customers to receive a coupon when they hit "**Claim New User Coupon**", set the Keyword to **Claim New User Coupon**.
+
+![](/images/gitbook/image-498-e9e3943e.png)
+
+#### Step 2.4: Configure the Sent Coupon
+
+Add a Send message component in the Flow
+
+![](/images/gitbook/image-10-1-32ae52d4.png)
+
+In the message, click the coupon variable and select the coupon campaign to insert.
+
+![](/images/gitbook/image-11-1-c12ca543.png)
+
+After editing successfully, link the Keyword and Send message components. Then save the Flow
+
+![](/images/gitbook/image-13-1-d7634d75.png)
+
+### Step 3: Generate a QR Code for Sharing (Optional, only for QR code claim scenario)
+
+Generate a QR code for the number, set the keyword to: **Claim New User Coupon**. [See detailed chat link configuration tutorial](/help/whatsapp-accounts-management/phone-number-management/chat-links)
+
+![](/images/gitbook/image-15-1-d0f535be.png)

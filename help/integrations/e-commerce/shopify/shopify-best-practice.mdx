@@ -1,0 +1,54 @@
+---
+title: "Shopify Best Practice"
+description: >-
+  This article primarily explains how to use YCloud Journey to prompt Shopify
+  users who have abandoned their carts to complete their purchases.
+---
+
+# Shopify Best Practice
+
+**Benefits of This Journey**
+
+The target audience includes users who reached the payment page, entered the necessary information, but closed the page without successfully completing the payment.
+
+Invite these users to return and finish the checkout process, completing their orders.
+
+## Prerequisite
+
+Before creating the Journey, you need to create a message template with a Shopify payment link.
+
+Set up the template content, then in the "Buttons" section, select **Call to action > Visit Website > Shopify link**. Once configured, save the template.
+
+![](/images/gitbook/image-183-70f22f38.png)
+
+*Message template with Shopify payment link*
+
+## Trigger Settings
+
+**Enter trigger:**
+
+* When to send: Shopify events\_Shopify checkout created
+* Sender: Select the WhatsApp phone number you have already created.
+* Audience: No additional restrictions are applied in this use case.
+* Filter out unsubscribed customers: It is recommended to check this option.
+* Customer Trigger Limit: Choose "Enter every time the person matches the rules"
+
+Exit trigger：
+
+* Exit rules: Shopify events\_Shopify order paid
+
+Goal:
+
+* This example does not set up any additional goals
+
+## Set Waiting Time
+
+Create a **Wait** component and configure the waiting duration, then connect the **Trigger** and **Wait** components.
+
+This defines how long you will wait for the customer to complete the checkout and place the order.
+
+## Select Message Template
+
+Select the pre-configured message template that includes the Shopify payment link, and assign the appropriate attributes to the variables in the template. Connect the **Wait** component to complete the Journey creation.<br />
+
+![](/images/gitbook/image-185-cd66ea3f.png)

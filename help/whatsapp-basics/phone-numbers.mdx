@@ -1,0 +1,162 @@
+---
+title: "Phone Numbers"
+description: >-
+  This article explains how to select a phone number, add it to your WABA
+  account, and the  sending limits of your phone number.
+---
+
+# Phone Numbers
+
+A WhatsApp Business Account (WABA) requires a valid phone number to interact with customers via messages.
+
+## Adding a Phone Number to WABA
+
+If you do not already have a WABA, please create your first one through embedded sign-up and connect a phone number.
+
+[create-waba-via-embedded-sign-up.md](/help/whatsapp-accounts-management/create-a-whatsapp-api-account/create-waba-via-embedded-sign-up)
+If you already have a WABA, you can add a phone number in the YCloud backend > WhatsApp Account.
+
+[add-numbers.md](/help/whatsapp-accounts-management/create-a-whatsapp-api-account/add-numbers)
+## Migrating a Phone Number
+
+If you want to use a phone number already registered on the WhatsApp or WhatsApp Business platform, refer to our migration guide:
+
+* [Migrate an existing WhatsApp number to a business account](https://developers.facebook.com/docs/whatsapp/on-premises/get-started/migrate-existing-whatsapp-number-to-a-business-account)
+* [Migrate a phone number to another WABA](/help/whatsapp-accounts-management/create-a-whatsapp-api-account/number-migration)
+
+## Phone Number Registration Limits
+
+Initially, only 2 business phone numbers can be registered.
+
+If your business gets Business Verification, this will increase to a maximum of 20.
+
+If you indeed have the necessity to increase the limit beyond 20, you can contact the YCloud support team.
+
+## Display Name
+
+Each phone number has a display name, which should be related to your company or brand name. The display name will be reviewed by Meta. The display name must follow the [Display Name Guidelines](https://www.facebook.com/business/help/757569725593362).
+
+In YCloud, you can change the display name by following the path : YCloud > WhatsApp accounts > Number settings > Business Profile > Display name > Edit.
+
+![](/images/gitbook/image-769-18af5939.png)
+
+*Changing the display name in YCloud*
+
+![](/images/gitbook/image-770-0b99af2f.png)
+
+*Click Edit to pop up a pop-up window*
+
+⚠️Note :
+
+* We recommend carefully reading the WhatsApp Business display name guidelines before changing your display name.
+* Display names are limited to 3-150 characters.
+
+💡After changing your display name, you will see the following statuses:
+
+* Approved: Your display name has passed review.
+* Rejected: Your display name has been rejected.
+* In review: Your display name is currently under review.
+
+## Phone Number Status
+
+Statuses are categorized as follows:
+
+* Connected: Sending functionality is working properly.
+* Flagged: This status appears when the phone number's quality rating becomes low status (red). In this flagged status, you cannot upgrade the message limit tier. If the quality rating improves to medium or high within 7 days from being flagged, the status will change to Connected. If the quality rating does not improve, the phone number status will revert to Connected, but the message limit will be reduced to the lower tier.
+* Restricted: This status appears when the phone number reaches its message limit. In the Restricted status, you cannot initiate messages with customers proactively until the 24-hour conversation window resets. However, you can still reply to user-initiated messages.
+
+## Quality Rating
+
+Your phone number's quality rating is based on how receptive the people you chat with are to your messages. It is determined by various quality signals from conversations between the business and users. This mainly includes user feedback (such as blocks, reports) and the reasons provided by users when they block the business.
+
+Therefore, if the messages you send cause users displeasure, leading them to block or report you, your rating will drop. When you improve the content you send or the customer base, your rating will rebound.
+
+To maintain a high rating, ensure your messages are useful and not annoying.
+
+Quality ratings are categorized as:
+
+* High: The phone number receives almost no negative customer feedback.
+* Medium: The phone number has received some negative feedback from customers.
+* Low: The phone number has received negative feedback from multiple customers.
+
+Please note：It is normal for high-volume numbers to experience quality changes within a short time (even minutes).
+
+You can view the phone number quality at YCloud > WhatsApp accounts:
+
+![](/images/gitbook/image-422-ec68875e.png)
+
+*Phone Number Quality*
+
+#### **Suggestions for Maintaining a High Quality Rating** <a href="#maintain-high-quality-rating" id="maintain-high-quality-rating"></a>
+
+To ensure the good health of your messaging:
+
+1. Meta requires businesses to obtain customer opt-in before starting a conversation, whether on WhatsApp or outside of WhatsApp.
+2. Ensure messages comply with WhatsApp Business Policy and Commerce Policy.
+3. Create highly personalized and beneficial messages for users, avoiding generic and open-ended introductions.
+4. Control message frequency carefully, avoid excessive daily communication, and optimize the content and length of messages.
+5. Clearly communicate the value of receiving important updates on WhatsApp and keep messages personalized.
+6. Allow customers to choose the types of messages they receive and respect their choices accordingly.
+7. Provide an opt-out method, including features like "**stop**" or "**unsubscribe**" buttons.
+8. Respect customer requests, avoid sending messages to unsubscribed users, thereby reducing the risk of customers blocking or reporting your account.
+
+## Message Limits
+
+Message limits determine the maximum number of conversations you can initiate with a phone number in a continuous 24-hour period. These limits do not apply to user-initiated conversations.
+
+You can view the phone number message limits at YCloud > WhatsApp accounts:
+
+![](/images/gitbook/image-423-5ea748fc.png)
+
+*Phone Number Message Limits*
+
+### Initial Limits
+
+Phone numbers that are not get Business Certification or have not had their display name approved are limited to 250 per day. This means a maximum of 250 conversations can be initiated by the business within a 24-hour period.
+
+Phone numbers that are get business certification and have had their display name approved will have their message limit increased to 1000 per day.
+
+Before reaching the 1000 per day message limit, the [**WhatsApp Manager**](https://business.facebook.com/wa/manage/home/) > **Overview** > **Limits** panel will display useful information on how to increase the limit.
+
+![](/images/gitbook/image-425-ef6bce5b.png)
+
+### Increasing Limits
+
+Message limits can be increased to the following levels:
+
+* 1K business-initiated conversations
+* 10K business-initiated conversations
+* 100K business-initiated conversations
+* Unlimited business-initiated conversations
+
+This quantity starts from 1K unique customers and expands automatically based on the phone number status, phone number quality rating, and the frequency with which the business initiates conversations with unique customers.
+
+#### Automatic Expansion Rules
+
+Each time you initiate a new conversation with a customer, WhatsApp determines whether your limit should be increased. This decision is based on the following criteria:
+
+* Your phone number status is connected
+* Your phone number quality rating is "medium" or "high"
+* In the past 7 days, you have initiated X or more conversations with unique customers, where X is your current messaging limit divided by 2 If you meet all conditions, we will increase your messaging limit one level within 24 hours.
+
+You can also learn how your business phone number will be promoted to the next level at [**WhatsApp Manager**](https://business.facebook.com/wa/manage/home/) > **Account Tools** > **Insights**:
+
+![](/images/gitbook/image-426-89bf874a.png)
+
+## Removing a Phone Number from WABA
+
+Go to BM Account > WhatsApp Manage > [Phone number](https://business.facebook.com/wa/manage/phone-numbers)
+
+Find the phone number you want to delete. Click the trash can icon.
+
+![](/images/gitbook/image-421-d7013ae6.png)
+
+*Delete Phone Number*
+
+> **Warning**
+>
+> Deletion Notes:
+>
+> * Only BM account administrators can delete phone numbers.
+> * A number cannot be deleted if the business has sent paid messages using that number in the past 30 days.
+> * After a number is deleted from the WhatsApp Business platform, it can be used again in the WhatsApp or re-registered on the WhatsApp Business platform. This rule does not apply to phone numbers that have been banned by the WhatsApp Business platform.

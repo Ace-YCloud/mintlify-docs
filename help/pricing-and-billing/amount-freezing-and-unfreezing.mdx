@@ -1,0 +1,47 @@
+---
+title: "Amount Freezing and Unfreezing"
+---
+
+# Amount Freezing and Unfreezing
+
+### Funds Freezing and Thawing Policy
+
+We will deduct or thaw the corresponding funds based on the following criteria.
+
+### When are funds frozen?
+
+When you submit a message sending request, YCloud will estimate the amount of funds to be consumed and freeze this amount from your account balance before sending. This operation ensures that the messages that have been submitted can be successfully sent.
+
+To view frozen funds: Hover your mouse over the question mark icon next to the balance.
+
+![](/images/gitbook/image-500-21ae1559.png)
+
+### When are funds thawed?
+
+When the message processing is complete, YCloud will deduct or thaw the funds frozen for each message. The detailed explanation for when message processing is complete is:
+
+**SMS/Email/Voice Code:**
+
+* We deduct the amount when the message is successfully sent from YCloud.
+* We thaw the amount when the message fails to be sent from YCloud.
+
+**WhatsApp:**
+
+* We deduct the amount when the message is successfully delivered (delivered or read).
+* We thaw the amount when the message fails to be sent (failed).
+* When the message is continuously in processing status, the funds will remain frozen. If the processing status lasts for 30 days, the funds will be automatically thawed.
+
+**Examples**
+
+1. A campaign submits a scheduled SMS activity, estimated to consume $10. We will freeze $10 from the balance. When the sending time arrives and the SMS is dispatched, the amount is deducted. If the activity is canceled before sending, we will thaw the funds.
+2. A WhatsApp message is sent to the US, estimated to consume $10. We will pre-freeze $10.
+
+```
+  ① If the message is dispatched and remains in processing status, it will be frozen until 30 days later when it is automatically thawed.
+
+  ② If the message is delivered or read within 30 days, the amount will be deducted.
+
+  ③ If the message fails within 30 days, the amount will be thawed.
+```
+
+If you have any questions or concerns about this policy, please feel free to contact us.

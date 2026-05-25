@@ -1,0 +1,181 @@
+---
+title: "Admin Guide"
+description: Supervisor Operation Guide
+---
+
+# Admin Guide
+
+Adding Team Members
+
+### Step 1: Invite Team Members
+
+1. To invite team members, click on the "Account profile" in the bottom left corner and select Settings > Users and teams > [Users](https://www.ycloud.com/console/#/app/settings/usersAndTeams). Click the "Invite user" button on the page.
+
+![](/images/gitbook/image-99-1-ec1b68e3.png)
+
+2. Fill in the basic information of the member to be invited and click the "Add" button. The system will send an activation email to the member's email.
+
+![](/images/gitbook/image-107-1-dcd8e9e6.png)
+
+### Step 2: Team Members Accept the Invitation
+
+The member finds the corresponding activation email and clicks the "Activate your account" button to accept the invitation and complete the account activation.
+
+![](/images/gitbook/image-110-1-814fea2d.png)
+
+> **Info**
+>
+> Please note that the invited user does not need to register a new account through the YCloud official website.
+
+> **Warning**
+>
+> After completing the above steps, team members can log in to the YCloud backend and view messages in the Inbox. If you need the system to automatically assign conversations to him, you need to add the user in the corresponding WhatsApp number settings > Assignment rules.
+
+### Step 3: Add agent to the Team
+
+Set up agent and add agent to the team to facilitate subsequent distribution and transfer.
+
+For details, refer to [Creating a Team](/help/account-management/users-and-teams#chuang-jian-tuan-dui)
+
+## Inbox Settings
+
+### Authority to Create A New Conversation
+
+To make it easier for you to manage number permissions, Inbox has a submenu called "Authority". This feature can control users' permissions to initiate new sessions using this number.
+
+#### Operation Introduction
+
+1. Click the "Add Members" button, and search for the member or team you want to add
+2. For members or teams that have been added, you can remove them individually by clicking the "Remove" button on the right side of the list, or delete them in bulk after selecting them by clicking the checkbox on the left side
+3. You can search for members by their usernames or email addresses using the search box in the upper right corner
+4. For members who are newly invited to join in the "Users and Teams" setting, the system will automatically grant them the right to initiate new sessions for all numbers under the tenant. If you do not want some users to have the right to initiate new sessions for specific numbers, you can remove them here
+
+#### Application scenarios
+
+Here are some reference use cases:
+
+1. If you don't want salespeople to have the right to initiate conversations with some numbers, you can remove them from the authorized list
+2. Numbers representing different product lines are managed by different employees, who only have the right to initiate new conversations for the numbers they are assigned
+
+![](/images/gitbook/image-112-60e7da7e.png)
+
+### Basic Assignment Rules Configuration
+
+You can set up automatic assignment rules for new conversations
+
+#### Step 1: Enter the settings page of the target number.
+
+Guidance: [WhatsApp accounts](https://www.ycloud.com/console/#/app/dashboard/account) > Settings > Assignment
+
+![](/images/gitbook/image-100-1-8e9239b6.png)
+
+#### Step 2: Set First Priority Assignment Rules
+
+When both are enabled, the priority of the first priority assignment rules is **from top to bottom**
+
+* Priority 1: When a conversation comes in, it will check if the customer has an Owner, and if there is an Owner, it will force the conversation to be assigned to the Owner;
+* Priority 2: The conversation will be assigned to the last agent who received the conversation (Prerequisite: the agent is online).
+* Priority3: Assign to an agent, a team, a Chatbot or Unassigned
+
+![](/images/gitbook/My_Photor_1760605072772-332a80a4.jpg)
+
+### Advanced Assignment Rules Configuration
+
+Advanced distribution rules are available to users who subscribe to Pro and higher versions.\
+Click the "Add advanced rules" at the top to create advanced rules.
+
+![](/images/gitbook/My_Photor_1760605427516-c793a2a4.jpg)
+
+If you have already configured advanced allocation rules in other numbers of the same tenant and want to reuse some of their logic, you can select the corresponding rule in the pop-up window that appears and click "Copy". The copy button will copy the selected rule to your canvas as a draft, making it convenient for you to continue to modify and adjust it on its basis.\
+If you want to start creating from a blank canvas, click the "Start from scratch" button, and you can enter the blank canvas.
+
+![](/images/gitbook/image-114-ec02f403.png)
+
+#### Advanced Allocation Toolbox
+
+Click the plus node after the module to select the condition module or the action module, or select the module you want to add from the left side, and then connect them after completing the configuration.
+
+![](/images/gitbook/image-115-29b67a05.png)
+
+![](/images/gitbook/image-116-e4d6f1f1.png)
+
+#### Condition Block
+
+1. Click the "Add filter" button, and you can choose to add the necessary conditions from five options: country, language, ownership, last handled online agent, and message inbound time
+2. The system will judge the various conditions of the incoming users in the order you have configured, from top to bottom, and enter the first matching branch and execute the subsequent distribution actions. If you do not configure an action module after the conditions, the user session will be transferred to the "Unassigned" list
+3. **Country:** The system will automatically determine the user's country and region based on their mobile phone area code, and decide whether to enter the branch according to the country you have configured
+4. **Language:** The system will try to determine the language the user is using, and if it succeeds in determining it, it will decide whether to enter the branch based on the language you have configured
+5. **Ownership:** The system will automatically determine whether the incoming user already has an ownership, and if it detects that there is one, it will enter this conditional branch
+6. **Last Handled Online Agent:** The system will determine whether the agent who assisted the user last time is online. If true, it will enter this conditional branch
+7. **Message Inbound time:** According to the user's message arrival time, match it with the time period you have set, and those that meet the conditions will enter the conditional branch
+8. Any incoming session that does not meet your configuration conditions will enter the "Else" condition branch
+
+![](/images/gitbook/image-117-2b2f2d70.png)
+
+#### Agent takeover Block
+
+1. **Owner takeover:** The conversation will be assigned to the agent that the user belongs to, regardless of whether they are online or not
+2. **Last handled online agent takeover:** The conversation will be assigned to the agent who last assisted the user last time if he is online
+3. **Agent takeover:** Agents assigned according to your needs
+   1. Select a specific agent, the conversation will be directly assigned to him, ignoring their online status.
+   2. If you choose to assign to a team, the conversation will be assigned to that team and routed to a specific agent according to the team's internal rules
+   3. Assign to a Chatbot
+   4. Assign to unassigned
+
+![](/images/gitbook/image-65-8c05085f.png)
+
+#### Canvas configuration, saving, and editing
+
+1. After finishing configuration, you can drag the lines on the nodes to connect these blocks. Through the button in the lower left corner of the canvas, you can zoom in the canvas, or automatically adjust the canvas to the appropriate size. You can also arrange and tidy up the modules.
+2. After completing all the configurations, click the "Check" button in the upper right corner to check if your configurations are compliant.
+3. The system will automatically generate a name for this advanced allocation rule, and you can modify it in the upper left corner.
+4. Click the "Save" button after completing the check to save your advanced assignment rule.
+
+![](/images/gitbook/image-120-efbee992.png)
+
+After completing the configuration, return to the advanced configuration list page, and click the "Edit" button to enter the canvas editing rules.\
+When you're ready, switch on the "Activate Advanced Rules" . The assignment logic you've configured will take effect immediately after the switch.
+
+![](/images/gitbook/image-66-c4b4dabe.png)
+
+### Automation Rules Configuration
+
+Set up automatic response rules for the Inbox on the automation rules page: including welcome messages, new user ice-breaking, automatic replies for unassigned conversations, automatic replies when the agent does not respond in time, and automatic closing of conversations.
+
+![](/images/gitbook/image-113-1-66f387e0.png)
+
+*Expand or collapse the settings content with the arrow on the right, and turn the function on or off with the switch*
+
+* **Welcome Message:** You can set a welcome message that is automatically sent when the customer first opens the conversation.
+* **Ice-Breaking Tips:** These are customizable, clickable text prompts that appear in the chat window for new users. They help customers quickly understand the services provided by the business and can trigger the chatbot to execute specific workflows.
+* **Automatic Reply for Unassigned Conversations:** If the conversation has not been assigned, you can set the system to automatically reply to ensure timely response to the customer.
+* **Timeout Automatic Reply:** If the customer's message is not replied to by the agent within the setting timeline, the system will automatically send a message to the customer. You can set the waiting time for sending the reminder message.
+* **Automatic Closing of Conversations:** If the customer does not respond within the set time, the system will automatically close the conversation. You can set the time for automatic closing.
+
+For detailed settings, refer to [Automation](/help/whatsapp-accounts-management/phone-number-management/automation)
+
+### Customer Tag System Configuration
+
+Enter Contact > Settings > [Tags](https://www.ycloud.com/console/#/app/contact/settings/tags) to manage system tags.
+
+Agents can use predefined tags to better manage and filter customers.
+
+![](/images/gitbook/image-114-1-5b37876e.png)
+
+### Quick Reply Configuration
+
+Enter Your preference > [Canned Response](https://www.ycloud.com/console/#/app/userSettings/cannedResponse) to configure account-shared preset replies, which agents can quickly reference in chats.
+
+![](/images/gitbook/image-117-1-63bd46bf.png)
+
+🎉🎉 Congratulations, you have completed the basic configuration of the team Inbox. In addition, you can also configure a smarter chatbot reception process based on working hours. For detailed settings, refer to ChatBot.
+
+## View Real-Time Reports
+
+As a admin, you need to understand the team's reception situation in real-time. You can enter Inbox > [Analytics](https://www.ycloud.com/console/#/app/inbox/analytics) to view real-time data statistics.
+
+For detailed guidance, refer to the document: [Inbox Data Analysis](/help/inbox/inbox-data-analysis)
+
+![](/images/gitbook/image-118-1-37186329.png)
+
+![](/images/gitbook/image-120-1-a5393c47.png)

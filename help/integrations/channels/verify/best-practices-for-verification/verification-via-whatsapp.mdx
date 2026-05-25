@@ -1,0 +1,107 @@
+---
+title: "Verification via WhatsApp"
+---
+
+# Verification via WhatsApp
+
+Using WhatsApp to deliver a one-time password (OTP) to assist with user authentication.
+
+Send OTP messages via WhatsApp to their device. This experience is similar to receiving SMS OTP, and even on Android phones, the OTP code can be retrieved directly from the English WhatsApp message, allowing users to receive the code without leaving the application.
+
+## Benefits of WhatsApp Verification
+
+As a verification channel, it has the same advantages as SMS and is not affected by local carrier infrastructure. This means WhatsApp messages can be received in areas where there is Wi-Fi but weak or no cellular signal (such as remote areas or on airplanes). WhatsApp is usually faster than SMS and is end-to-end encrypted, providing additional security.
+
+WhatsApp also offers more security advantages: Each WhatsApp user can be identified by the unique phone number provided when creating an account. WhatsApp uses its own set of robust anti-fraud tools to verify these phone numbers. This means you outsource part of the authentication work to WhatsApp.
+
+In many countries, WhatsApp is cheaper than SMS and can help you save money without charging for unsent messages. In India, Indonesia, and South America, we recommend using WhatsApp as the preferred verification channel because it can improve your overall verification conversion rate and is cheaper.
+
+Now use YCloud verification instead of building it from scratch, start sending OTP immediately, with no message quantity or industry restrictions, and send through pre-approved WhatsApp shared phone numbers.
+
+## Setting Up WhatsApp Verification
+
+1. Use the send verification code API, with the channel specified as WhatsApp.
+2. Verify the verification like any other channel. [Reference API](https://docs.ycloud.com/reference/verification-send)
+
+## WhatsApp Verification Pricing
+
+The cost of sending messages varies by country where the verification message is sent, and there are no additional fees. WhatsApp only charges for successful messages, and you do not pay for failed or undelivered messages.
+
+[💰️ See WhatsApp Pricing for more details.](https://www.ycloud.com/price)
+
+## Best Practices for Implementing WhatsApp OTP
+
+### User Interface Design
+
+Using WhatsApp to send OTP is a new approach, and we provide some UI design suggestions:
+
+| Design Option                                                                                                                                                                         | Applicable Scenarios                                                                                              |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| <p>Default to sending OTP via WhatsApp<br />Send via SMS immediately if WhatsApp fails (likely because the target phone number has not yet registered a personal WhatsApp account).</p> | Your audience is mainly in countries with high WhatsApp coverage, such as Indonesia, India, Brazil, and Colombia. |
+| Provide button options for receiving OTP message channels, allowing users to choose their own OTP receiving channel.                                                                  | Your audience is in countries with insufficient WhatsApp coverage, or your application covers many countries.     |
+
+![](/images/gitbook/image-491-082985b4.png)
+
+OTP is sent via WhatsApp by default. If it fails, it is resent via SMS immediately.
+
+![](/images/gitbook/653b8ca2a8195-7d5f4bc5.png)
+
+*Provide button options for receiving OTP message channels*
+
+## Check if the User Has WhatsApp Installed
+
+To improve user experience and default to using WhatsApp, you can determine if the user has the WhatsApp app installed on the same device running your application. Here is an implementation example for WhatsApp detection on Android:
+
+```javascript
+fun PackageManager.isPackageInstalled(packageName: String): Boolean {
+  return try {
+    getPackageInfo(packageName, PackageManager.GET_ACTIVITIES)
+    true
+  } catch (e: NameNotFoundException) {
+    false
+  }
+}
+
+fun isWhatsAppInstalled : Boolean() {
+    val whatsAppPackageName = "com.whatsapp"
+    val whatsAppBusinessPackageName = "com.whatsapp.w4b"
+    return getPackageManager().isPackageInstalled(whatsAppPackageName) || getPackageManager().isPackageInstalled(whatsAppBusinessPackageName)
+}
+```
+
+## Q\&A
+
+<details>
+
+<summary><strong>Why is WhatsApp a good channel for OTP delivery?</strong></summary>
+
+In the past few years, we have witnessed the rise of a new messaging channel: WhatsApp. It has over 2 billion users in 180 countries and is rapidly spreading across various countries. Each WhatsApp user is identified by the unique phone number provided when creating a WhatsApp account, meaning WhatsApp can directly replace SMS for all verification use cases, including registration, login, and transactions.
+
+</details>
+
+<details>
+
+<summary><strong>How does WhatsApp verification work?</strong></summary>
+
+If you are familiar with the verification API used for sending SMS OTP, you simply need to change the required channel parameter from SMS to WhatsApp in the API request. Like SMS, the pre-approved OTP template message is sent through a shared phone number maintained by YCloud.
+
+</details>
+
+<details>
+
+<summary>Can I use my brand and phone number to send WhatsApp OTP messages instead of using YCloud's "generic sender"?</summary>
+
+Currently, it is not possible to set your brand and phone number as the sender. However, your brand name will be included in the WhatsApp message body. Using YCloud's WhatsApp generic sender for verification has one of the main benefits of being able to use YCloud's WhatsApp shared number. It has the following advantages:
+
+* Start with the highest message volume limit from the beginning
+* Avoid potential obstacles in WhatsApp business policies, such as dating apps and cryptocurrency products. However, you still need to comply with YCloud's acceptable use policy.
+
+</details>
+
+<details>
+
+<summary>Which YCloud product should I use: the Verification WhatsApp API or the WhatsApp Programmable Messaging API?</summary>
+
+If your use case is OTP delivery, we strongly recommend using the YCloud Verification WhatsApp API, as it is the solution built specifically for it. If you want to develop more personalized messaging use cases using WhatsApp, you can choose the [WhatsApp Programmable Messaging API](https://docs.ycloud.com/reference/whatsapp_message-send).
+
+</details>

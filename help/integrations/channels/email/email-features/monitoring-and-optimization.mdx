@@ -1,0 +1,33 @@
+---
+title: "Monitoring and Optimization"
+---
+
+# Monitoring and Optimization
+
+Maximize the effectiveness of your email campaigns with YCloud's tracking and analysis features. Gain valuable insights into recipient behavior, campaign performance metrics, and more to continuously optimize your email strategy and achieve better results.
+
+## [Email Status](https://helpcenter.ycloud.com/docs/XldbuM#ee3d27329d013840e7a2c0c3d7b266f0)
+
+To ensure effective communication, it is important to understand the status of your emails after they are sent. This information can help you determine if recipients have received your emails and if they have clicked on any URLs included in the emails. We typically categorize this information into two types: sending data and tracking data. By analyzing this data, you can gain valuable insights into the effectiveness of your communication efforts.
+
+## About Sending Data
+
+| Status      | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Sending     | The email has been sent, but status information has not yet been returned.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+| Delivered   | The email has reached the recipient's mailbox.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| Undelivered | <p>• Unable to establish SMTP connection: There may be a server error or an internal service issue with the mailbox provider.<br />• Domain rejected: The email sending was rejected due to IP or domain-related reasons.<br />• Email address does not exist: The email address may not exist.<br />• Email content rejected: The sending behavior or content of this email may be determined as spam.<br />• Rejected: The email may be rejected abnormally or due to recipient settings.<br />• Other: There may be other reasons why the email was not delivered.</p> |
+| Unsent      | <p>Invalid email, including<br />• Blacklist, free: The email address is on the blacklist and will not be sent. YCloud will not charge you for this email.<br />• Unsubscribe, free: The email address has been unsubscribed by its user. YCloud will not send this email to you or charge you.<br />• MX lookup error: The temporary or permanent connection of YCloud's sending pool cannot access the receiving domain's MX (mail exchange) service.</p>                                                                                                           |
+
+## About Tracking Data
+
+| Stat Field | Definition                                                                                                                                                                                                                                                                                                                                                                             |
+| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Open       | <p><strong>Email open tracking.</strong><br />YCloud utilizes common tracking methods in the email field to monitor the number of times an email is opened. A small transparent image is embedded in each email, which is loaded when the email is opened. Note that due to the complexity of email technology and the diversity of email clients, this method is not 100% accurate.</p> |
+| Clicks     | <p><strong>URL click tracking</strong><br />Each time a recipient clicks on a URL in the email, the tracker redirects it and sends it through YCloud's server to the intended website. This allows tracking of the number of clicks, which can be viewed in the analysis data.</p>                                                                                                       |
+
+## Statistics
+
+Here you can view the analysis and sending logs of your emails. [Go to view](https://www.ycloud.com/console/#/app/integrations/email/analytics/overview)
+
+![](/images/gitbook/image-487-87bf60bd.png)

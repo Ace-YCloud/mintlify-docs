@@ -1,0 +1,20 @@
+---
+title: "Custom OTP"
+---
+
+# Custom OTP
+
+If you already have a system for generating and verifying verification codes and wish to continue using them, you can send us your code and use our pre-approved message templates along with text and voice localization options.
+
+**How to use custom codes?**\
+To use your own generated verification codes, include them in the API call to the send verification request.
+
+```javascript
+{
+"to": "+44868534958",
+"channel": "SMS",
+"code": "1234",
+}
+```
+
+To ensure accurate and reliable user authentication, it is recommended to submit the user-provided verification code using the Verification Code API. This method not only allows you to monitor the success rate of verifications but also provides us with valuable information about the stability of global SMS routes. By leveraging this API, you can provide your users with a seamless and secure authentication process.

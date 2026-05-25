@@ -1,0 +1,72 @@
+---
+title: "Connect TikTok Ad Account"
+description: >-
+  This guide walks you through: configuring your TikTok advertising operations
+  via YCloud and getting them up and running.
+---
+
+# Connect TikTok Ad Account
+
+> **Info**
+>
+> Before you begin, read this : [TikTok Messaging Ads: Workflow Guide & Prerequisites](/help/ctwa-click-to-whatsapp-ad/tiktok-messaging-ad)
+
+### Step 1: Connect TikTok Ad Account in YCloud
+
+Before creating ads, you need to authorize your TikTok ad account in YCloud. Once authorized, YCloud can identify the ad account you want to use for delivery and support subsequent phone number binding, messaging event set creation, and event postback.&#x20;
+
+#### **Steps**
+
+1.  In YCloud, go to **CTWA** and click **Connect Ad Account (TikTok)**.&#x20;
+
+    ![](/images/gitbook/image-21-51063fb8.png)
+2.  On the TikTok authorization page that opens, log in to your TikTok Ads account.&#x20;
+
+    ![](/images/gitbook/tiktok-tk-t1-c7f00ab3.png)
+3.  Confirm your TikTok login account, then click **Confirm** to complete the authorization.&#x20;
+
+    1. If you find that you are logged in with the wrong TikTok account and need to switch, click **Switch Account**.
+
+    ![](/images/gitbook/image-23-17309350.png)
+4.  Return to YCloud. Your ad account should now appear in the account list.&#x20;
+
+    ![](/images/gitbook/image-24-a89651e0.png)
+
+* If this is your first time using TikTok messaging ads, we recommend following the guided setup（**Go to Settings**）. Proceed to **Step 2**.
+* If your TikTok ad account already has a WhatsApp Business number linked, you can skip this step. Proceed to **Step 3**.&#x20;
+
+**Important Notes**
+
+* The currently logged-in TikTok account must have sufficient permissions for the target Ad Account. Otherwise, you may encounter insufficient authorization or be unable to complete the authorization process.
+
+
+### Step 2: Link the WhatsApp Business Number&#x20;
+
+After connecting your TikTok ad account, you need to select a WhatsApp Business number for ad delivery in YCloud.
+
+> ℹ️ Once linked, YCloud will create a corresponding messaging event set for the **WhatsApp Business Number** in TikTok Ads Manager. You will need this when creating TikTok messaging ads
+
+#### **Steps**&#x20;
+
+You can enter the linking process in two ways:
+
+1.  After the TikTok ad account is successfully connected, follow the on-page guide and click **Link WhatsApp Number Now**.&#x20;
+
+    ![](/images/gitbook/image-25-c329037f.png)
+
+> ℹ️ What if you skip this step but want to link a new WhatsApp Business number later? Go to **Ad Account** → find the corresponding ad account → click **Event Set** → create a new Event Set to link a WhatsApp Business number.&#x20;
+
+
+After entering the linking process:&#x20;
+
+![](/images/gitbook/image-27-f88a8f86.png)
+
+1. Confirm the **Ad Account**.
+2. Select the WhatsApp Business number to use for ad delivery.
+3. Submit the configuration and confirm the creation was successful.&#x20;
+
+
+**Important Notes**
+
+* The WhatsApp Business number used for ad delivery must already be connected to YCloud.
+* Under the same ad account, each WhatsApp Business number only needs to be linked once. If a number has already been linked to the current ad account, it will be displayed as **Used**. ![](/images/gitbook/image-28-cde709fd.png)

@@ -1,0 +1,62 @@
+---
+title: "Contact Event"
+---
+
+# Contact Event
+
+Know more about how to manage contact event in YCloud
+
+## Events Definition
+
+Tracking events in YCloud helps you better understand how your customers are using your product. This understanding allows you to send targeted, relevant messages and provides you with all the context needed to support your customers.
+
+Events represent what your customers do and when they do it, for example:
+
+* When a customer registers
+* When a customer adds an item to their cart on your website
+* When a customer begins the checkout process
+* When a customer completes an order
+* When a user signs up for a membership
+
+Events can be used in various product under the YCloud platform:
+
+* **Trigger in Journey:** Events can trigger specific actions.
+* **Customer Interaction in Inbox:** Events allow customer service to view recent user interactions.
+* **CTWA Conversion Result Definition:** Events can define conversion results.
+
+**Use Cases:**
+
+* **Journey:** Once a customer triggers a billing event, they enter the flow. After waiting 20 minutes, a WhatsApp marketing message is sent to encourage the customer to complete the payment. If the customer places an order, they exit the flow.
+* **Inbox:** Customer service can view key customer actions in real-time.
+* **CTWA:** When a customer successfully places an order, the order event is logged as the conversion result for the CTWA, which is then passed on to the advertising platform.
+
+> **Info**
+>
+> The events described here are just examples; you can design them according to your specific needs.
+
+
+## Event Attributes:
+
+Each event includes the following information:
+
+* Event Name
+* Event Time
+* Object Identifier
+* Contact Number
+
+Each event you track can also include attributes, which provide additional details about each specific event. For example, if you track a "purchase" event, the metadata could include the name and price of the purchased item.
+
+* `STRING`: A plain string with a length of up to 255 characters.
+* `NUMBER`: A numerical value with up to one decimal place.
+* `TIMESTAMP`: The event timestamp.
+* `URL`: A string formatted as a URL, starting with `http://` or `https://`.
+
+
+## Creating and Sending Events
+
+By default, YCloud only tracks some basic events, such as adding new contacts to your Contact list.
+
+More valuable events often require the help of engineers or developers to implement. Please share this documentation with your colleagues and explain how you intend to use it.
+
+* **Create Event Definition:** [https://docs.ycloud.com/reference/custom\_events-create-definition](https://docs.ycloud.com/reference/custom_events-create-definition)
+* **Send Event:** [https://docs.ycloud.com/reference/custom\_events-send-event](https://docs.ycloud.com/reference/custom_events-send-event)

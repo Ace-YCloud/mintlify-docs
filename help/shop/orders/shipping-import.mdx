@@ -1,0 +1,196 @@
+---
+title: "Shipping Import"
+description: >-
+  This article explains how to use a CSV file in Shop to bulk import or update
+  shipping information for existing orders (carrier, tracking number, tracking
+  URL).
+---
+
+# Shipping Import
+
+### What you can do
+
+* This feature applies only to **existing orders** in your shop and is used to update their shipment status and logistics information. **It does not create new orders for the shop!**
+* You can update: shipment status, carrier, tracking number, and tracking URL.
+* For **physical product** orders: upon successful import, orders will be marked as **Shipped**, and logistics information will be visible to customers.
+* For **virtual/digital product** orders: orders are simply marked as **Shipped** without requiring tracking number or tracking link.
+
+***
+
+### Before you start
+
+To ensure a smooth fulfillment process, please first complete the following setups:
+
+* Create your shop, add products, set up shipping templates and payment methods (COD / PayPal).
+* It's recommended to familiarize yourself with the **Orders → Fulfillment / Mark as Paid (COD) / Refunds & Returns** workflow. 【Shops → Orders】 previously linked.
+
+***
+
+### Download template
+
+On the **Shop → Orders** page, click **Import** to open the modal, then click **Download Template**.
+
+**Screenshot placeholder:**
+
+![](/images/gitbook/shipping_info_entrance-8d0ad053.png)
+
+![](/images/gitbook/shipping_info_template_entrance-9f4230ab.png)
+
+**Template filling notes:**
+
+* Only CSV format is supported.
+* Maximum file size: **15 MB**, maximum **1,000 rows**.
+* Only **one file per upload** is allowed.
+
+***
+
+### Fields in shipping-import template
+
+| Column             | Description                                                                                            | Physical Example                                      | Virtual Example    |
+| ------------------ | ------------------------------------------------------------------------------------------------------ | ----------------------------------------------------- | ------------------ |
+| `Order_ID`         | System-generated unique order identifier. **Required**                                                 | 100001250814000155                                    | 100001250814000153 |
+| `Shipping_Carrier` | Carrier name such as SF, J\&T, DHL, etc. Required for physical orders; leave blank for virtual orders  | FedEx                                                 | (leave blank)      |
+| `Tracking_Number`  | Tracking number. Required for physical orders; ignore for virtual orders                               | 1234 5678 9012                                        | (leave blank)      |
+| `Tracking_Url`     | Tracking link customers click to view logistics. Required for physical orders; leave blank for virtual | https://www.fedex.com/wtrk/track/?trknbr=123456789012 | (leave blank)      |
+
+***
+
+### Upload & processing
+
+**1. Prepare to upload**
+
+Click **Upload**, which opens a file selector.
+
+**Screenshot placeholder:**
+
+![](/images/gitbook/shipping_info_upload-facc5d39.png)
+
+
+Please note the requirements on the upload modal:
+
+* CSV format
+* Up to **15 MB** and **1,000 rows**
+* Only **one file per upload**
+
+***
+
+**2. Select file, start upload**
+
+Choose a CSV file and click **Open**.
+
+**Screenshot placeholder:**
+
+![](/images/gitbook/shipping_info_filepicker-0c808550.png)
+
+
+Once the template passes validation, data import begins automatically and the result display appears (see step 4). If validation fails, an error message will appear and import will not proceed.
+
+***
+
+**3. File validation fails**
+
+If the CSV doesn’t meet import requirements, no data will be imported.\
+You’ll receive a clear error message and need to correct the file.
+
+**Screenshot placeholder:**
+
+![](/images/gitbook/shipping_info_error_csv-9215df79.png)
+
+
+Refer to the **file-level validation rules** below. If checks pass, data import begins (may take longer for large files—please wait).
+
+**Screenshot placeholder:**
+
+![](/images/gitbook/shipping_info_file_uploading-ca842345.png)
+
+
+***
+
+**4. File imported successfully**
+
+**Screenshot placeholder:**
+
+![](/images/gitbook/shipping_info_result-reports-ae08e778.png)
+
+
+After import completes, the system displays:
+
+* Number of success rows
+* Number of failed rows
+
+Click **Download Error Report** to get a CSV of only the failed rows, including error reasons.
+
+***
+
+### Field descriptions (template columns)
+
+| Column             | Description                                                                    |
+| ------------------ | ------------------------------------------------------------------------------ |
+| `Order_ID`         | System-generated unique order identifier, used to match existing orders.       |
+| `Shipping_Carrier` | Carrier name such as SF, J\&T, DHL, etc.                                       |
+| `Tracking_Number`  | Tracking number. Required for physical product orders; ignored for digital.    |
+| `Tracking_Url`     | Tracking link customers click on to view logistics.                            |
+| `import status`    | failed (default),it means this row failed to import                            |
+| `error message`    | Provides specific reason for import failure—for example, “Order ID not found.” |
+
+
+***
+
+### Validation & error report
+
+The system performs both file-level and row-level validations:
+
+**File-level validation**
+
+* Missing or mismatched header → `Invalid template header`
+* Non-CSV type → `Unsupported file type`
+* File is empty or has no valid rows → `No valid entries found`
+* File exceeds size or row limits → `Maximum allowed size is 15 MB and 1,000 rows`
+* Uploading multiple files at once → `Please upload only one file at a time`
+
+**Row-level validation**
+
+* Empty, not found, or mismatched `Order_ID` → `Order not found`
+* Duplicate `Order_ID` in the file → `Duplicate Order ID; skipped`
+* Missing or malformed `Tracking_Number` for physical items → `Invalid Tracking Number`
+* For digital orders, logistics fields are skipped and the order is marked as shipped
+
+**Example failure report (CSV):**
+
+```csv
+Order_ID,Shipping_Carrier,Tracking_Number,Tracking_Url,Result,Reason
+412341234,,,,Failed,"Missing shipping data"
+634563456354635,,,,Failed,"Order not found"
+```
+
+> If network or system errors occur, the system may show a generic error message—please retry a few minutes later.
+
+***
+
+### FAQs
+
+**Q1: Can I import again even after an order is already marked as “Shipped”?**\
+Yes. Re-importing or editing the same `Order_ID` will overwrite with the latest logistics information.
+
+
+**Q2: Do virtual or digital products require tracking fields?**\
+No. These orders are simply marked as shipped; the logistics fields are ignored.
+
+
+**Q3: Which payment methods are currently supported?**\
+To align with fulfillment workflows, Shop supports **Cash on Delivery (COD)** and **PayPal Wallet**.
+
+
+**Q4: Excel converted a long Order\_ID into scientific notation like “1.23E+17”. How do I avoid that?**\
+Set the `Order_ID` column to “Text” or prepend an apostrophe (`'`) in Excel to preserve the value correctly.
+
+
+**Q5: What happens to rows with errors during import?**\
+These rows are skipped, and a failure report is generated with specific error reasons. You can correct and re-upload them.
+
+
+**Q6: What if there are duplicate rows for the same order?**\
+As long as each row is valid:
+
+* The first entry sets the shipping info and marks the order as shipped.
+* The second entry overwrites the shipping info with the latest data.

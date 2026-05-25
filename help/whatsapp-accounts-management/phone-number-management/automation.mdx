@@ -1,0 +1,227 @@
+---
+title: "Automation"
+---
+
+# Automation
+
+Automation is the configuration for phone numbers, including:
+
+* [Welcome message](/help/whatsapp-accounts-management/phone-number-management/automation#welcome-message-huan-ying-xiao-xi) (Feature Deprecation)
+* [Ice breaker](/help/whatsapp-accounts-management/phone-number-management/automation#ice-breakers-po-bing-ti-shi)
+* [Auto-reply for unassigned conversation](/help/whatsapp-accounts-management/phone-number-management/automation#autoreply-for-unassigned-conversations-zi-dong-hui-fu-wei-fen-pei-dui-hua)
+* [Auto-reply for in queue conversations](https://helpdocs.ycloud.com/help-center/whatsapp-accounts-zhang-hao-guan-li/shou-ji-hao-ma-guan-li/zi-dong-hua#auto-reply-for-in-queue-conversations)
+* [Auto-reply for delayed agent responses](/help/whatsapp-accounts-management/phone-number-management/automation#autoreply-for-delayed-agent-responses-chao-shi-zi-dong-hui-fu)
+* [Auto-close Inbox conversations](/help/whatsapp-accounts-management/phone-number-management/automation#autoclose-inbox-conversations-chao-shi-zi-dong-guan-bi-dui-hua)
+* [CSAT](https://helpdocs.ycloud.com/help-center/whatsapp-accounts-zhang-hao-guan-li/shou-ji-hao-ma-guan-li/zi-dong-hua#csat-customer-satisfaction)
+
+Automation settings guidance: \
+Home > WhatsApp accounts > Number's Settings > Automation
+
+![](/images/gitbook/image-217-77baec8a.png)
+
+*Automations*
+
+
+## Welcome message (Feature Deprecation)
+
+**Timing of sending**: Whenever a WhatsApp user fist opens a chat window with you.
+
+> **Info**
+>
+> Note: It is triggered when the customer first opens a chat window with you, even before they send any message to you.
+
+![](/images/gitbook/image-218-08d2054b.png)
+
+*Welcome message*
+
+**Message format**: Welcome messages can be sent in free-form: text, media, interactive messages with buttons. _For example: Media message, see the example below:_
+
+![](/images/gitbook/image-219-40b461f6.png)
+
+*Media message as Welcome message*
+
+**Use case**: Welcome messages are great for service interactions, such as customer support. For example, you can embed a WhatsApp button on your app or website. When a user clicks on the button, they are directed to WhatsApp, where they will receive a welcome message providing context on how to interact with you.
+
+**Charges**: Although welcome messages are proactively sent by the business, the messages sent will be charged as service conversation type.
+
+### Steps
+
+#### Step 1: Enable the welcome message switch
+
+![](/images/gitbook/image-220-a7afea70.png)
+
+*Enable welcome message*
+
+#### Step 2: Edit the auto-reply message content
+
+Supported message types:
+
+* Text message: Pure text type message. Supports Emoji, bold, italic, etc.
+* Rich media message: Image/video/file + text type message.
+* Interactive message: Interactive messages with buttons, such as quick reply buttons, view website buttons, list buttons.
+
+> **Info**
+>
+> Note: For interactive messages, if you want to use list buttons, the Header must be set to None or plain text Header.
+
+![](/images/gitbook/image-221-06c5550f.png)
+
+*Save welcome message*
+
+
+## Ice breakers
+
+Ice breakers provide users with a way to start a conversation with a business through a list of common questions. When a user opens your chat window, a list of preset ice breaker phrases will appear in the user's input box, and the user can send a message immediately by clicking on it.
+
+![](/images/gitbook/image-222-8b2257cd.png)
+
+*Ice breakers*
+
+**Rules**: You can configure up to 4 ice breakers on a phone number. Each ice breaker can have up to 80 characters. Emojis are not supported.
+
+### Steps
+
+#### Step 1: Enable the ice breaker switch
+
+![](/images/gitbook/image-223-229904c8.png)
+
+*Enable ice breaker*
+
+#### Step 2: Set options
+
+After setting the options, click Save.
+
+![](/images/gitbook/image-224-bfebdc8b.png)
+
+*Edit and save Ice breaker*
+
+## Auto-reply for unassigned conversations
+
+When a conversation enters unassigned, which means no one is serving the conversation, the system automatically replies to the customer with a message to ensure timely response.
+
+![](/images/gitbook/image-236-222a0cff.png)
+
+*Auto-reply for unassigned message*
+
+### Steps
+
+#### Step 1: Turn on the switch
+
+![](/images/gitbook/image-225-c473e685.png)
+
+*Enable auto-reply for unassigned conversations*
+
+#### Step 2: Edit the auto-reply content
+
+Click the Edit button to edit. Supported message types:
+
+* Text message: Pure text type message. Supports Emoji, bold, italic, etc.
+* Rich media message: Image/video/file + text type message.
+* Interactive message: Interactive messages with buttons, such as quick reply buttons, view website buttons, list buttons.
+
+After setting, click Save.
+
+![](/images/gitbook/image-235-b7dec104.png)
+
+*Edit and save auto-reply for unassigned conversations*
+
+## Auto-reply for in queue conversations
+
+When this switch is turned on, conversations in the queue will receive an automatically sent message, notifying the customer that they are currently in a waiting state, ensuring timely responses.
+
+If a staff member who has reached their reception limit closes one of their ongoing conversations, a conversation from the queue will automatically be assigned to their inbox.
+
+Additionally, staff members can also manually claim conversations that are in the queue.
+
+
+### Steps
+
+**Method 1:**
+
+When the reception limit is reached, the number of people currently in the queue will be displayed at the top of the staff member's Inbox interface. Click on **people in queue**, select the conversation you want to transfer to yourself, and the transfer will be successful.
+
+![](/images/gitbook/image-187-b20c3968.png)
+
+![](/images/gitbook/image-188-b3e29577.png)
+
+**Method 2:**
+
+Inbox > Unassigned > In queue
+
+You can view the conversations currently in the queue. Click into a conversation to transfer it.
+
+![](/images/gitbook/image-189-164bb824.png)
+
+## Auto-reply for delayed agent responses
+
+If the customer's message is not replied to by the agents within the specified time, the system will automatically send a message to the customer. You can set the waiting time for sending reminder messages.
+
+### Steps
+
+#### Step 1: Turn on the switch
+
+![](/images/gitbook/image-237-610adfbb.png)
+
+*Enable Auto-reply for delayed agent responses*
+
+#### Step 2: Set the waiting time and reply content
+
+Waiting time: If the agent has not replied to the customer within the set time, the system will automatically reply.
+
+Click the Edit button to edit the content. Supported message types:
+
+* Text message: Pure text type message. Supports Emoji, bold, italic, etc.
+* Rich media message: Image/video/file + text type message.
+* Interactive message: Interactive messages with buttons, such as quick reply buttons, view website buttons, list buttons.
+
+After setting, click Save.
+
+![](/images/gitbook/image-238-3080d114.png)
+
+*Edit and save Auto-reply for delayed agent responses*
+
+## Auto-close Inbox conversations
+
+In the case of agent is serving the conversation, if the customer does not reply within the set time, the system will automatically close the conversation. You can set the auto-close time.
+
+> **Info**
+>
+> This setting does not apply to unassigned conversations and conversations assigned to bots. Unassigned conversations will not be automatically closed, and conversations assigned to bots have two closing methods:
+>
+> 1. Close the conversation after the process is completed.
+> 2. Close the conversation if the customer does not respond to the bot for 10 minutes.
+
+### Steps
+
+#### Step 1: Turn on the switch
+
+![](/images/gitbook/image-239-dbd6c544.png)
+
+*Enable auto-close Inbox conversation*
+
+#### Step 2: Edit the auto-close time
+
+Supported configuration range: 1 minute to 72 hours.
+
+Recommended configuration parameter: 24 hours.
+
+After configuration, click Save.
+
+![](/images/gitbook/image-240-6a0ddfb4.png)
+
+*Save auto-close Inbox conversations*
+
+## CSAT（Customer Satisfaction)
+
+When this switch is turned on, after a conversation handled by a human agent ends, a satisfaction survey will automatically be sent to the user. Please note that if the conversation is handled by a BOT, the satisfaction survey will not be triggered. **This feature is only effective for conversations handled by human agents.**
+
+### Steps
+
+#### Step 1: Turn on the switch
+
+![](/images/gitbook/image-557-52658e16.png)
+
+**Step 2: Edit the Content**\
+As shown in the image below, you can configure the text for the message and the button. Once the button is expanded, the survey format is fixed and cannot be modified.
+
+![](/images/gitbook/image-558-c136b147.png)

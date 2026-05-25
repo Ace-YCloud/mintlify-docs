@@ -1,0 +1,75 @@
+---
+title: "Basic Principles"
+---
+
+# Basic Principles
+
+The primary goal of sending emails is to enhance customer engagement and retention, or to increase the return on investment for marketing campaigns. If emails are not sent for any reason, the content of those emails will have no chance of being read, clicked, or yielding any results for your business.\
+This section will explain how Email works and the foundational knowledge relevant to helping you make the best decisions.
+
+## Deliverability
+
+Email deliverability is a measure of how many emails are successfully received by Internet Service Providers (ISPs), regardless of whether they end up in the inbox or the spam folder. It simply refers to the percentage of emails that are not bounced.
+
+When you click "send," your email goes through various filters before reaching the recipient. A key step in this process is avoiding being marked as spam or being moved to the spam folder.
+
+Major ISPs like Gmail, Outlook, and Yahoo Mail employ advanced spam filtering methods to protect their users and mail services from abuse. These spam filters act as the first line of defense, analyzing incoming emails and allowing good emails into the inbox while filtering out bad ones to the spam folder or outright rejecting them.
+
+Your **IP address, reputation, and domain** play crucial roles in ensuring your emails reach your customers' inboxes.
+
+## Sender Name, Email Address, and Domain
+
+When sending an email, you need to upload the Sender name, Email address, and Domain fields. The image below shows a sender's information, including all three parts, and highlights their differences:
+
+![](/images/gitbook/image-482-0fb4cd3c.png)
+
+*What are the differences between the sender name, email address, and domain?*
+
+## Domain Verification
+
+To ensure email deliverability and inbox rates, it is crucial to authenticate the domain from which you are sending. This allows email providers to permit YCloud to send emails using your domain. This not only increases the chances of email delivery but also reduces the likelihood of emails being marked as spam by recipients.
+
+First, you simply need to configure your sending domain on the YCloud platform and obtain the necessary DNS records for verification. Once you have the records, you can configure the Domain Name System (DNS) records on your domain management platform.
+
+By verifying your domain, you can clearly indicate to recipients who the email is from, thereby establishing trust and credibility. Therefore, it is strongly recommended that you complete this process to ensure the success of your email marketing campaigns.
+
+[domain-configuration.md](/help/integrations/channels/email/email-features/domain-configuration)
+## IP Address
+
+When sending email campaigns, there are two options for IP: shared and dedicated.
+
+For small-scale email campaigns, shared IP addresses are a cost-effective solution as they are shared among multiple domains. However, it is important to remember that you have no control over the reputation of the senders, so be aware that even one bad sender on the IP address could lead to delivery issues for others using that address.
+
+On the other hand, dedicated IP addresses are specifically for your campaigns, providing a direct connection to ISPs and faster delivery to recipients. If you send a large volume of emails weekly, a dedicated IP is a valuable investment to protect your reputation.
+
+YCloud uses shared IPs by default, but you can purchase a dedicated IP from YCloud and be charged monthly for the dedicated IP.
+
+## Reputation
+
+Sending emails is a crucial part of communication, but it is important to remember that every email you send can affect your reputation. Internet Service Providers (ISPs) collect data about your sending behavior, including your domain (the part of the email address after the "@" symbol) and IP address (the unique identifier of your sending activity).
+
+To ensure successful email delivery, maintaining a good IP and domain reputation is essential. Receiving servers consider multiple factors when evaluating reputation, including the reactions of other recipients to emails from the same IP and domain (e.g., whether they are marked as spam), as well as the placement of previous emails from the same IP and domain.
+
+To cultivate a good reputation, it is recommended to use your own domain, conduct IP warm-up, send only to those who need the email, and ensure high-quality content. By taking these steps, you can ensure that your emails reach recipients' inboxes and maintain a high reputation.
+
+Reputation deductions can occur due to the following: server unreachability; incorrect address format; non-existent address; spam; spam reports.
+
+## Subscriber Preferences and Unsubscribe
+
+To build trust and reputation with subscribers, it is important to allow them to control their communication preferences. You can achieve this by allowing them to choose their preferred contact channels (SMS, app push, email, etc.), topics they are interested in, types of messages they prefer, and the frequency of communications.
+
+In addition to building trust, it is also necessary to comply with the law and ensure your emails reach recipients. To achieve this, it is important to include an unsubscribe link in your email marketing campaigns. This allows your subscribers to easily opt out of receiving future emails, which helps prevent your emails from being marked as spam.
+
+## Legal Compliance
+
+An effective preference center with a functional unsubscribe link is not only good practice but also a mandatory requirement under the CAN-SPAM Act. This Act requires all unsubscribes to be effective, honored, and fulfilled within ten business days.
+
+To comply with the law, you must obtain explicit opt-in permission from users. Confirmed opt-in lists are more attractive from the outset and will effectively help you build sender reputation. By sending emails only to those who have agreed to receive them, you can avoid being marked as spam by recipients. If too many recipients mark your emails as spam, ISPs may consider you to be spamming everyone on your sender list, including those who have opted to receive your emails.
+
+By following best practices in email marketing and complying with the law, you can ensure that your emails are well-received by your audience and that your sender reputation remains good.
+
+Email opt-in laws:
+
+* [U.S. CAN-SPAM Act](https://www.ftc.gov/business-guidance/resources/can-spam-act-compliance-guide-business)
+* [CASL in Australia and Canada](https://ised-isde.canada.ca/site/canada-anti-spam-legislation/en)
+* [EU GDPR](https://www.gdpreu.org/compliance/email-marketing/)

@@ -1,0 +1,127 @@
+---
+title: "Update order status"
+---
+
+# Update order status
+
+## Before updating the order status
+
+Before updating the order status, **make sure the order has been paid**. YCloud will push you the paid status via this [webhook](https://docs.ycloud.com/reference/whatsapp-payment-updated-webhook-examples).&#x20;
+
+You will receive updates when the status of the user-initiated transaction changes. It occurs when the payment status changes to `captured` (when the payment is successfully completed), or `pending` (when the user attempts but has yet to receive a successful transaction signal).
+
+Sample:
+
+```
+{
+  "id": "evt_eEkn26qar3nOB8md",
+  "type": "whatsapp.payment.updated",
+  "apiVersion": "v2",
+  "createTime": "2024-10-10T07:08:00.000Z",
+  "whatsappPayment": {
+    "wabaId": "WABA-ID",
+    "referenceId": "<reference-id>",
+    "status": "captured | pending",
+    "transactions": [
+      {
+        "id": "<transaction-id>",
+        "type": "billdesk | payu | razorpay | zaakpay",
+        "status": "pending | success | failed",
+        "createdTimestamp": 1728544066000,
+        "updatedTimestamp": 1728544066000,
+        "amount": {
+          "value": 21000,
+          "offset": 100
+        },
+        "currency": "INR",
+        "methodType": "upi | card | wallet | netbanking",
+        "error": {
+          "code": "error-code",
+          "reason": "error-reason"
+        }
+      }
+    ]
+  }
+}
+```
+
+## Order status enumeration value
+
+| Value               | Description                                                                                                                                                                                                       |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `pending`           | User has not successfully paid yet                                                                                                                                                                                |
+| `processing`        | User payment authorized, merchant/partner is fulfilling the order, performing service, etc.                                                                                                                       |
+| `partially-shipped` | A portion of the products in the order have been shipped by the merchant                                                                                                                                          |
+| `shipped`           | All the products in the order have been shipped by the merchant                                                                                                                                                   |
+| `completed`         | The order is completed and no further action is expected from the user or the partner/merchant                                                                                                                    |
+| `canceled`          | The partner/merchant would like to cancel the `order_details` message for the order/invoice. The status update will fail if there is already a `successful` or `pending` payment for this `order_details` message |
+
+![](/images/gitbook/image-596-f6b4c02b.png)
+
+
+## How to notify customers about changes in order status?
+
+You can notify customers by sending an Order Status Updates template when an order is comfirmed or shipped.
+
+e.g. When an order has been shipped, you can send an **Order Status Updates** template to the customer, informing them about the updated status.
+
+
+### Create order status update template
+
+> **Info**
+>
+> The prerequisite is that you have linked your payment account.
+
+1. Create via api
+
+api doc: [https://docs.ycloud.com/reference/whatsapp\_template-create](https://docs.ycloud.com/reference/whatsapp_template-create)
+
+create example: [https://docs.ycloud.com/reference/whatsapp-template-creation-examples#order-status-template](https://docs.ycloud.com/reference/whatsapp-template-creation-examples#order-status-template)
+
+
+2. Create on YCloud
+
+Visit [https://www.ycloud.com/console/#/app/dashboard/template](https://www.ycloud.com/console/#/app/dashboard/template)
+
+![](/images/gitbook/image-597-41099422.png)
+
+### Send Order status updates message
+
+api: [https://docs.ycloud.com/reference/whatsapp\_message-send-directly](https://docs.ycloud.com/reference/whatsapp_message-send-directly)
+
+example:
+
+```
+curl 'https://api.ycloud.com/v2/whatsapp/messages/sendDirectly' \
+-H 'Content-Type: application/json' \
+-H 'X-API-Key: {{YOUR-API-KEY}}' \
+-d '{
+  "from": "{{BUSINESS-PHONE-NUMBER}}",
+  "to": "{{CUSTOMER-PHONE-NUMBER}}",
+  "type": "template",
+  "template": {
+    "name": "order_status_template",
+    "language": {
+      "policy": "deterministic",
+      "code": "en_US"
+    },
+    "components": [
+      {
+        "type": "order_status",
+        "parameters": [
+          {
+            "type": "order_status",
+            "order_status": {
+              "reference_id": "<reference_id_value>",
+              "order": {
+                "status": "processing | partially_shipped | shipped | completed | canceled",
+                "description": "<OPTIONAL_DESCRIPTION>"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}'
+```

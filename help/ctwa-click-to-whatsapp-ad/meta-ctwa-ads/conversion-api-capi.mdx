@@ -1,0 +1,378 @@
+---
+title: "Meta Ads：Traffic Delivery\\&Conversion Reporting"
+description: >-
+  Introduce how to view the converrsations and set conversion reporting rules
+  correctly
+---
+
+# Meta Ads：Traffic Delivery\&Conversion Reporting
+
+> **Info**
+>
+> Before you start, we recommend reading:
+>
+> * [Meta CTWA Ads](https://helpdocs.ycloud.com/help-center/zh/ctwa-click-to-whatsapp-ad/facebook-ads)
+> * [Connect Meta Ad Account](https://helpdocs.ycloud.com/help-center/zh/ctwa-click-to-whatsapp-ad/facebook-ads/connect-facebook-ad-account)
+> * [Create Click to WhatsApp Ad (CTWA)](https://helpdocs.ycloud.com/help-center/zh/ctwa-click-to-whatsapp-ad/facebook-ads/chuang-jian-dian-ji-whatsapp-guang-gao-ctwa)
+
+### 1. View Conversations from Meta Ads in YCloud
+
+After your ads start delivering, users who click a Meta CTWA ad and open a conversation in WhatsApp will enter YCloud.\
+The focus of this step is to confirm whether ad traffic is being delivered into WhatsApp correctly and whether the source information is being recorded properly.
+
+**What You Will See**
+
+Once your ads start bringing in real conversations, you will usually see the following in YCloud:
+
+* New conversations will appear in YCloud Inbox
+* Contact details will display information related to the ad source
+
+![](https://4253554051-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F78HV6e8vN6mhwsbohgTK%2Fuploads%2FjkG8ulFinrBzDXwnUlne%2Finbox-SOURCE%3Dmeta-T1.png?alt=media&token=01a34a35-0a45-4f1d-a528-f6fc453b8b26)
+
+![](https://4253554051-files.gitbook.io/~/files/v0/b/gitbook-x-prod.appspot.com/o/spaces%2F78HV6e8vN6mhwsbohgTK%2Fuploads%2FQo1IT7qM5EqrMHk3ZaLi%2FCONTACT-SEGMENT%3DAD-CODE-T1.png?alt=media&token=2dabfa70-f560-463d-b8af-4eda1f84422e)
+
+You can also filter contacts from ads in the contact list by using `Source is AD`, and use the following fields to understand the source in more detail:
+
+* `Source = AD`: This means the contact first reached your number through a Meta ad
+* `Source URL`: This is the Meta ad link the contact used when they first reached your number
+* `Source ID`: This is the Meta ad ID associated with the contact's first interaction with your number
+
+> **Info**
+>
+> If your ads are already live but you still cannot see any conversations or data, please check the following first:
+>
+> * Whether the ad has been approved and has actually started delivering
+> * Whether the WhatsApp Business Number selected in the ad is the same number already connected in YCloud
+> * Whether the corresponding Meta ad account has already been connected to YCloud
+> * Whether any user has actually clicked the ad and started a WhatsApp conversation
+
+### 2. Understand Meta Conversion Reporting, CAPI, and Deep Funnel Events
+
+If you want Meta to see not only “ad clicked” or “conversation started,” but also deeper business outcomes after the WhatsApp conversation, you need to use conversion reporting.
+
+**What Is Conversion Reporting**
+
+Conversion reporting means that after a user clicks a Meta CTWA ad and starts a WhatsApp conversation, YCloud sends the user’s later business actions back to Meta as events through CAPI.
+
+**What Are Deep Funnel Events**
+
+Deep funnel events are events that are closer to actual business outcomes than “conversation started.”\
+For example, actions such as placing an order or completing payment after the conversation can better reflect whether the ad actually drove business conversion.
+
+In the Meta CTWA scenario, the deep funnel event currently supported by YCloud is:
+
+* `Purchase`
+
+**What Is CAPI**
+
+CAPI (Conversion API) is the event reporting interface provided by Meta.\
+It helps businesses send post-conversation business events back to Meta for ad measurement and later optimization.
+
+After the ad account is connected, YCloud can report eligible events back to Meta through CAPI.\
+When real conversations and `Purchase` events happen later, the related data will gradually appear in Meta’s event reporting system.
+
+### 3. Configure Purchase Reporting in YCloud
+
+If you want Meta to see deeper business outcomes such as purchases, you need to configure the corresponding `Purchase` event in YCloud.
+
+**Currently Supported Deep Funnel Event**
+
+In the Meta CTWA scenario, YCloud currently supports reporting only the following deep funnel event back to Meta:
+
+* `Purchase`
+
+This means that if you want to view deeper business conversions in Meta later, or try a purchase-oriented optimization goal, you should currently configure everything around the `Purchase` event.
+
+> **Info**
+>
+> `Purchase` is not suitable for every advertiser.\
+> To understand when “Maximize number of conversations” or “Maximize number of purchases” is more appropriate, continue reading the FAQ section below.
+
+**How to Configure Tracking Events in YCloud**
+
+1. Go to the `CTWA` section in YCloud.
+2. Select the target ad from the ad list and enter `Track events`.
+3. Click `+ Track new event` to create a new tracking event.
+4. Complete the following fields as needed:
+
+* Event name: Used only for internal identification and management
+* Trigger type: Defines what condition will trigger this event
+* Reported event type: Fixed as `Purchase`
+
+**Common Trigger Methods**
+
+YCloud currently supports 3 common ways to trigger `Purchase`.\
+You can choose the one that best fits your business workflow and use it as the condition for `Purchase` reporting.
+
+#### **Method 1: Trigger Purchase Through Contact Tags**
+
+If your team manually or automatically adds a tag to a contact after a purchase is completed, this is the most suitable method.
+
+For example:
+
+* After payment is completed, the contact is tagged as `Paid`
+* After the customer confirms the order, the contact is tagged as `Purchased`
+
+When the specified tag is added to the contact, YCloud will trigger one `Purchase` report.
+
+**Steps:**
+
+1. Go to the `CTWA` section in YCloud.
+2. Select the target ad and enter `Track events`.
+3. Click `+ Track new event`.
+4. In trigger type, choose “Contact Tag” or the corresponding tag-based trigger option.
+5. Select the tag that should count as a `Purchase` condition.
+6. In reported event type, choose `Purchase`.
+7. Save the configuration and enable the tracking event.
+
+**Suitable for:**
+
+* Your sales or support team applies tags after a deal is completed
+* You already have a stable tag management process
+* You want a relatively simple way to start reporting `Purchase` data
+
+#### **Method 2: Trigger Purchase Through Keywords**
+
+If customers usually send specific keywords after a purchase is completed, such as an order number, payment confirmation phrase, or another business confirmation phrase, you can also use keyword-based triggering.
+
+When a customer mentions a matching keyword in a WhatsApp conversation, YCloud will trigger one `Purchase` report.
+
+**Steps:**
+
+1. Go to the `CTWA` section in YCloud.
+2. Select the target ad and enter `Track events`.
+3. Click `+ Track new event`.
+4. In trigger type, choose “Keyword”.
+5. Add one or more keywords as trigger conditions.
+6. In reported event type, choose `Purchase`.
+7. Save the configuration and enable the tracking event.
+
+**Suitable for:**
+
+* Your customers usually send fixed keywords after conversion
+* You want to quickly identify purchases based on conversation content
+* You do not yet have a complete tag or system-reporting setup
+
+> **Warning**
+>
+> If the keyword itself is ambiguous, it is not recommended to use it directly as a `Purchase` condition.\
+> Otherwise, false triggers may occur and affect how Meta interprets and optimizes `Purchase` data.
+
+#### **Method 3: Trigger Purchase Through API + Custom Event**
+
+If your business system can clearly determine exactly when a purchase is completed, then `API + Custom Event` is the recommended option.
+
+This method is usually more suitable for:
+
+* Order systems
+* Payment systems
+* CRM / ERP
+* Self-built backend services
+* Mobile apps
+
+When your system confirms that a purchase is completed, it can create a custom event through the YCloud API, and that event can then trigger one `Purchase` report.
+
+**Steps:**
+
+1. Go to the `CTWA` section in YCloud.
+2. Select the target ad and enter `Track events`.
+3. Click `+ Track new event`.
+4. In trigger type, choose `API + Custom Event`.
+5. Configure the corresponding custom event condition for this tracking event.
+6. In reported event type, choose `Purchase`.
+7. Save the tracking event.
+8. When your business system confirms that a purchase is completed, send the corresponding `Custom Event` through the YCloud API.
+9. Once the event matches, YCloud will report that `Purchase` back to Meta.
+
+**Suitable for:**
+
+* You want to use the true purchase status from your business system as the only standard
+* You do not want to rely on manual tagging or keyword matching
+* You require higher accuracy for `Purchase` data
+
+> **Info**
+>
+> If you have your own order or payment system, `API + Custom Event` is usually the better option.\
+> This method is closer to the real business outcome and is more suitable as the data signal Meta uses for later ad optimization.
+
+> **Info**
+>
+> It is recommended to define the business meaning of `Purchase` clearly before you start reporting it.\
+> For example, decide whether a valid purchase means “order placed successfully” or “payment completed.” Only with a stable definition will your later data be truly useful.
+
+### 4. How to Choose an Optimization Goal
+
+In Meta CTWA advertising, the optimization goal should match your current stage.
+
+**In the Early Delivery Stage, Prioritize Maximize Number of Conversations**
+
+If your ads have just started delivering, or you do not yet have stable `Purchase` reporting data, it is recommended to prioritize:
+
+* `Maximize number of conversations`
+
+This is better for first validating whether the ad can steadily bring in WhatsApp conversations and for quickly validating the basic chain from “ad click” to “conversation started.”
+
+**When to Consider Maximize Number of Purchases**
+
+Only after the following conditions are met should you evaluate switching to:
+
+* `Maximize number of purchases (Purchase)`
+
+It is recommended that at least the following conditions be met first:
+
+* `Purchase` reporting has already been configured correctly in YCloud
+* Real customers have already triggered `Purchase` events
+* The business definition of `Purchase` is stable and will not change frequently
+* Your core campaign goal has already shifted from “getting more conversations” to “getting more purchases”
+
+### 5. View Ad Performance and Conversion Data
+
+After conversation handover and `Purchase` reporting are configured, you can view data both in Meta and in YCloud.
+
+**View in Meta**
+
+You can view ad delivery data in `Meta Ads Manager > Campaigns` at the campaign, ad set, or ad level, including:
+
+* Spend
+* Impressions
+* Clicks
+* Conversation results
+
+If `Purchase` reporting has already been configured and triggered by real users, you can also view `Purchase` event data reported by YCloud in `Meta Events Manager > Dataset`.
+
+**View in YCloud**
+
+You can view two types of data in YCloud:
+
+**1. View overall ad data**
+
+Go to `CTWA > Ad Manage`, where you can view the basic delivery data of CTWA ads under a given ad account within a selected time range, such as:
+
+* Spend
+* Impressions
+* Clicks
+* Started conversations
+
+**2. View leads and tracking event details brought by the ad**
+
+If you want to see which leads were brought by a specific ad, or which customers triggered the `Purchase` event, you can go to the corresponding ad’s `Track events / View Leads` page.
+
+There you can further check:
+
+* Which customers came from that ad
+* Which customers triggered the `Purchase` event
+* Whether the corresponding leads or event details can be exported
+
+#### Next Step
+
+**Handle Visitors from CTWA Ads**
+
+Once the ads start bringing in conversations, you can continue handling customers in YCloud and assign your sales or support team to follow up.
+
+* [Receive CTWA Visitors](https://helpdocs.ycloud.com/help-center/zh/ctwa-click-to-whatsapp-ad/jie-dai-ctwa-de-fang-ke)
+
+**View Overall CTWA Analysis Data**
+
+If you want to view CTWA ad performance and lead data from an overall perspective, you can continue reading:
+
+* [CTWA Analysis](https://helpdocs.ycloud.com/help-center/zh/ctwa-click-to-whatsapp-ad/ctwa-fen-xi)
+
+#### FAQ
+
+<details>
+
+<summary>Q: Why are my ads already live, but I still cannot see any conversations or data in YCloud?</summary>
+
+A: First check whether the ad has actually started delivering and whether any real users have clicked the ad and started a WhatsApp conversation. If the ad only has impressions or clicks but no one has started a conversation yet, YCloud will not show any corresponding conversation or later data. Also confirm that the WhatsApp Business Number used in the ad is the same one already connected in YCloud.
+
+</details>
+
+<details>
+
+<summary>Q: Why can’t I see Purchase data in Meta yet?</summary>
+
+A: This is usually because you have not configured `Purchase` reporting correctly in YCloud yet, or because although it is configured, no real customers have triggered a `Purchase` event yet. It is recommended that you first go to `Meta Events Manager > Dataset` to check whether any events have entered the corresponding dataset, and then confirm whether the `Purchase` trigger conditions in YCloud are configured correctly.
+
+</details>
+
+<details>
+
+<summary>Q: Which optimization goal should I choose at the beginning of delivery?</summary>
+
+A: If your ads have just started delivering, it is recommended to prioritize “Maximize number of conversations.” At this stage, the main goal is to validate whether the ads can steadily bring in WhatsApp conversations. After `Purchase` reporting has been configured and stable data is available, you can then evaluate whether to switch to “Maximize number of purchases (Purchase).”
+
+</details>
+
+<details>
+
+<summary>Q: How should I choose between Maximize number of purchases and Maximize number of conversations?</summary>
+
+A: These two optimization goals are suitable for different stages.
+
+If you choose “Maximize number of purchases (Purchase),” Meta mainly relies on the data signal of whether a customer has made a purchase when optimizing the ad.\
+However, in the CTWA scenario, Meta cannot naturally know whether a customer completed a purchase after a WhatsApp conversation. Therefore, this type of signal mainly depends on the conversion events you configure in YCloud and the data that YCloud sends back to Meta through CAPI.
+
+This means:
+
+* If you have not yet configured a `Purchase` event in YCloud
+* Or although it is configured, you do not yet have stable `Purchase` data
+* Or you are still validating whether the ads can steadily bring in conversations
+
+Then it is more recommended to prioritize “Maximize number of conversations,” because at this stage the ad is better optimized around whether it can bring in more WhatsApp conversations.
+
+It becomes more appropriate to consider “Maximize number of purchases” only after the following conditions are met:
+
+* You have correctly configured a `Purchase` conversion event in YCloud
+* Real customers have already triggered `Purchase`, and the data is being continuously reported back to Meta
+* The business definition of `Purchase` is stable, for example you have already defined whether “order placed successfully” or “payment completed” should count as one `Purchase`
+* The core goal of the ad has already shifted from “getting more conversations” to “getting more purchases”
+
+In simple terms:
+
+* If your current priority is to first get the conversation flow running, choose “Maximize number of conversations”
+* If your current priority is to drive more purchases, and you already have stable `Purchase` reporting data, then choose “Maximize number of purchases”
+
+> **Info**
+>
+> Practical recommendation: At the beginning of delivery, prioritize “Maximize number of conversations.” After `Purchase` reporting becomes stable, then evaluate whether to switch to “Maximize number of purchases.”
+
+</details>
+
+<details>
+
+<summary>Q: Why can’t I select “Maximize number of purchases (Purchase)” at the ad set level for my CTWA ad?</summary>
+
+A: There are usually two reasons:
+
+1. You are not yet steadily sending `Purchase` events back to Meta through YCloud;
+2. Although `Purchase` reporting has already been configured, the account or ad has not yet accumulated enough stable and valid `Purchase` signals, so Meta does not make this optimization goal available yet.
+
+In this case, it is recommended that you first use “Maximize number of conversations” as the optimization goal to validate the basic conversation flow. After `Purchase` reporting has been configured correctly and stable purchase data is available, return to Meta Ads Manager and check whether “Maximize number of purchases” is available.
+
+</details>
+
+<details>
+
+<summary>Q: Do I have to configure Purchase reporting before I can start running Meta CTWA ads?</summary>
+
+A: No. You can first create the ad and start delivery to validate whether it can steadily bring in WhatsApp conversations. The role of `Purchase` reporting is to help you measure and optimize deeper business conversions after the basic conversation flow is already working.
+
+</details>
+
+<details>
+
+<summary>Q: I selected Maximize number of conversations, so why can I still see Purchase data in the Dataset?</summary>
+
+A: When you have not configured a dedicated `Purchase` event rule, YCloud will by default report one `Engage` behavior to Meta as a `Purchase` event.
+
+Here, `Engage` means that after ad traffic enters WhatsApp, the user completes at least 2 message interactions with you.
+
+The purpose of doing this is to provide Meta with one usable deep-interaction signal first, before you set your own custom `Purchase` rule, so that you can later use it for data analysis, audience building, and optimization testing.
+
+Please note:
+
+* Seeing this kind of `Purchase` data in the `Dataset` does not mean the customer has completed a real purchase
+* If you are still using “Maximize number of conversations” as the optimization goal, this default reporting will not directly switch your ad optimization goal to “Maximize number of purchases”
+* If you want `Purchase` to more accurately represent real transactions, it is recommended that you configure a dedicated `Purchase` trigger rule in YCloud as soon as possible based on your own business definition
+
+</details>

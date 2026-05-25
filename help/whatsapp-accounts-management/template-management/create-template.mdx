@@ -1,0 +1,160 @@
+---
+title: "Create Template"
+---
+
+# Create Template
+
+## Tutorial for Creating Marketing and Utility Templates
+
+### Step 1: Access the Templates Page
+
+1. Navigate to Templates from the left-hand navigation. Users with multiple WABA accounts should switch the WABA space in the top right corner.
+
+![](/images/gitbook/image-194-1-f193b786.png)
+
+*Templates*
+
+2. Enter Templates from the WhatsApp accounts.
+
+![](/images/gitbook/image-195-1-9097afb7.png)
+
+*WABA > Templates*
+
+### Step 2: Name & Select Template Type
+
+1. Template name: The name of the template. Names only support numbers, lowercase letters, and underscores \_.
+
+> **Info**
+>
+> Note: The name is unique and is the name called when sending via the interface.
+
+2. Category: The type of template. There are three types of templates, select based on the content:
+   1. Utility: Transactional templates. Used for sending notification messages.
+   2. Marketing: Marketing templates. All messages with marketing implications, as well as all greeting messages.
+   3. Authentication: Verification code templates. Fixed content, only supports sending verification codes.
+
+![](/images/gitbook/image-198-1-5d6bb229.png)
+
+*Template name & Category*
+
+### Step 3: Choose Language
+
+One template content can be configured in multiple languages. Click Add language to continue adding.
+
+Multiple languages can be edited together and then submitted.
+
+![](/images/gitbook/image-197-1-790843e4.png)
+
+*Choose language*
+
+Click the Edit button on the right side of the language to edit or delete the language.
+
+![](/images/gitbook/image-199-1-22ddeeb9.png)
+
+*Edit language*
+
+### Step 4: Edit Template Content
+
+[View introduction to creating verification code templates](/help/whatsapp-accounts-management/template-management/create-template#yan-zheng-ma-mu-ban-she-zhi-can-shu-jie-shao)
+
+Taking **marketing** and **notification templates** as examples:
+
+1. Header (optional): Header types supported: text, image, video, file.
+2. Body (required): Text content. Supports emoji, bold, and other text styles.
+3. Footer (optional): Text footer.
+4. Button (optional)
+   1. Up to 10 buttons can be added
+   2. Button types include:
+      1. Quick reply
+      2. Visit website
+      3. Call phone number
+      4. Copy offer code
+5. Variables: Variables can be added in Header, Body, or Visit website. When adding variables, a Sample must be provided for reviewers to judge the content of the entire template. The Sample is only used for review, and the actual variable value must be sent when issuing.
+
+![](/images/gitbook/image-4-1-9bebef51.png)
+
+Detailed template content can be found in the [Message Templates](/help/whatsapp-basics/message-templates) documentation
+
+![](/images/gitbook/image-22-1-c2c892d9.png)
+
+*Edit template*
+
+### Step 5: Submit Template
+
+After all languages are edited, scroll to the bottom of the page and click the submit button.
+
+![](/images/gitbook/image-23-1-df71854f.png)
+
+*Submit template*
+
+Confirm the template content is correct and click Confirm.
+
+![](/images/gitbook/image-24-1-02ecf723.png)
+
+*Confirm*
+
+### Step 6: Wait for Approval
+
+The template is reviewed by Meta, please be patient. Generally, the review will be completed within one day.
+
+If the template is rejected, you can enter the edit page to view the reason, and modify the template or appeal according to the prompt.
+
+![](/images/gitbook/image-203-1-ae01c59b.png)
+
+*Rejected template*
+
+## Introduction to Creating Verification Code Templates
+
+The steps to create verification code templates are the same as above, this section mainly introduces the settings for verification code templates.
+
+### Code Delivery
+
+Code delivery sets the method of delivering the verification code, with three options:
+
+* [Copy Verification Code](/help/whatsapp-accounts-management/template-management/create-template#fu-zhi-yan-zheng-ma-de-mu-ban)
+* [One-Click Fill Verification Code](/help/whatsapp-accounts-management/template-management/create-template#yi-jian-tian-chong-yan-zheng-ma)
+* [Zero-Click Autofill Verification Code](/help/whatsapp-accounts-management/template-management/create-template#ling-dian-ji-yan-zheng-ma-mu-ban)
+
+#### Copy Verification Code Template
+
+Choose the Copy Code type of sending method. You can customize the button name. [Click for detailed introduction](/help/whatsapp-basics/message-templates/authentication-message-templates/copy-verification-code-authentication-template)
+
+![](/images/gitbook/image-6-1-d3540963.png)
+
+#### One-Click Fill Verification Code
+
+Choose the Autofill type of sending method. You can customize the button name. The Autofill mode requires entering your App's Package name and App signature hash. The one-click fill verification code requires your application to be able to initiate a "handshake". [Click for detailed introduction](/help/whatsapp-basics/message-templates/authentication-message-templates/one-click-autofill-authentication-template)
+
+![](/images/gitbook/image-5-1-9c84847e.png)
+
+#### Zero-Click Verification Code Template
+
+Choose the Autofill type of sending method. Complete the Autofill information configuration. Enable the Zero-tap button and agree to the protocol.
+
+The zero-click verification code is an upgrade of the one-click fill verification code template, so it also requires your application to be able to initiate a "handshake". [Click for detailed introduction](/help/whatsapp-accounts-management/template-management/create-template#ling-dian-ji-yan-zheng-ma-mu-ban)
+
+![](/images/gitbook/image-7-1-379f90d2.png)
+
+### Template Content Settings
+
+Although the content of the verification code template is fixed, you can still add verification code validity and security tips through switches.
+
+![](/images/gitbook/image-8-1-e7504504.png)
+
+### Verification Code Message Validity Time Configuration
+
+Since WhatsApp business api messages are valid for 30 days, meaning that after sending, customers can open WhatsApp within 30 days to view the message, leading to successful receipt and charging. However, 30 days is too long for verification code messages, which are typically only valid for a few minutes. Therefore, WhatsApp provides a configuration for the validity time of messages in verification code templates.
+
+**Function:** After this verification code template message is sent, if it is not successfully received within the set message validity time, it will not continue to try to send. That is, no fee will be incurred. **We strongly recommend setting the message validity time less than or equal to the actual validity time of your verification code**.
+
+Example: _You configure the message validity time to be 5 minutes (the actual validity time of the verification code in your app might be 10 minutes)._
+
+_WhatsApp sends the verification code message to the user, but due to the user being offline or other reasons, the message remains in the processing (sending) state for 5 minutes. After this duration, WhatsApp stops trying to send this message to the user, and no fee is incurred. Even if the user connects to the internet and opens WhatsApp after 5 minutes, they will not see this message._
+
+Configuration entry:
+
+![](/images/gitbook/image-9-1-8c29b464.png)
+
+## Related Reading
+
+[message-templates](/help/whatsapp-basics/message-templates)

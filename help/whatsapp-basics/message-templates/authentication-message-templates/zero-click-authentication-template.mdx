@@ -1,0 +1,36 @@
+---
+title: "Zero-Click Authentication Template"
+---
+
+# Zero-Click Authentication Template
+
+The Zero-Tap Authentication Template allows your users to receive one-time passwords or codes via WhatsApp without leaving your application.
+
+When a user in your app requests a password or code and you provide that password or code using the Zero-Tap Authentication Template, the WhatsApp client simply broadcasts the included password or code, which your app can capture immediately using a broadcast receiver.
+
+From the user's perspective, they request a password or code in your app, and it automatically appears in your app. If your app users happen to be viewing messages in the WhatsApp client, they will only see a message displaying the default pinned text: _\<code> is your verification code._
+
+Like the One-Tap Autofill Button Authentication Template, when the WhatsApp client receives a template message containing the user's password or code, we perform a series of eligibility checks. If the message fails this check and we cannot broadcast the password or code, the message will display a One-Tap Autofill Button or Copy Code button. Therefore, when you create a Zero-Tap Authentication Template, you must include One-Tap Autofill and Copy Code buttons in the post body payload, even if the user may never see one of the buttons.
+
+![](/images/gitbook/image-445-12a25d0c.png)
+
+#### Limitations <a href="#limitations" id="limitations"></a>
+
+Zero-Tap is only supported on Android. If you send a Zero-Tap Authentication Template to a WhatsApp user with a non-Android device, WhatsApp will display a Copy Code button.
+
+URLs, media, and emojis are not supported.
+
+## **Template Creation**
+
+### **Example Request Creation via API (Copy Code)**
+
+[Open related resource](https://docs.ycloud.com/reference/whatsapp-template-creation-examples#zero-tap-authentication-template)
+
+### Manually Create via [YCloud Console](https://www.ycloud.com/console/#/app/whatsApp/template)
+
+[create-template](/help/whatsapp-accounts-management/template-management/create-template)
+## **Sending Authentication Template Messages**
+
+Use YCloud [WhatsApp API](https://docs.ycloud.com/reference/whatsapp_message-send-directly) to send authentication template messages.
+
+Please note that if you are sending an authentication template with a One-Tap Autofill Button, you must first initiate a handshake between your app and WhatsApp Messenger or WhatsApp Business. See the handshake below.

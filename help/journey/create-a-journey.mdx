@@ -1,0 +1,58 @@
+---
+title: "Create a Journey"
+---
+
+# Create a Journey
+
+The following is a brief introduction on how to create a Journey. For detailed component introductions, please visit the [Component and Function Introduction](/help/journey/components-and-features-introduction).
+
+## Step 1: Enter Journey
+
+Entry: [Journey](https://www-prepare.ycloud.com/console/#/app/journey/list)
+
+![](/images/gitbook/image-1-1-0799ef0f.png)
+
+## Step 2: Create a New Journey
+
+After clicking the Create Journey button, you can choose to create from a template or custom a Journey.
+
+![](/images/gitbook/image-1-1-1-81d112bd.png)
+
+## Step 3: Set Activity Name
+
+![](/images/gitbook/image-2-1-78e25b85.png)
+
+## Step 4: Set Trigger
+
+The Trigger is the activator for this Journey and will only be successfully triggered if all conditions in the Trigger are met.
+
+| Setting Item                  | Function                                                                                                                                                                                                 | Required |
+| ----------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Event                         | Select a condition that, when met by the user, will trigger the event                                                                                                                                    | Yes      |
+| Sender: Subscriber Settings   | Select the WhatsApp account used to send messages to customers. (Subsequent templates will be selected from the WABA associated with this number)                                                        | Yes      |
+| Audience                      | Set user conditions. If not set, no user judgment is made. If conditions are set, the customer is judged against these conditions when the event occurs, and will be triggered if the conditions are met | No       |
+| Filter Unsubscribed Customers | If opened, customers on the unsubscribed list will be filtered out. If closed, unsubscribed customers will not be filtered                                                                               | No       |
+| Customer Trigger Limit        | <p>Options:</p><ol><li>One user triggers only once</li><li>Every time a user meets the conditions, it triggers</li></ol>                                                                                 | Yes      |
+
+![](/images/gitbook/image-3-1-78eb45ee.png)
+
+## Step 5: Design the Flow
+
+Drag and connect components to design the flow according to your business scenario. Specific component functions can be found in the [Component Introduction](/help/journey/components-and-features-introduction).
+
+![](/images/gitbook/image-515-5337be35.png)
+
+## Step 6: Save and Activate Journey
+
+After completing the settings, click the Save button in the upper right corner.
+
+* Set Journey [Goals](/help/journey/components-and-features-introduction/goal-he-exit-rule) and [Exit Rules](/help/journey/components-and-features-introduction/goal-he-exit-rule) (Optional)
+* Set the Journey status to Active
+
+After setting, click the Save button in the popup.
+
+![](/images/gitbook/image-516-da77d67d.png)
+
+If there are errors in the component settings during saving, you can check the error prompts in the upper right corner of the red-framed components, modify them, and then click the check button in the upper right corner to check.
+
+![](/images/gitbook/image-517-6c51e932.png)

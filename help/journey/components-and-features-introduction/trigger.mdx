@@ -1,0 +1,30 @@
+---
+title: "Trigger"
+description: Learn How to Use Triggers to Start a Customer Journey
+---
+
+# Trigger
+
+The Trigger is the initiator of this Journey and will only be successfully activated if all conditions in the Trigger are met. Trigger Settings:
+
+| Setting                       | Function                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | Required |
+| ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
+| Event                         | <p>Select a condition that, when met by the user, will trigger the action</p><p></p><p><em>Example：When setting the event as "last shopping time &#x3C; 1 day" , you need send us user's last shopping time via</em> <a href="https://docs.ycloud.com/reference/contact-update"><em>Contact API</em></a><em>. When the customer's last shopping time changes, we will check if the changed time to the current time is less than 1 day. If it is less than 1 day, the Journey will be triggered.</em></p> | Yes      |
+| Sender: Subscriber Settings   | Select the WhatsApp account used to send messages to customers. (Subsequent templates will be chosen from the WABA associated with this number)                                                                                                                                                                                                                                                                                                                                                           | Yes      |
+| Audience                      | Set user conditions; if not set, no user judgment is made. If conditions are set, when the event occurs, it checks if the customer meets the audience conditions, triggering if met                                                                                                                                                                                                                                                                                                                       | No       |
+| Filter Unsubscribed Customers | When checked, filters out customers on the unsubscribe list. If unchecked, does not filter out unsubscribed customers                                                                                                                                                                                                                                                                                                                                                                                     | No       |
+| Customer Trigger Limit        | <p>Options:</p><ol><li>Trigger only once per user</li><li>Trigger every time the user meets the condition</li></ol>                                                                                                                                                                                                                                                                                                                                                                                       | Yes      |
+
+## Exit Trigger (Optional)
+
+When a user enters a Journey, the system continuously checks if the user meets the exit criteria. If the criteria are met, the user will immediately exit the Journey, regardless of the stage they are in, and no further actions will be executed.
+
+## Goal (Optional)
+
+Used to Measure the Effectiveness of a Journey. By setting goals, the system continuously tracks whether customers meet the target criteria after the Journey is triggered. When a customer meets the criteria, the Journey's goal completion count increases by one.
+
+> **Info**
+>
+> Note: The goal is used for data tracking only. Achieving the goal does not mean the customer will exit the Journey. Customers will only exit the Journey if they meet the exit trigger criteria or after completing the final component of the Journey.
+
+![](/images/gitbook/image-559-1cba43ed.png)

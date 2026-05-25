@@ -1,0 +1,57 @@
+---
+title: "Contact Attribute Settings"
+---
+
+# Contact Attribute Settings
+
+Contact attributes are used to store a contact's basic information, source, tags, and interaction status. With contact attributes, you can view customer information in the contact list and contact details, and use attributes for filtering, segmentation, and follow-up operations.
+
+
+Contact attributes include **system attributes** and **custom attributes**:
+
+* System attributes: Automatically generated or updated by YCloud, such as nickname, phone number, source, create time, and last contacted time.
+* Custom attributes: Created by team members based on business needs, such as customer level, purchase intent, store location, or business type.
+
+### Common System Attributes
+
+Common contact attributes include:
+
+<table><thead><tr><th width="153.89453125">Attribute</th><th>Description</th></tr></thead><tbody><tr><td>Nickname</td><td>The contact's original nickname, usually synced from WhatsApp profile information.</td></tr><tr><td>Phone number</td><td>The contact's primary phone number, usually synced from WhatsApp or entered manually.</td></tr><tr><td>Email</td><td>The contact's email address.</td></tr><tr><td>Country / Region</td><td>The country or region associated with the contact, usually identified based on the phone number or profile information.</td></tr><tr><td>Source</td><td>The contact source, used to indicate whether the contact came from a message, link, import, API, ad, or another entry point.</td></tr><tr><td>Source ID</td><td>The unique identifier of the contact source, usually used to record the original ad source or channel source.</td></tr><tr><td>Source URL</td><td>The original URL associated with the contact source, such as an ad, campaign, or entry link.</td></tr><tr><td>Tag</td><td>Tags assigned to the contact for classification, filtering, and follow-up operations.</td></tr><tr><td>Owner</td><td>The email address of the team member responsible for managing the contact.</td></tr><tr><td>Create time</td><td>The time when the contact was first created in the system.</td></tr><tr><td>Last contacted</td><td>The most recent time when an interaction occurred with this contact.</td></tr><tr><td>Last connected number</td><td>The WhatsApp Business number or channel number most recently used to communicate with this contact.</td></tr></tbody></table>
+
+> **Info**
+>
+> Attributes marked as System are system attributes. They are usually generated or updated automatically by YCloud based on contact information, source, conversations, imports, or integration data.
+
+#### Source
+
+Source, also known as Contact source, is one of the most commonly used system attributes for contacts. It indicates where the contact first entered YCloud, and can be used to identify acquisition channels, analyze ad performance, or filter contacts from different entry points.
+
+Source may include the following enum values:
+
+<table><thead><tr><th width="154.671875">Source</th><th>Description</th></tr></thead><tbody><tr><td>Inbound message</td><td>The contact connected with your WhatsApp number by sending an inbound message.</td></tr><tr><td>Link / QR Code</td><td>The contact connected with your WhatsApp number through a link or QR code.</td></tr><tr><td>Manually added</td><td>The contact was manually added by a team member.</td></tr><tr><td>File import</td><td>The contact was added through file import.</td></tr><tr><td>Shopify</td><td>The contact was synced from your Shopify store to YCloud through the <a href="https://helpdocs.ycloud.com/help-center/zh/integrations/e-commerce/shopify/cod-order-confirmation">Shopify integration</a>.</td></tr><tr><td>API added</td><td>The contact connected with your WhatsApp number through the <a href="https://docs.ycloud.com/reference/contact-create">YCloud API</a>.</td></tr><tr><td>AD</td><td>The contact connected with your WhatsApp number through Meta Click-to-WhatsApp ad traffic. Learn more about <a href="https://helpdocs.ycloud.com/help-center/zh/ctwa-dian-ji-whatsapp-guang-gao/ctwa-jie-shao">Meta CTWA Ads</a>.</td></tr><tr><td>TikTok AD</td><td>The contact connected with your WhatsApp number through TikTok Messaging Ads. Learn more about <a href="https://helpdocs.ycloud.com/help-center/zh/ctwa-dian-ji-whatsapp-guang-gao/tiktok-guang-gao/tiktok-ad-introduction">TikTok Messaging Ads</a>.</td></tr><tr><td>Post</td><td>The contact connected with your WhatsApp number through Facebook posts or similar entry points.</td></tr><tr><td>Calling</td><td>The contact connected with your WhatsApp number through WhatsApp Calling.</td></tr><tr><td>WhatsApp Business App</td><td>The contact connected with your WhatsApp number through WhatsApp Business App.</td></tr><tr><td>Unknown</td><td>The system cannot identify how the contact connected with your WhatsApp number, or the source was not recorded in historical data.</td></tr></tbody></table>
+
+For example, if you want to view contacts generated by TikTok ads, you can filter by "TikTok AD". If you want to view contacts synced or created through Shopify, you can filter by "Shopify".
+
+![](/images/gitbook/image-2-f840145b.png)
+
+### Add a Custom Attribute
+
+If system attributes do not meet your business management needs, you can add custom attributes.
+
+1. Log in to your [YCloud account](https://www.ycloud.com).
+2. Go to **Contact > Settings > Attributes**.
+3.  Click **Add Attribute**.&#x20;
+
+    ![](/images/gitbook/image-3-27313aaf.png)
+4. Enter the attribute name and select the attribute type.
+5. Click **Add** to finish
+
+![](/images/gitbook/image-4-7673951e.png)
+
+### Edit or Delete an Attribute
+
+After an attribute is added successfully, you can view it on the **Contact > Settings > Attributes** page. You can also edit or delete it as needed.
+
+![](/images/gitbook/image-836-2ba25a8d.png)
+
+Before editing or deleting an attribute, check whether it is being used in contact filters, segments, automation workflows, or other operational scenarios, to avoid affecting existing contact management workflows.

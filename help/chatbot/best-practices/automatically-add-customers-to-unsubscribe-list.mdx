@@ -1,0 +1,80 @@
+---
+title: "Automatically Add Customers to Unsubscribe List"
+---
+
+# Automatically Add Customers to Unsubscribe List
+
+Automatically identify customer unsubscribe intentions through YCloud Chatbot, allowing customers to unsubscribe and automatically add them to the unsubscribe list, avoiding direct complaints to WhatsApp. This will effectively prevent your WhatsApp account from being banned.
+
+Example:
+
+When a customer's message to unsubscribe is received, the Chatbot automatically asks the customer if they confirm they want to unsubscribe, and for those who confirm a second time, adds them to the unsubscribe list.
+
+![](/images/gitbook/image-697-4dc23fb0.png)
+
+## Step 1: Log in to your YCloud account and create a Chatbot Flow
+
+![](/images/gitbook/_e14b84bb-d55e-4eff-8225-5e0228f64e28-01ee2de7.jpg)
+
+## Step 2: Add unsubscribe trigger keywords
+
+> **Info**
+>
+> Recommendation: Set multiple unsubscribe keywords and choose "Containing" rather than "Exact matching". This way, any keyword in the list will trigger the Chatbot. After setting up, click the save button.
+
+![](/images/gitbook/image-699-1670c6b0.png)
+
+## Step 3: Confirm customer's unsubscribe intention (optional)
+
+> **Warning**
+>
+> Strongly recommend adding this step to avoid customers mistakenly entering the unsubscribe list. You can choose to use the "Ask a question" component to ask the customer: "Please confirm if you want to unsubscribe from messages?"
+
+Detailed steps:
+
+1. Select the "Ask a question" component
+
+![](/images/gitbook/_029d54a3-5b72-4932-ac6a-20391a58b8db-0463dc20.jpg)
+
+2. Choose the Buttons message format
+
+![](/images/gitbook/_c1952858-e095-407c-847e-717e93d36c2f-150e923d.jpg)
+
+3. Set the inquiry content: "Please confirm if you want to unsubscribe from WhatsApp?"
+
+* Set two options for the Button
+  * OPT-OUT
+  * Hand slip
+* After setting up, click Save
+
+![](/images/gitbook/image-700-f2481d17.png)
+
+4. Connect the Keyword trigger to the Ask a question component after setting up
+
+![](/images/gitbook/image-702-4bdd716b.png)
+
+## Step 4: Add to Unsubscribe List
+
+1. Add the Unsubscribe component
+
+![](/images/gitbook/image-703-516ef284.png)
+
+2. You can choose whether to automatically reply with a successful unsubscribe message. If needed, click the Auto-reply switch on the right and enter the auto-reply content below, then select Save to save.
+
+![](/images/gitbook/image-704-fb535079.png)
+
+3. Connect the "OPT-OUT" button from the Ask a question component to the Unsubscribe component
+
+![](/images/gitbook/image-705-7eba41a6.png)
+
+## Step 5: Add a Send messages text (optional)
+
+Add a Send messages text component and connect it to the "No, I clicked by mistake" button
+
+![](/images/gitbook/image-706-5803f45e.png)
+
+## Step 6: Save and activate the Chatbot
+
+After editing the Chatbot flow, click Save in the upper right corner, and in the pop-up window, click Active > Save to instantly activate the unsubscribe Chatbot. When a customer triggers the unsubscribe keyword, the Chatbot will automatically add this phone to the unsubscribe list and display it in the Contact > Unsubscribe list.
+
+![](/images/gitbook/image-707-d4d3d1ef.png)

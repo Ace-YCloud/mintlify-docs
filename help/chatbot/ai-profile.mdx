@@ -1,0 +1,113 @@
+---
+title: "AI Profile"
+description: >-
+  Setup the personality and the workflow reference of AI Agent to meet the
+  requirements of customized brand services
+---
+
+# AI Profile
+
+## Choose the role
+
+Create an AI Agent, choose the role you want the AI Agent to be.
+
+![](/images/gitbook/screenshot-2x-2-5cbfcc86.png)
+
+![](/images/gitbook/screenshot-2x-1-1-ce724628.png)
+
+## Quick start
+
+We have already pre-set all the basic configurations. You can directly associate your brand information below, then have a conversation with AI in the preview interface on the right to view the results. If you need to adjust the AI configuration, you can click the "Edit" button in the upper right corner to enter the configuration editing interface.
+
+![](/images/gitbook/screenshot-2x-2-1-c3cf167f.png)
+
+## How to Write Good Prompts for AI Agent
+
+A good prompt can significantly improve the efficiency and accuracy of your AI Agents. This guide covers how to write good prompts for AI Agents on YCloud.First, you need to know how **Instructions, Actions** and other **Capabilities** work:
+
+| Instructions                          | Guide the AI Agent's **overall** behavior with a step-by-step work procedure and other general principles such as fall back handling and boundaries.                                                                                                                                                                  |
+| ------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| <p>Actions<br /></p>                    | Guides AI on when and how to trigger actions independently. Actions can interrupt instructions.E.g. You can write "when the user expresses satisfaction and has no more questions" for the action "close conversations". In that way, the AI Agent will close the conversation as long as the user shows such intent. |
+| Flows, Knowledge Base and Actionbooks | They exist as the skill library of AI agents, which can be invoked on demand by agents when answering user questions. Among them, Flows has the highest priority and will be triggered first.                                                                                                                         |
+
+### Writing Instructions
+
+![](https://ycloudteam.feishu.cn/space/api/box/stream/download/asynccode/?code=ZmNhMmI4NzdiZDI1ODk2NzFhZjFiMzZlMGViZjk4OWVfYmhOWXVvY3ZhYkVqZVg4T1NFMlZyazlFdWpZdEZ1M2ZfVG9rZW46SklUcmJXYThHb2hTc1J4TXVYWGMxemxObnhkXzE3NzIyNjI1NTc6MTc3MjI2NjE1N19WNA)
+
+We recommend breaking down instructions into several parts:
+
+| **Component**              | **What's it for**                                                                                                                             | **Example**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Work procedure             | <p>Tell the AI Agent step by step how to guide user's interaction<br /></p>                                                                     | <ol start="1"><li>Human-like greetings, welcome users politely and warmly</li><li><p>Understand Needs</p><ol><li>ask for their needs, such as “What are you looking for?”</li><li>Acknowledge their reply briefly (e.g., “Got it 👍”)</li><li>Keep it natural. No rapid-fire questions.</li></ol></li><li><p>Provide Quick Value</p><ol><li>Based on their answer, highlight one key benefit that matches their need. Keep it short (1–2 sentences max).</li></ol></li><li><p>Collect Contact (Soft Transition)</p><ol><li>After some value exchange, say: If you'd like, I can send you more details.</li><li>Ask for user info, &#123;&#123;Email&#125;&#125;, &#123;&#123;Nickname&#125;&#125;</li><li>ensure that you have asked for all the required information and do not ask for information beyond what is required</li><li>Make it natural and only ask one question a time</li><li>Example: For E-mail, you can ask "What's the best email to reach you?"</li></ol></li><li><p>Handle Interest</p><ol><li><p>If they show strong interest, ask "Would you like to book a demo or talk to a specialist?"</p><ol><li>If yes → Escalate to human agent</li><li>If not ready → Stay helpful without pressure</li></ol></li></ol></li><li><p>Closing</p><ol><li>Before ending: Is there anything else I can help you with?</li><li>If no, politely thank the visitor such as "Thanks for stopping by, &#123;&#123;nick_name&#125;&#125;! 😊"</li></ol></li></ol> |
+| Context                    | Provide context for the AI agent by describing who it is interacting with and the main purpose of the conversation.                           | <ol start="1"><li>You're speaking to someone exploring our products or services.</li><li>Your goal is to get the customer's information</li></ol>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| Role & Communication style | Explain the role the AI agent should play, the tone it should use, and how it should communicate.                                             | <ol start="1"><li>You're a warm, helpful, and relaxed sales guide—never pushy.</li><li>Ask one question at a time. Keep replies short, clear, and encouraging.</li><li>Keep replies short and conversational, two sentences max.</li></ol>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| Follow up handling         | Tell the AI Agent what to do to follow up in the conversation, such as how long to wait and what's the next action if the user doesn't reply. | If there's no reply after 5 minutes, send: "Hi, just checking if you're still there?". And if still no reply after 5 minutes, send: "I'll close the chat for now, but feel free to ask anytime!" and close the conversation.Note：The current timer measures time in minutes, with a maximum duration of no more than 60 minutes                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
+| Fall back handling         | Tell the AI Agent how to react when user input is unclear, incomplete, or outside its capabilities                                            | If you don't understand the user's intent, first try to confirm it in a friendly manner. If you still cannot understand, escalate to human agents.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Boundaries                 | <p>Defines what AI Agent should <em>not</em> attempt (e.g. legal advice, medical diagnosis, financial advice, stock checking, etc.)<br /></p>   | <ul><li>Never invent facts, processes, prices, or policies that are not covered in the instructions here.</li><li>Do not share personal, financial, or sensitive information unless explicitly instructed to.</li><li>Stay within your role, do not act or advise beyond it.</li><li>Never share assumptions, opinions, or promises.</li></ul>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+
+### Writing actions prompts
+
+![](https://ycloudteam.feishu.cn/space/api/box/stream/download/asynccode/?code=YjE2YzcxMDJlZDM5MDc1YWQxNjNmMjdlZDg1ZTc3MDFfaDNISW4xRkM1b3RNTk1wcjczY242VFpzd3RBcHJraklfVG9rZW46UTVkcGJ3MWdab2prVm54YTRBdmM0V1lhbmxkXzE3NzIyNjI1NTc6MTc3MjI2NjE1N19WNA)
+
+For each action, describe:
+
+* **When** it should happen (the condition)
+* **What** the Agent should do
+
+| **Action**                | **What you can write for prompts**                                                                                                                                      | **Example**                                                                                                                                                                                    |
+| ------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Close conversations       | Tell the Agent under what circumstances the conversations can be closed, and whether a notification message needs to be sent to the user when closing the conversation. | The Contact confirms their issue is resolved and no further help is required.                                                                                                                  |
+| Escalate to human agents  | Instruct the AI to transfer to the corresponding agent or agent team in different scenarios.                                                                            | <ul><li>If the user indicates a desire to be served by a human agent, hand off to agent: John</li><li>If the user wants advice on the refund request, hand off to team: support team</li></ul> |
+| Add contact tags          | Describe in which scenarios what corresponding labels should be added to users.                                                                                         | <ul><li>If the user shows a strong purchase intention, add the contact "purchase intention"</li><li>If the user shows strong interest in Product A, add the contact "Product A"</li></ul>      |
+| Update contact attributes | Tell the AI Agent when to update contact attributes. Also, it can restrict the AI Agent to update only certain attributes.                                              | Update &#123;&#123;Contact.Email&#125;&#125;, &#123;&#123;Contact.Order\_address&#125;&#125; when users mention them.                                                                                                              |
+
+Actions can only be triggered independently when they are enabled. If you disable a specific action, it will still be usable within Instructions, but it will not be able to trigger independently outside of Instructions. This means that while the action remains available for use in predefined instructions or actionbooks, it cannot be activated in other contexts until it is re-enabled.
+
+### Using variables, hand off and contact tags
+
+![](https://ycloudteam.feishu.cn/space/api/box/stream/download/asynccode/?code=NDNlMjBmMGI0MzE4ZjUxMjZiZmU4OGE1NmY1ZjU4MDRfRXJvTHliM3lyalBvVVh1R1ZKVnlqZnVvSEpza3JWRlRfVG9rZW46SnhXaGI2VFNpb2hSNzN4a2tSY2NuRW1IblJjXzE3NzIyNjI1NTc6MTc3MjI2NjE1N19WNA)
+
+#### **Variables**
+
+**What are variables?**
+
+Variables allow you to reference specific contact information within your AI prompts. Think of them as placeholders that automatically fill in with real customer data.
+
+**How do they work?**
+
+Simply add variables to your prompts whenever you need to refer to contact details like name, email, purchase history, or any custom field you've created. The AI Agent intelligently understands when to:
+
+* Read the field value (e.g., "Hello &#123;&#123;contact.name&#125;&#125;")
+* Update the field based on conversation context (e.g., capturing a phone number during chat)
+  * &#x20; Example: "Collect the customer's &#123;&#123;contact.phone\_number&#125;&#125; during the conversation."
+
+#### **Hand off**
+
+![](https://ycloudteam.feishu.cn/space/api/box/stream/download/asynccode/?code=MzgyMDNhNDAwMzY2MmQ1ZDM1NTkxNzBlZjllODViZTVfdkRnQ29IUXpMQmlNSkY4dFVEb0dzRVU0ZFlJSzVFYnVfVG9rZW46RWJkYmJHeFZQbzVPN3h4dXdWaGNjSE43bkRoXzE3NzIyNjI1NTc6MTc3MjI2NjE1N19WNA)
+
+**What is hand off?**&#x20;
+
+Hand off allows you to escalate conversations from the AI Agent to human agents when needed. Available options:
+
+* Assign to specific agent - Route to a particular team member
+* Assign to team - Route to any available member of a specific team
+* Assign to owner - Route to the contact's designated account owner
+* Assign to last handler - Route to the agent who previously assisted this contact and is now available to serve
+
+**When to use:** Configure hand off rules for complex inquiries, sensitive issues, or when the AI cannot resolve the request.
+
+#### **Add contact tags**
+
+![](https://ycloudteam.feishu.cn/space/api/box/stream/download/asynccode/?code=MmIzOGEzYmVkNmM1YTQxMmJkZjBjMTMyNGEzN2I4MzRfWEJjaDdZakU3dVZjQ3M4aUxoTGRUQTQ1QzJsaEQ0NXhfVG9rZW46QVlYN2JEWU9vbzh1R1B4QVpYbWNiWjA0bkJ5XzE3NzIyNjI1NTc6MTc3MjI2NjE1N19WNA)
+
+**What are contact tags?**
+
+Tags are labels you can automatically apply to contacts based on their behavior or conversation content.
+
+**How to use:** Select specific tags to apply when certain conditions are met during the conversation. Common use cases:
+
+* Interest tracking: If a user asks about "Product A", automatically tag them with "interested-product-a"
+* Issue categorization: Tag contacts with "billing-question" or "technical-support"
+* Lead qualification: Tag potential customers with "hot-lead" or "needs-follow-up"
+
+Benefits: Tags help you segment contacts, trigger automated workflows, and provide better personalized service in future interactions.<br />

@@ -1,8 +1,8 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
-  "name": "Product Guide",
-  "description": "Step-by-step guides for every product—platform setup, analytics, and integrations in one place.",
+  "name": "YCloud Docs",
+  "description": "YCloud help documentation for WhatsApp marketing, service, sales, and partner workflows.",
   "colors": {
     "primary": "#166E3F",
     "light": "#26BD6C",
@@ -16,7 +16,11 @@
     "eyebrows": "breadcrumbs"
   },
   "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
+    "options": [
+      "copy",
+      "view",
+      "assistant"
+    ]
   },
   "navigation": {
     "global": {
@@ -27,51 +31,310 @@
           "href": "/"
         },
         {
-          "anchor": "Changelog",
-          "icon": "scroll-text",
-          "href": "https://www.mintlify.com/docs/changelog"
-        },
-        {
           "anchor": "Help",
           "icon": "life-buoy",
-          "href": "https://www.mintlify.com/docs/contact-support"
+          "href": "/help"
+        },
+        {
+          "anchor": "Partner",
+          "icon": "handshake",
+          "href": "/partner"
         }
       ]
     },
-    "directory": "card",
     "groups": [
       {
-        "group": "Platform",
-        "icon": "layers",
-        "expanded": true,
+        "group": "Overview",
         "pages": [
-          "platform/quickstart",
-          "platform/key-concepts",
-          "platform/configuration/settings",
-          "platform/configuration/user-management",
-          "platform/administration/roles-permissions"
+          "help",
+          "help/update-log",
+          "help/update-log/update.oct"
         ]
       },
       {
-        "group": "Analytics",
-        "icon": "chart-bar",
-        "expanded": true,
+        "group": "Quick Start",
         "pages": [
-          "analytics/quickstart",
-          "analytics/connect-data",
-          "analytics/dashboards/create-dashboard",
-          "analytics/reports/scheduled-reports"
+          "help/quick-start/create-a-whatsapp-business-api-account",
+          "help/quick-start/send-verification-code-via-whatsapp",
+          "help/quick-start/send-utility-messages-via-whatsapp",
+          "help/quick-start/acquire-more-customers-ctwa",
+          "help/quick-start/marketing-via-whatsapp",
+          "help/quick-start/customer-support-via-whatsapp"
+        ]
+      },
+      {
+        "group": "WhatsApp Basics",
+        "pages": [
+          "help/whatsapp-basics/whatsapp-business-account-waba",
+          "help/whatsapp-basics/whatsapp-account-structure",
+          "help/whatsapp-basics/phone-numbers",
+          "help/whatsapp-basics/messages",
+          "help/whatsapp-basics/message-templates",
+          "help/whatsapp-basics/message-templates/authentication-message-templates",
+          "help/whatsapp-basics/message-templates/authentication-message-templates/copy-verification-code-authentication-template",
+          "help/whatsapp-basics/message-templates/authentication-message-templates/one-click-autofill-authentication-template",
+          "help/whatsapp-basics/message-templates/authentication-message-templates/zero-click-authentication-template",
+          "help/whatsapp-basics/message-templates/catalog-template",
+          "help/whatsapp-basics/message-templates/carousel-template",
+          "help/whatsapp-basics/message-templates/coupon-code-template",
+          "help/whatsapp-basics/message-templates/limited-time-offer-template",
+          "help/whatsapp-basics/message-templates/multi-product-message-template",
+          "help/whatsapp-basics/whatsapp-flows",
+          "help/whatsapp-basics/whatsapp-flows/create-whatsapp-flows",
+          "help/whatsapp-basics/whatsapp-flows/send-whatsapp-flows",
+          "help/whatsapp-basics/whatsapp-flows/analyse-whatsapp-flows",
+          "help/whatsapp-basics/business-verification",
+          "help/whatsapp-basics/green-tick-verification",
+          "help/whatsapp-basics/compliance-information",
+          "help/whatsapp-basics/compliance-information/opt-in-to-subscribe-to-whatsapp",
+          "help/whatsapp-basics/compliance-information/opt-out-of-unsubscribing-from-whatsapp"
+        ]
+      },
+      {
+        "group": "WhatsApp Accounts Management",
+        "pages": [
+          "help/whatsapp-accounts-management/create-a-whatsapp-api-account",
+          "help/whatsapp-accounts-management/create-a-whatsapp-api-account/create-waba-via-embedded-sign-up",
+          "help/whatsapp-accounts-management/create-a-whatsapp-api-account/add-numbers",
+          "help/whatsapp-accounts-management/create-a-whatsapp-api-account/number-migration",
+          "help/whatsapp-accounts-management/create-a-whatsapp-api-account/whatsapp-business-app-coexistence",
+          "help/whatsapp-accounts-management/template-management",
+          "help/whatsapp-accounts-management/template-management/create-template",
+          "help/whatsapp-accounts-management/template-management/create-template/create-whatsapp-flows-template",
+          "help/whatsapp-accounts-management/template-management/create-template/create-whatsapp-pay-template",
+          "help/whatsapp-accounts-management/template-management/create-template/ai-generates-marketing-templates",
+          "help/whatsapp-accounts-management/template-management/copy-template",
+          "help/whatsapp-accounts-management/template-management/template-data-statistics",
+          "help/whatsapp-accounts-management/phone-number-management",
+          "help/whatsapp-accounts-management/phone-number-management/phone-number-nickname-settings",
+          "help/whatsapp-accounts-management/phone-number-management/phone-number-profile-settings",
+          "help/whatsapp-accounts-management/phone-number-management/conversation-assignment-rules",
+          "help/whatsapp-accounts-management/phone-number-management/automation",
+          "help/whatsapp-accounts-management/phone-number-management/chat-links",
+          "help/whatsapp-accounts-management/account-disabling-and-handling",
+          "help/whatsapp-accounts-management/data-analysis"
+        ]
+      },
+      {
+        "group": "Inbox",
+        "pages": [
+          "help/inbox/inbox-introduction",
+          "help/inbox/quick-start-with-inbox",
+          "help/inbox/admin-guide",
+          "help/inbox/agent-sale-guide",
+          "help/inbox/initiate-new-chat",
+          "help/inbox/company-canned-response",
+          "help/inbox/welcome-messages",
+          "help/inbox/conversation-tags",
+          "help/inbox/ai-copilot",
+          "help/inbox/search-contacts-and-chat-history",
+          "help/inbox/conversation-logs",
+          "help/inbox/message-translation",
+          "help/inbox/inbox-calling",
+          "help/inbox/inbox-data-analysis",
+          "help/inbox/inbox-mobile-client",
+          "help/inbox/best-practices",
+          "help/inbox/best-practices/how-sales-teams-use-inbox",
+          "help/inbox/best-practices/how-service-teams-use-inbox"
+        ]
+      },
+      {
+        "group": "Contact",
+        "pages": [
+          "help/contact/contact-management",
+          "help/contact/create-import-contacts",
+          "help/contact/contact-grouping",
+          "help/contact/bulk-operations",
+          "help/contact/unsubscribe-list",
+          "help/contact/contact-settings",
+          "help/contact/contact-settings/contact-attribute-settings",
+          "help/contact/contact-settings/contact-tag-settings",
+          "help/contact/contact-settings/contact-event",
+          "help/contact/owner-assignment-settings-agent-sales-assignment"
+        ]
+      },
+      {
+        "group": "Calling",
+        "pages": [
+          "help/calling/overview",
+          "help/calling/quick-start-with-calling",
+          "help/calling/manager-guideline",
+          "help/calling/agent-guideline",
+          "help/calling/call-logs",
+          "help/calling/outbound_calls"
+        ]
+      },
+      {
+        "group": "Campaign",
+        "pages": [
+          "help/campaign/create-a-whatsapp-marketing-campaign",
+          "help/campaign/track-button-clicks",
+          "help/campaign/analyze-campaign-data"
+        ]
+      },
+      {
+        "group": "Journey",
+        "pages": [
+          "help/journey/journey-introduction",
+          "help/journey/create-a-journey",
+          "help/journey/components-and-features-introduction",
+          "help/journey/components-and-features-introduction/trigger",
+          "help/journey/components-and-features-introduction/send-template",
+          "help/journey/components-and-features-introduction/message-status-rule",
+          "help/journey/components-and-features-introduction/add-tag",
+          "help/journey/components-and-features-introduction/wait",
+          "help/journey/components-and-features-introduction/goal-he-exit-rule",
+          "help/journey/journey-best-practice"
+        ]
+      },
+      {
+        "group": "Chatbot",
+        "pages": [
+          "help/chatbot/what-is-chatbot",
+          "help/chatbot/create-a-chatbot",
+          "help/chatbot/reactive-ai-agent",
+          "help/chatbot/rule-based-agent",
+          "help/chatbot/ai-profile",
+          "help/chatbot/ai-knowledge-base",
+          "help/chatbot/ai-suggestions",
+          "help/chatbot/ai-skills",
+          "help/chatbot/create-a-flow",
+          "help/chatbot/chatbot-components",
+          "help/chatbot/chatbot-components/trigger",
+          "help/chatbot/chatbot-components/ask-a-question",
+          "help/chatbot/chatbot-components/send-messages",
+          "help/chatbot/chatbot-components/agent-takeover",
+          "help/chatbot/chatbot-components/unsubscribe",
+          "help/chatbot/chatbot-components/branch",
+          "help/chatbot/chatbot-components/send-shopify-orders",
+          "help/chatbot/analyse-chatbot-data",
+          "help/chatbot/best-practices",
+          "help/chatbot/best-practices/ycloud-chatbot-best-practice",
+          "help/chatbot/best-practices/automatically-add-customers-to-unsubscribe-list",
+          "help/chatbot/best-practices/ai-guidance-best-practice"
+        ]
+      },
+      {
+        "group": "Ctwa (Click to WhatsApp Ad)",
+        "pages": [
+          "help/ctwa-click-to-whatsapp-ad/ctwa-introduction",
+          "help/ctwa-click-to-whatsapp-ad/meta-ctwa-ads",
+          "help/ctwa-click-to-whatsapp-ad/meta-ctwa-ads/connect-facebook-ad-account",
+          "help/ctwa-click-to-whatsapp-ad/meta-ctwa-ads/create-click-to-whatsapp-ad-ctwa",
+          "help/ctwa-click-to-whatsapp-ad/meta-ctwa-ads/conversion-api-capi",
+          "help/ctwa-click-to-whatsapp-ad/tiktok-messaging-ad",
+          "help/ctwa-click-to-whatsapp-ad/tiktok-messaging-ad/connect-tiktok-ad-account",
+          "help/ctwa-click-to-whatsapp-ad/tiktok-messaging-ad/create-tiktok-instant-messaging-ad",
+          "help/ctwa-click-to-whatsapp-ad/tiktok-messaging-ad/tiktok-ads-traffic-delivery-conversion-reporting",
+          "help/ctwa-click-to-whatsapp-ad/receive-ctwa-visitors",
+          "help/ctwa-click-to-whatsapp-ad/ctwa-analysis"
+        ]
+      },
+      {
+        "group": "Shop",
+        "pages": [
+          "help/shop/overview",
+          "help/shop/creatstore",
+          "help/shop/shipping",
+          "help/shop/payments",
+          "help/shop/products",
+          "help/shop/orders",
+          "help/shop/orders/order-status",
+          "help/shop/orders/shipping-import"
+        ]
+      },
+      {
+        "group": "WhatsApp pay",
+        "pages": [
+          "help/whatsapp-pay/overview",
+          "help/whatsapp-pay/link-your-payment-account",
+          "help/whatsapp-pay/send-order-detail",
+          "help/whatsapp-pay/update-order-status"
         ]
       },
       {
         "group": "Integrations",
-        "icon": "plug",
-        "expanded": true,
         "pages": [
-          "integrations/quickstart",
-          "integrations/authentication",
-          "integrations/connectors/crm",
-          "integrations/webhooks/configure"
+          "help/integrations/channels",
+          "help/integrations/channels/global-sms",
+          "help/integrations/channels/global-sms/getting-started",
+          "help/integrations/channels/global-sms/sms-basic-principles",
+          "help/integrations/channels/global-sms/sms-features",
+          "help/integrations/channels/global-sms/sms-features/api-interface",
+          "help/integrations/channels/global-sms/sms-features/smpp",
+          "help/integrations/channels/global-sms/sms-features/mass-messaging",
+          "help/integrations/channels/global-sms/sms-features/sender-id",
+          "help/integrations/channels/verify",
+          "help/integrations/channels/verify/getting-started",
+          "help/integrations/channels/verify/verification-features",
+          "help/integrations/channels/verify/verification-features/verification-message-templates",
+          "help/integrations/channels/verify/verification-features/security-settings",
+          "help/integrations/channels/verify/verification-features/verification-analysis",
+          "help/integrations/channels/verify/verification-features/custom-otp",
+          "help/integrations/channels/verify/best-practices-for-verification",
+          "help/integrations/channels/verify/best-practices-for-verification/best-practices",
+          "help/integrations/channels/verify/best-practices-for-verification/verification-channel-selection",
+          "help/integrations/channels/verify/best-practices-for-verification/verification-via-whatsapp",
+          "help/integrations/channels/verify/best-practices-for-verification/preventing-fraud-and-invalid-registrations",
+          "help/integrations/channels/email",
+          "help/integrations/channels/email/getting-started",
+          "help/integrations/channels/email/basic-principles",
+          "help/integrations/channels/email/email-features",
+          "help/integrations/channels/email/email-features/domain-configuration",
+          "help/integrations/channels/email/email-features/sending-emails-via-api",
+          "help/integrations/channels/email/email-features/monitoring-and-optimization",
+          "help/integrations/channels/email/best-practices-for-email",
+          "help/integrations/channels/email/best-practices-for-email/separate-marketing-subdomain",
+          "help/integrations/channels/email/best-practices-for-email/warm-up-sending",
+          "help/integrations/channels/email/email-template-samples",
+          "help/integrations/coupons",
+          "help/integrations/coupons/coupon-tool-usage",
+          "help/integrations/e-commerce",
+          "help/integrations/e-commerce/shopify",
+          "help/integrations/e-commerce/shopify/checkout-abandon",
+          "help/integrations/e-commerce/shopify/cod-order-confirmation",
+          "help/integrations/e-commerce/shopify/order-canceled-fulfilled",
+          "help/integrations/e-commerce/shopify/shopify-best-practice",
+          "help/integrations/mm-lite-api",
+          "help/integrations/freshdesk",
+          "help/integrations/data-connectors",
+          "help/integrations/hubspot"
+        ]
+      },
+      {
+        "group": "Account Management",
+        "pages": [
+          "help/account-management/enterprise-account-information",
+          "help/account-management/users-and-teams",
+          "help/account-management/visual-agent",
+          "help/account-management/personal-references-settings",
+          "help/account-management/security-and-privacy",
+          "help/account-management/notify"
+        ]
+      },
+      {
+        "group": "Pricing and Billing",
+        "pages": [
+          "help/pricing-and-billing/whatsapp-conversation-billing-rules",
+          "help/pricing-and-billing/billing-rule",
+          "help/pricing-and-billing/amount-freezing-and-unfreezing",
+          "help/pricing-and-billing/billing-and-recharge",
+          "help/pricing-and-billing/low-balance-alert",
+          "help/pricing-and-billing/subscription-expiration-and-15-day-buffer-period"
+        ]
+      },
+      {
+        "group": "Support",
+        "pages": [
+          "help/support/ycloud-support-team",
+          "help/support/meta-support",
+          "help/support/frequently-asked-questions"
+        ]
+      },
+      {
+        "group": "Partner",
+        "pages": [
+          "partner"
         ]
       }
     ]
@@ -81,17 +344,19 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [],
+    "links": [
+      {
+        "label": "YCloud",
+        "href": "https://www.ycloud.com"
+      }
+    ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "label": "Console",
+      "href": "https://www.ycloud.com/console/"
     }
   },
   "footer": {
-    "socials": {
-      "x": "https://x.com/yourcompany",
-      "linkedin": "https://linkedin.com/company/yourcompany"
-    }
+    "socials": {}
   }
 }
