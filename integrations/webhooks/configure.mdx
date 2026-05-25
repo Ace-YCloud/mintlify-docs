@@ -22,7 +22,7 @@ Webhooks deliver HTTP POST requests to a URL you control whenever a selected eve
   <Step title="Select events">
     After creating the endpoint, open it and click **Add events**. Choose the event types you want this endpoint to receive. You can subscribe to all events or select individual types.
 
-    See [event types](/integrations/webhooks/event-types) for the full list and payload schemas.
+    The event picker shows the full list of supported event types along with example payload schemas for each one.
   </Step>
   <Step title="Verify the signature header">
     Every webhook request includes an `X-Signature-256` header containing an HMAC-SHA256 signature of the request body, signed with your endpoint's secret key.
